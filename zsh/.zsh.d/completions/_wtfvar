@@ -1,0 +1,23 @@
+#compdef wtfvar
+
+_wtfvarvars(){
+    val=("${(@f)$(set | awk -F'=' '{print $1}')}")
+    _wanted val expl "Variables" compadd -a val
+}
+
+_wtfvardelimiters(){
+    val=(":" " " ";" "\n")
+    _wanted -V val expl "Delimiters" compadd -a val
+}
+
+local expl
+local -a val
+
+arguments=(
+'1:[Variables]:_wtfvarvars'
+'2:[Delimiters]:_wtfvardelimiters'
+)
+
+_arguments $arguments && return 0
+
+return 1

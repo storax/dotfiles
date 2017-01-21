@@ -1,0 +1,92 @@
+#compdef homesick
+
+typeset -A opt_args
+local curcontext="$curcontext" context state state_descr line
+
+local expl
+local command
+local -a castles
+
+local -a _homesick_subcommands
+_homesick_subcommands=(
+  'cd:Open a new shell in the root of the given castle'
+  'clone:Clone +uri+ as a castle for homesick'
+  "commit:Commit the specified castle's changes"
+  'destroy:Delete all symlinks and remove the cloned repository'
+  'diff:Shows the git diff of uncommitted changes in a castle'
+  'exec:Execute a single shell command inside the root of a castle'
+  'exec_all:Execute a single shell command inside the root of every cloned castle'
+  'generate:generate a homesick-ready git repo at PATH'
+  'help:Describe available commands or one specific command'
+  'link:Symlinks all dotfiles from the specified castle'
+  'list:List cloned castles'
+  'open:Open your default editor in the root of the given castle'
+  'pull:Update the specified castle'
+  'push:Push the specified castle'
+  'rc:Run the .homesickrc for the specified castle'
+  'show_path:Prints the path of a castle'
+  'status:Shows the git status of a castle'
+  'track:add a file to a castle'
+  'unlink:Unsymlinks all dotfiles from the specified castle'
+  'version:Display the current version of homesick')
+
+_homesick_subcommands_plain=(
+  'cd' 'clone' "commit" 'destroy' 'diff' 'exec' 'exec_all' 'generate'
+  'help' 'link' 'list' 'open' 'pull' 'push' 'rc' 'show_path'
+  'status' 'track' 'unlink' 'version')
+
+__castle_list ()
+{
+    local castles
+    castles=($(homesick list | awk '{print $1}'))
+    _wanted castlelist expl 'Castles' compadd $castles
+}
+
+__homesick_track ()
+{
+    local curcontext="$curcontext" state line
+    typeset -A opt_args
+
+    _arguments -C \
+        ':file:_files' \
+        '::castle:__castle_list'
+}
+
+_arguments -C \
+    ':command:->command' \
+    '*::options:->options' \
+  && return 0
+
+case $state in
+  (command)
+    _describe -t commands "homesick subcommands" _homesick_subcommands
+  ;;
+
+  (options)
+    case $line[1] in
+      (cd|destroy|link|open|pull|push|rc|show_path|status|unlink)
+        _arguments ':castle:__castle_list'
+      ;;
+
+      (clone)
+        _message "Enter uri to the castle repository."
+      ;;
+
+      (list|version)
+        _message "no more arguments"
+      ;;
+      (track)
+        __homesick_track
+      ;;
+
+      (generate)
+        _path_files -f -/
+      ;;
+
+      (help)
+        _wanted command expl 'Command' compadd $_homesick_subcommands_plain
+    esac
+  ;;
+esac
+
+return 1
