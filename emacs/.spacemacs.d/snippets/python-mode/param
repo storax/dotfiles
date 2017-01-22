@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Function Parameter
+# key: param
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+:param $1:$2
+:type $1:$0

@@ -1,0 +1,35 @@
+#+TITLE: storax-flycheck layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[img/storax-flycheck.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Enables global flycheck mode.
+Uses current emacs lisp load path.
+Adds a 0.8 second delay to checking.
+Uses =flycheck-display-error-messages-unless-error-list= as =flycheck-display-errors-function=.
+
+You can customize =storax/modeline-flash-color=.
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-flycheck))
+#+end_src
+
+* Key bindings
+
+| Key Binding | Description    |
+|-------------+----------------|
+| ~C-c C-n~     | next error     |
+| ~SPC e n~     | next-error     |
+| ~C-c C-p~     | previous error |
+| ~SPC e p~     | previous error |

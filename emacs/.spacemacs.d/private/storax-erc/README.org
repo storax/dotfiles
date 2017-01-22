@@ -1,0 +1,58 @@
+#+TITLE: storax-erc layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[img/storax-erc.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+   - [[Gitter][Gitter]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Configures erc.
+The default erc server is =irc.gitter.im=.
+Enables the following modules:
+- autojoin
+- button
+- completion
+- fill
+- hl-nicks
+- image
+- irccontrols
+- list
+- log
+- match
+- menu
+- move-to-prompt
+- netsplit
+- networks
+- noncommands
+- pcomplete
+- readonly
+- ring
+- stamp
+- track
+- youtube
+
+Also configures the auto join list.
+
+** Gitter
+Gitter requires a special token you can fetch from [[https://irc.gitter.im/][irc.gitter.im]].
+It should be stored in =storax-secret-file=.
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-erc))
+#+end_src
+
+* Key bindings
+
+| Key Binding | Description           |
+|-------------+-----------------------|
+| ~<SPC> a i g~ | storax-erc/erc-gitter |

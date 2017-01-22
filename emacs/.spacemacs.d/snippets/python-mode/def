@@ -1,0 +1,29 @@
+# -*- coding: utf-8 mode: snippet -*-
+# name: Function with sphinx doc
+# key: def
+# group: Definitions
+# expand-env: ((yas-indent-line 'nil) (yas-wrap-around-region 'nil) (curcol 0))
+# contributor: Michael Markert <markert.michael@googlemail.com>
+# contributor: David Zuber <zuber.david@gmx.de>
+# --
+def ${1:$(progn (setq curcol (current-column)) nil)}${1:name}($2):
+    $>"""$3
+${2:$(let* ((indent (concat "\n" (make-string curcol 32)))
+            (args (mapcar
+                   'car
+                   (mapcar
+                    '(lambda (x) (split-string x "="))
+                    (split-string
+                     (replace-regexp-in-string "[[:blank:]]*" "" yas-text)
+                     "," t))))
+             (params (mapconcat
+                      (lambda (x) (format ":param %s:%s:type %s:" x indent x))
+                      args
+                      indent)))
+       (unless (string= "" params) 
+         (concat indent params)))}
+    $>:returns: ${4:None}
+    $>:rtype: ${5:None}
+    $>:raises: ${6:None}
+    $>"""
+    $>$0

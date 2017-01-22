@@ -1,0 +1,3 @@
+#!/usr/bin/zsh
+pip install -U pip
+pip install tox

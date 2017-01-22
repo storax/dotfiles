@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : img
+#key : img
+#contributor : David Zuber
+# --
+#+CAPTION: $1
+#+NAME: $2
+${3:`(progn (org-insert-link) nil)`}

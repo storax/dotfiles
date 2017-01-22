@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: log exception
+# key: loge
+# expand-env: ((yas-indent-line 'nil))
+# --
+log.exception("$1")$0

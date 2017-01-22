@@ -1,0 +1,6 @@
+* NEXT %?
+SCHEDULED: %(format-time-string "%<<%Y-%m-%d %a .+1d/3d>>")
+:PROPERTIES:
+:STYLE: habit
+:REPEAT_TO_STATE: NEXT
+:END:

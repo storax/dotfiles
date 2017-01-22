@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg3054"
+   height="17px"
+   version="1.1"
+   width="16px"
+   viewBox="0, 0, 358.922, 306.29">
+  <g
+     transform="scale(2, 2) translate(-150,-200)"
+     id="Background">
+    <g
+       clip-path="url(#Clip0)"
+       id="Group1">
+      <path
+         id="path3071"
+         transform="translate(147.174,212.688)"
+         d="M 17.009,97.021 65.508,48.508 17.009,0 0,17.022 31.476,48.508 0,80.012 17.009,97.021"
+         style="fill:#3db485;fill-rule:nonzero;stroke:none" />
+      <path
+         id="path3073"
+         transform="translate(228.75,285.635)"
+         d="M 37.923,0 0,0 0,24.074 37.038,24.06 74.076,24.074 74.076,0 37.923,0"
+         style="fill:#3db485;fill-rule:nonzero;stroke:none" />
+    </g>
+  </g>
+</svg>

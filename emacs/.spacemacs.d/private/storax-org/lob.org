@@ -1,0 +1,19 @@
+#+NAME: cat
+#+HEADER: :var org_file=""
+#+HEADER: :var start=0
+#+HEADER: :var end=0
+#+BEGIN_SRC  sh :results output
+if [ $end -gt 0 -a $start -gt 0 ]
+then
+    sed -n "$start,$end p" $PWD/$org_file
+elif [ $end -eq 0 -a $start -eq 0 ]
+then
+    cat $PWD/$org_file
+elif [ $start -eq 0 ]
+then
+    head -n $end $PWD/$org_file
+elif [ $end -eq 0 ]
+then
+    tail -n +$start $PWD/$org_file
+fi
+#+END_SRC

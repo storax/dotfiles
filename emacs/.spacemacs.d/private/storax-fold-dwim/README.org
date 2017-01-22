@@ -1,0 +1,31 @@
+#+TITLE: storax-fold-dwim layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[img/storax-fold-dwim.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Enables =fold-dwim= and adds keybindings.
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-fold-dwim))
+#+end_src
+
+* Key bindings
+
+| Key Binding | Description              |
+|-------------+--------------------------|
+| ~<SPC> n d h~ | hide all                 |
+| ~<SPC> n d s~ | show all                 |
+| ~<SPC> n d T~ | toggle                   |
+| ~<SPC> n d t~ | toggle selective display |

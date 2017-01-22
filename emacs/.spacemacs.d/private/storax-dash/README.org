@@ -1,0 +1,38 @@
+#+TITLE: storax-dash layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[file:img/dash-256.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Installs the wonderful [[https://github.com/areina/helm-dash][helm-dash]] package.
+It's used to browse documentation offline.
+It also adds two functions to make installing docsets easier.
+=storax/dash-install-set= and =storax/dash-install-user-set=.
+It will check if a docset already exists on disk.
+Because docset name and directoy are sometimes different,
+the functions will escape the docstring name.
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-dash))
+#+end_src
+
+* Key bindings
+This adds a new prefix =d= for =dash=.
+
+| Key Binding | Description                   |
+|-------------+-------------------------------|
+| ~<SPC> d h~   | helm-dash-at-point            |
+| ~<SPC> d H~   | helm-dash                     |
+| ~<SPC> d i~   | helm-dash-install-docset      |
+| ~<SPC> d u~   | helm-dash-install-user-docset |

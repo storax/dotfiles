@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : report
+#key : report
+#contributor : David Zuber
+# --
+#+BEGIN: clocktable :maxlevel 2 :scope ${1:$$(yas-choose-value '("file" "agenda" "subtree" "nil" "tree" "file-with-archives" "agenda-with-archives"))} :block ${2:$$(yas-choose-value (list (format-time-string "%Y-%m-%d") "today" "yesterday" "thisweek" "lastweek" "thismonth" "lastmonth" "thisyear" "lastyear" "untilnow"))}$0
+#+CAPTION: Clock summary at [2016-08-22 Mo 22:35]
+| File | Headline       | Time |
+|------+----------------+------|
+|      | ALL *Total time* | *0:00* |
+#+END:

@@ -1,0 +1,11 @@
+# -*- utf-8 mode: snippet -*-
+# name: Document title
+# key: tit
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil) (lvl "="))
+# contributor: David Zuber <zuber.david@gmx.de>
+# --
+${1:=}${1:$(setq lvl (if (string= "" yas-text) "=" yas-text))}${2:$(make-string (if (> 0 (- (string-width yas-text) 2)) 0 (- (string-width yas-text) 2)) (string-to-char lvl))}
+${2:Title}
+${2:$(make-string (if (> 2 (string-width yas-text)) 2 (string-width yas-text)) (string-to-char lvl))}
+
+$0

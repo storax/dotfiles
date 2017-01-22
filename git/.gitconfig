@@ -1,0 +1,12 @@
+[user]
+	name = David Zuber
+	email = zuber.david@gmx.de
+[core]
+	editor = emacsclient -t -a=\"\"
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[push]
+	default = simple

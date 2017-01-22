@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+#name : i3-mode
+#key : mode
+#expand-env: ((yas-indent-line 'fixed))
+#contributor : David Zuber
+# --
+# Mode: ${1:mode}  -------------------------------------------------------
+set \$$1_mode                   $1
+
+mode "\$$1_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $default
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    $2
+}
+$0

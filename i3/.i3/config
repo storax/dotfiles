@@ -1,0 +1,373 @@
+#  ██╗██████╗ 
+#  ██║╚════██╗
+#  ██║ █████╔╝
+#  ██║ ╚═══██╗
+#  ██║██████╔╝
+#  ╚═╝╚═════╝ 
+# i3
+# inspired by syl20bnr
+#
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# ========================================================================
+#                          Configuration variables
+# ========================================================================
+
+# Main modifier alt r
+set $mod 108
+set $mod2 Mod4
+# terminal
+set $term urxvtcd
+# navigation keys
+set $left j
+set $right l
+set $up i
+set $down k
+# Mode key
+# quit any current mode
+# Space !!!
+set $quitmode 65
+# Backspace go up in the hierarchy of modes
+set $upmode 22
+
+# paths
+set $i3cibin ~/.i3ci/bin
+# force an update of the i3 status bar
+set $updatebar killall -USR1 i3status
+# wallpaper
+set $lockwall ~/.img/mrrobot.png
+set $wall ~/.img/annapuma.jpg
+set $wallpaper feh --bg-fill $wall
+
+workspace_auto_back_and_forth yes
+# ========================================================================
+#                             System Preferences
+# ========================================================================
+
+# Font for window titles. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod2
+
+focus_follows_mouse no
+
+# no waste of pixels
+#hide_edge_borders both
+
+# Special window properties
+#for_window [class="Emacs"] border 1pixel
+#for_window [title="$term"] border 1pixel
+for_window [class="I3-exit"] floating enable; border 1pixel
+for_window [class="Tilda"] floating enable; border 1pixel
+for_window [class="Kodi"] border pixel 0
+assign [class="Conky"] "8: ~"
+assign [class="Tilda"] "8: ~"
+bindsym F12 workspace "8: ~"
+
+for_window [instance="guake"] floating enable
+
+# i3 bar --------
+bar {
+    id                      main
+    status_command          $HOME/.i3/conky/conky.sh
+    position                top
+    mode                    dock
+    modifier                $mod2
+    workspace_buttons       yes
+    binding_mode_indicator  yes
+    tray_output             primary
+    font pango: M+ 1m, FontAwesome, Ionicons, 10
+    colors {
+         background #2f2f2f
+         statusline #dcdccc
+         separator  #dcdccc
+         focused_workspace  #93b3a3 #2f2f2f #93b3a3
+         active_workspace   #ffcfaf #2f2f2f #ffcfaf
+         inactive_workspace #626262 #2f2f2f #dcdccc
+         urgent_workspace   #dca2a2 #2f2f2f #dca3a3
+    }
+}
+
+# class                     border  backgr. text    indicator
+client.focused              #7f9f7f #7f9f7f #303030 #ffcfaf
+client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
+client.unfocused            #3f3f3f #3F3F3F #DCDCCC #3f3f3f
+client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
+
+# ========================================================================
+#                                  Modes
+# ========================================================================
+
+set $default default
+
+# Mode: main  ------------------------------------------------------------
+set $main_mode                  main (f) focus (m) move (r) resize (t) layout (x) system (w) workspace (d) dmenu (RET) term (Q) kill
+
+mode "$main_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $default
+    bindsym  f                  mode $focus_mode
+    bindsym  m                  mode $move_mode
+    bindsym  r                  mode $resize_mode
+    #bindsym  t                  mode $term_mode
+    bindsym  t                  mode $layout_mode
+    bindsym  x                  mode $system_mode
+    bindsym  w                  mode $wks_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  Return             exec i3-sensible-terminal, mode $default
+    bindsym  d                  exec --no-startup-id dmenu_run,mode $default
+    bindsym  shift+q            kill
+    bindsym  semicolon          exec i3-input -P "i3-msg ", mode $default
+
+    # make it more available
+    bindsym  $left              focus left
+    bindsym  $down              focus down
+    bindsym  $up                focus up
+    bindsym  $right             focus right
+    # quick select switch to workspace
+    bindsym 1                   workspace number 1
+    bindsym 2                   workspace number 2
+    bindsym 3                   workspace number 3
+    bindsym 4                   workspace number 4
+    bindsym 5                   workspace number 5
+    bindsym 6                   workspace number 6
+    bindsym 7                   workspace number 7
+    bindsym 8                   workspace number 8
+    bindsym 9                   workspace number 9
+    bindsym 0                   workspace number 10
+}
+bindcode $mod mode $main_mode
+
+# Mode: focus  -----------------------------------------------------------
+set $focus_mode                 focus (m) move (ijkl) focus move (p) parent (c) child (f) float (Tab) next wks (S-Tab) prev wks
+
+mode "$focus_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    bindsym  m                  mode $move_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $left              focus left
+    bindsym  $down              focus down
+    bindsym  $up                focus up
+    bindsym  $right             focus right
+    bindsym  p                  focus parent
+    bindsym  c                  focus child
+    bindsym  f                  focus mode_toggle
+    bindsym  Tab                workspace next_on_output
+    bindsym  shift+Tab          workspace prev_on_output
+    # quick select switch to workspace
+    bindsym 1                   workspace number 1
+    bindsym 2                   workspace number 2
+    bindsym 3                   workspace number 3
+    bindsym 4                   workspace number 4
+    bindsym 5                   workspace number 5
+    bindsym 6                   workspace number 6
+    bindsym 7                   workspace number 7
+    bindsym 8                   workspace number 8
+    bindsym 9                   workspace number 9
+    bindsym 0                   workspace number 10
+}
+
+# Mode: move  ------------------------------------------------------------
+set $move_mode                  move (f) focus (t) floating toggle (ijkl) move win (0-9) workspace
+
+mode "$move_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    bindsym  f                  mode $focus_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $left              move left
+    bindsym  $down              move down
+    bindsym  $up                move up
+    bindsym  $right             move right
+    bindsym  t                  floating toggle
+    bindsym  1                  move container to workspace number 1, workspace number 1
+    bindsym  2                  move container to workspace number 2, workspace number 2
+    bindsym  3                  move container to workspace number 3, workspace number 3
+    bindsym  4                  move container to workspace number 4, workspace number 4
+    bindsym  5                  move container to workspace number 5, workspace number 5
+    bindsym  6                  move container to workspace number 6, workspace number 6
+    bindsym  7                  move container to workspace number 7, workspace number 7
+    bindsym  8                  move container to workspace number 8, workspace number 8
+    bindsym  9                  move container to workspace number 9, workspace number 9
+    bindsym  0                  move container to workspace number 10, workspace number 10
+}
+
+# Mode: resize  ----------------------------------------------------------
+set $resize_mode                resize (ijkl) grow shrink (f) fullscreen (h) hide (s) show
+
+mode "$resize_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $left              resize shrink width 10 px or 10 ppt
+    bindsym  $down              resize grow height 10 px or 10 ppt
+    bindsym  $up                resize shrink height 10 px or 10 ppt
+    bindsym  $right             resize grow width 10 px or 10 ppt
+    bindsym  f                  fullscreen, mode $default
+    bindsym  h                  move scratchpad
+    bindsym  s                  scratchpad show
+}
+
+# Mode: term  ------------------------------------------------------------
+#set $term_mode                  main term
+#
+#mode "$term_mode" {
+#    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+#    bindsym  Escape             mode $default
+#    bindcode $quitmode          mode $default
+#    bindcode $upmode            mode $default
+#    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+#    
+#}
+
+# Mode: layout  ----------------------------------------------------------
+set $layout_mode                layout (m) move (d) default (h) splith (v) splitv (e) toggle (s) stacking (w) tabbed (f) fullscreen (t) float (ijkl) focus (p) parent (c) child
+
+mode "$layout_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    bindsym m                   mode $move_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $left              focus left
+    bindsym  $down              focus down
+    bindsym  $up                focus up
+    bindsym  $right             focus right
+    bindsym  p                  focus parent
+    bindsym  c                  focus child
+    bindsym  f                  fullscreen, mode $default
+    bindsym  d                  layout default
+    bindsym  h                  layout splith
+    bindsym  s                  layout stacking
+    bindsym  w                  layout tabbed
+    bindsym  e                  layout toggle split
+    bindsym  v                  layout splitv
+    bindsym  t                  floating toggle
+}
+# Mode: workspace  -------------------------------------------------------
+set $wks_mode                  workspace (r) rename (Tab) next (S-Tab) prev (0-9) goto wks
+
+mode "$wks_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  r                  exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+    bindsym  Tab                workspace next_on_output
+    bindsym  shift+Tab          workspace prev_on_output
+    # quick select switch to workspace
+    bindsym  1                  workspace number 1
+    bindsym  2                  workspace number 2
+    bindsym  3                  workspace number 3
+    bindsym  4                  workspace number 4
+    bindsym  5                  workspace number 5
+    bindsym  6                  workspace number 6
+    bindsym  7                  workspace number 7
+    bindsym  8                  workspace number 8
+    bindsym  9                  workspace number 9
+    bindsym  0                  workspace number 10
+}
+
+
+# Mode: system  ----------------------------------------------------------
+set $system_mode                system (e) exit (s) sound (l) lock (r) i3 restart (c) i3 reload
+set $system_exit_mode           system -> exit (l) lock (e) logout (R) restart (P) poweroff
+set $system_sound_mode          system -> sound (i) der bass muss ficken (k) psst (m) mute (s) ncmpcpp (p) play (i) prev (j) next
+set $system_display_mode        system -> display (i) brighter (k) darker
+
+mode "$system_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $main_mode
+    bindsym  e                  mode $system_exit_mode
+    bindsym  s                  mode $system_sound_mode
+    bindsym  d                  mode $system_display_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  l                  exec --no-startup-id "i3lock -d -i $lockwall", mode $default
+    bindsym  r                  exec $wallpaper, restart, mode $default
+    bindsym  c                  reload, mode $default
+}
+
+mode "$system_exit_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $system_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym l                   exec --no-startup-id "i3lock -d -i $lockwall", mode $default
+    bindsym e                   exec --no-startup-id "i3-msg exit", mode $default
+    #bindsym s                  suspend??, mode $default
+    #bindsym h                  hibernate???, mode "default"
+    bindsym shift+r             exec --no-startup-id "sudo shutdown -r now", mode $default
+    bindsym shift+p             exec --no-startup-id "sudo shutdown -P now", mode $default
+}
+
+mode "$system_sound_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $system_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $up                exec --no-startup-id "amixer -c 1 -q sset Master 5%+ unmute; $updatebar"
+    bindsym  $down              exec --no-startup-id "amixer -c 1 -q sset Master 5%- unmute; $updatebar"
+    bindsym  m                  exec --no-startup-id "amixer -c 1 -q sset Master toggle; amixer -c 1 -q sset Speaker toggle; $updatebar"
+    bindsym  s                  workspace 9: music, exec $term -name ncmpcpp -e ncmpcpp, mode $default
+    bindsym  p                  exec --no-startup-id "mpc toggle"
+    bindsym  $left              exec --no-startup-id "mpc prev"
+    bindsym  $right             exec --no-startup-id "mpc next"
+}
+
+mode "$system_display_mode" {
+    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
+    bindsym  Escape             mode $default
+    bindcode $quitmode          mode $default
+    bindcode $upmode            mode $system_mode
+    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
+    bindsym  $up                exec --no-startup-id "xbacklight -inc 10"
+    bindsym  $down              exec --no-startup-id "xbacklight -dec 10"
+}
+
+
+# ========================================================================
+#                                    Startup
+# ========================================================================
+
+# hide mouse after period of inactivity
+exec --no-startup-id unclutter
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id $wallpaper
+
+# Use natural scrolling
+exec --no-startup-id synclient VertScrollDelta=-108
+
+#exec guake
+exec tilda
+
+# Disable ibus hotkey
+exec --no-startup-id gsettings set org.freedesktop.ibus.general.hotkey triggers []
+
+# Use compton for composition (Opacity etc.)
+# -b is for daemonizing the process
+exec --no-startup-id compton -f -I 0.05 -O 0.052 -b
+exec --no-startup-id mopidy
+
+exec --no-startup-id i3-msg "workspace 8: ~"
+
+# screensaver
+exec --no-startup-id xset s 600 600
+exec --no-startup-id xset dpms 600 600 600
+exec --no-startup-id xautolock -time 60 -locker i3lock

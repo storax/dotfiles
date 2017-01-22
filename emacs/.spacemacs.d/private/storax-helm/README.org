@@ -1,0 +1,40 @@
+#+TITLE: storax-helm layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[file:img/helm-logo.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Adds keybindings to helm and helm-swoop.
+In find files mode, it will skip the first two candidates if they are =.= or =..=
+This can sometimes be super useful and sometimes super annoying.
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-helm))
+#+end_src
+
+* Key bindings
+
+| Key Binding | Description              |
+|-------------+--------------------------|
+| ~M-y~         | show kill ring with helm |
+| ~C-x C-f~     | helm find files          |
+| ~C-x C-h C-i~ | helm imenu               |
+| ~C-x b~       | helm buffer              |
+
+In helm swoop mode:
+
+| Key Binding | Description   |
+|-------------+---------------|
+| ~C-r~         | previous line |
+| ~C-s~         | next line     |

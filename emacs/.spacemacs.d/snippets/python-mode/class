@@ -1,0 +1,45 @@
+# -*- utf-8 mode: snippet -*-
+# name: Class with sphinx doc
+# key: class
+# group: Definitions
+# expand-env: ((yas-indent-line 'nil) (yas-wrap-around-region 'nil) (curcol 0))
+# contributor: Orestis Markou
+# contributor: Nishio Hirokazu
+# contributor: Yasser GonzÃ¡lez FernÃ¡ndez <yglez@uh.cu>
+# contributor: Michael Markert <markert.michael@googlemail.com>
+# contributor: David Zuber <zuber.david@gmx.de>
+# --
+class ${1:$(if (setq curcol (+ (current-column) 2)) nil)}${1:ClassName}(${2:object}):
+    $>"""$3
+    $>"""
+
+    $>def __init__(self, $4):
+        $>"""$5
+${4:$(let ((indent (concat "\n" (make-string curcol 32)))
+                   (args (mapcar 'car
+                                 (mapcar '(lambda (x) (split-string x "="))
+                                         (split-string (replace-regexp-in-string "[[:blank:]]*" "" yas-text)
+                                                       "," t)))))
+          (setq params
+                (mapconcat (lambda (x)
+                                   (format ":param %s:%s:type %s:" x indent x))
+                           args
+                           indent))
+          (unless (string= "" params) 
+              (concat indent params))
+         )
+        }
+        $>:raises: ${6:None}
+        $>"""
+        $>super($1, self).__init__($7)
+        $>${4:$(let ((indent (concat "\n" (make-string curcol 32)))
+                   (args (mapcar 'car
+                                 (mapcar '(lambda (x) (split-string x "="))
+                                         (split-string (replace-regexp-in-string "[[:blank:]]*" "" yas-text)
+                                                       "," t)))))
+        (mapconcat (lambda (x)
+                     (format "self._%s = %s" x x))
+                   args
+                   indent))
+        }
+        $>$0

@@ -1,0 +1,42 @@
+#+TITLE: storax-avy layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[img/storax-avy.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+
+* Description
+Enhances avy by always displaying the same face for the nth key.
+If you have paths with different length, the
+faces are selected according to the order you have to press them
+This way the first key to press is always the same color and easier to
+identify.
+This is done by reversing the face selection order in
+=avy--overlay-at-full=.
+Before:
+#+BEGIN_EXAMPLE emacs-lisp
+(set-text-properties
+ (- len i 1) (- len i)
+ `(face ,(nth i avy-lead-faces))
+ str)
+#+END_EXAMPLE
+After:
+#+BEGIN_EXAMPLE emacs-lisp
+(set-text-properties
+ (- len i 1) (- len i)
+ `(face ,(nth (- len i) avy-lead-faces))
+ str)
+#+END_EXAMPLE
+It will also set =avy-background= to =t=.
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-avy))
+#+end_src

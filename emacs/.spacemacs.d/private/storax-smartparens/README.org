@@ -1,0 +1,29 @@
+#+TITLE: storax-smartparens layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+[[img/storax-smartparens.png]]
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+ - [[Key bindings][Key bindings]]
+
+* Description
+Custom spartparens navigation
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(storax-smartparens))
+#+end_src
+
+* Key bindings
+
+| Key Binding     | Description    |
+|-----------------+----------------|
+| ~C-M-.~         | Swap place in region |
+| ~C-M-,~         | Swap place in region |

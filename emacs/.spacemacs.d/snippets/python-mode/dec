@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: dec
+# key: dec
+# group : definitions
+# --
+def ${1:decorator}(func):
+    """$2"""
+    @functools.wraps(func)
+    def decorated(*args, **kwargs):
+	ret = func(*args, **kwargs)
+	return ret
+
+    return decorated

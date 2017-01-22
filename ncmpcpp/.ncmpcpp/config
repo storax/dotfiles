@@ -1,0 +1,25 @@
+#  ███╗   ██╗ ██████╗███╗   ███╗██████╗  ██████╗██████╗ ██████╗
+#  ████╗  ██║██╔════╝████╗ ████║██╔══██╗██╔════╝██╔══██╗██╔══██╗
+#  ██╔██╗ ██║██║     ██╔████╔██║██████╔╝██║     ██████╔╝██████╔╝
+#  ██║╚██╗██║██║     ██║╚██╔╝██║██╔═══╝ ██║     ██╔═══╝ ██╔═══╝
+#  ██║ ╚████║╚██████╗██║ ╚═╝ ██║██║     ╚██████╗██║     ██║
+#  ╚═╝  ╚═══╝ ╚═════╝╚═╝     ╚═╝╚═╝      ╚═════╝╚═╝     ╚═╝
+# ncmpcpp
+
+##### connection settings #####
+## Needed for tag editor and file operations to work.
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_music_dir = ~/music
+mpd_crossfade_time = 5
+
+song_status_format = {{$4%a$9 - }{%t}}|{%f}
+##
+## Note: You can specify third character which will
+## be used to build 'empty' part of progressbar.
+##
+progressbar_look = "─╼·"
+playlist_shorten_total_times = "yes"
+follow_now_playing_lyrics = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"

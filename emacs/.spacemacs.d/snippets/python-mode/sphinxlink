@@ -1,0 +1,6 @@
+# -*- utf-8 mode: snippet -*-
+# name: Intersphinx link
+# key: link
+# contributor: David Zuber <zuber.david@gmx.de>
+# --
+:${1:$$(yas-choose-value '("class" "func" "meth" "data" "mod"))}:\`${2:object}\`

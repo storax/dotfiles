@@ -1,0 +1,14 @@
+# -*- coding: utf-8 mode: snippet -*-
+# name: Propery
+# key: prop
+# expand-env: ((yas-indent-line 'nil) (yas-wrap-around-region 'nil))
+# contributor: David Zuber <zuber.david@gmx.de>
+# --
+@property
+$>def ${1:name}(self):
+    $>"""$2"""
+    $>return self._$1
+
+$>@$1.setter
+$>def $1(self, value):
+    $>self._$1 = value

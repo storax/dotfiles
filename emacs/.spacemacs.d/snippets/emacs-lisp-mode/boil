@@ -1,0 +1,15 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Lisp boilerplate
+# key: boil
+# binding: direct-keybinding
+# --
+;;; ${1:`(buffer-name)`} --- ${2:Summary}
+
+;;; Commentary:
+
+;;; Code:
+
+$0
+
+(provide \'${1:`(file-name-sans-extension (buffer-name))`})
+;;; ${1:`(buffer-name)`} ends here

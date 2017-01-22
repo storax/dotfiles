@@ -1,0 +1,68 @@
+! ██╗  ██╗██████╗ ███████╗███████╗ █████╗ ██╗   ██╗██╗  ████████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██║  ╚══██╔══╝██╔════╝
+!  ╚███╔╝ ██║  ██║█████╗  █████╗  ███████║██║   ██║██║     ██║   ███████╗
+!  ██╔██╗ ██║  ██║██╔══╝  ██╔══╝  ██╔══██║██║   ██║██║     ██║   ╚════██║
+! ██╔╝ ██╗██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║   ███████║
+! ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝   ╚══════╝
+! Xdefaults
+
+! Had issues causing deadlocks when scrolling in Emacs.
+! Might be resolved by now.
+Emacs*useXIM: false
+
+! Using Xft
+URxvt.font:           xft:Sauce Code Pro:size=10
+!-*- Perl extensions -*-
+URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.underlineURLs: True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V: perl:pasta:paste
+urxvt.keysym.M-c:   perl:clipboard:copy
+urxvt.keysym.C-v:   perl:clipboard:paste
+urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+urxvt.clipboard.copycmd:  xsel -ib
+urxvt.clipboard.pastecmd: xsel -ob
+
+URxvt.buffered: true
+URxvt.fading: 15
+
+URxvt.scrollBar: false
+! do not scroll with output
+URxvt.scrollTtyOutput: false
+! scroll back to the bottom on keypress
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+URxvt*depth: 32
+
+URxvt*transparent: true
+URxvt.tintColor: #3f3f3f
+URxvt.shading: 114
+
+URxvt*xftAntialias: true
+
+*background: #3f3f3f
+*foreground: #dcdccc
+*cursorColor: #aaaaaa
+*colorUL: #acd0d3
+*color0: #3f3f3f
+*color1: #cc9393
+*color2: #7f9f7f
+*color3: #d0bf8f
+*color4: #6ca0a3
+*color5: #dc8cc3
+*color6: #93e0e3
+*color7: #dcdccc
+*color8: #000000
+*color9: #dca3a3
+*color10: #bfebbf
+*color11: #f0dfaf
+*color12: #8cd0d3
+*color13: #dc8cc3
+*color14: #93e0e3
+*color15: #ffffff
+
