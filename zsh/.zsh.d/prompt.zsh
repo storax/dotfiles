@@ -31,3 +31,18 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)e
 
 export PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}$(virtualenv_info)%{$reset_color%}]
 %# '
+
+precmd() {
+    RPROMPT=""
+}
+zle-keymap-select() {
+    RPROMPT=""
+    [[ $KEYMAP = vicmd ]] && RPROMPT="%{$fg[yellow]%}-- NORMAL --%{$reset_color%}"
+    () { return $__prompt_status }
+    zle reset-prompt
+}
+zle-line-init() {
+    typeset -g __prompt_status="$?"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init

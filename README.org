@@ -1,0 +1,84 @@
+* Dotfiles
+
+It's 2017 and time for a new dotfile management system.
+This time I went with [[http://www.gnu.org/software/stow/][GNU stow]] and not [[https://github.com/technicalpickles/homesick][homesick]].
+I made some additions heavily inspired by [[https://github.com/xero/dotfiles][xero's dotfiles.]]
+
+The main reason I chose [[http://www.gnu.org/software/stow/][GNU stow]] is it's minimal dependencies. No ruby!
+Since I'm slowly planning on moving to Gentoo, that will make the first step a lot easier.
+On the other hand, a lot of nice commands, especially the track command, are missing.
+
+This repo deprecates:
+[[https://github.com/storax/storaxcastle][storaxcastle]]
+[[https://github.com/storax/emacs-castle][emacs-castle]]
+[[https://github.com/storax/zsh-castle][zsh-castle]]
+[[https://github.com/storax/i3-castle][i3-castle]]
+
+** Installation
+[[http://www.gnu.org/software/stow/][GNU stow]] is very easy to use. For each directory in this repo, you simply call:
+
+#+BEGIN_SRC sh :exports code
+stow -t ~/ -D <directory>
+#+END_SRC
+
+I added a simple script to automate most of the required steps.
+
+** Packages
+Here is some little documentation about each package.
+*** zsh
+For =zsh= I migrated to [[
+https://github.com/zplug/zplug][zplug]] from [[https://github.com/zsh-users/antigen][antigen]].
+The installation is completely automated.
+At the moment I use these plugins:
+#+BEGIN_SRC sh :exports both
+zplug list
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXAMPLE
+zsh-users/zaw => none
+plugins/cp => from:"oh-my-zsh"
+zsh-users/zsh-completions => none
+plugins/python => from:"oh-my-zsh"
+themes/kphoen => as:"theme", from:"oh-my-zsh"
+oknowton/zsh-dwim => none
+plugins/pip => from:"oh-my-zsh"
+plugins/dirhistory => from:"oh-my-zsh"
+plugins/copydir => from:"oh-my-zsh"
+b4b4r07/zsh-vimode-visual => defer:"3"
+zsh-users/zsh-syntax-highlighting => defer:"2"
+plugins/copyfile => from:"oh-my-zsh"
+plugins/emacs => from:"oh-my-zsh"
+plugins/colored-man-pages => from:"oh-my-zsh"
+plugins/vagrant => from:"oh-my-zsh"
+plugins/nyan => from:"oh-my-zsh"
+plugins/colorize => from:"oh-my-zsh"
+rupa/z => none
+plugins/gem => from:"oh-my-zsh"
+plugins/command-not-found => from:"oh-my-zsh"
+plugins/sudo => from:"oh-my-zsh"
+plugins/common-aliases => from:"oh-my-zsh"
+plugins/git-flow => from:"oh-my-zsh"
+plugins/git => from:"oh-my-zsh"
+#+END_EXAMPLE
+
+I use vim bindings with a right prompt to signal the normal or insert mode.
+Still haven't configured the visual mode yet.
+
+
+*** emacs
+I spent way to much time on my emacs dotfile.
+It's using spacemacs with vim bindings and uses a couple built-in layers.
+There are a lot of private layers and tons of hand-written or hackish elisp code.
+I already forgot about half of it and unless I consolidate it, will be of little use to anyone.
+So this section stays empty.
+
+*** i3
+My i3 config is simple but I love it.
+Most of the time i3 takes up only a single key on my keyboard - the right =ALT= key.
+When you press it, you enter the main mode, which allows for quick window and workspace movement,
+killing of windows, opening shells etc.
+The movement bindings are always =h j k l=. From the main mode you can go to other mode, like =move= mode,
+to move windows around.
+This has the advantage that I can reuse keys. Also I can display the keybindings in my i3 status bar.
+To quit any mode just hit the spacebar, which is a very comfortable and quick movement.

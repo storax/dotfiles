@@ -41,4 +41,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug "themes/kphoen", as:theme, from:oh-my-zsh
 
+if ! zplug check; then
+    zplug install
+fi
+
 zplug load
