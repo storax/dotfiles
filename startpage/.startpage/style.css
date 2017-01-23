@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'SauceCodePro';
+    src: url('SauceCodePro.ttf')  format('truetype'),
+    local('SauceCodePro');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+	  margin: 0;
+	  padding: 0;
+    background: url('bg.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	  color: #dcdccc;
+	  font-size: 14px;
+}
+
+* {
+	  font-family: 'SauceCodePro';
+	  font-weight: normal;
+}
+
+#container {
+	  position: absolute;
+	  padding: 0 20px 0 20px;
+	  top: 35%;
+	  left: 0;
+	  right: 0;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 700px;
+	  height: auto;
+}
+
+#header {
+	  -webkit-box-shadow: 1px 1px 20px 0px #acd0d3;
+	  -moz-box-shadow: 1px 1px 20px 0px #acd0d3;
+	  box-shadow: 1px 1px 20px 0px #acd0d3;
+	  background-color: #3f3f3f;
+	  margin: 4px;
+	  padding: 8px;
+	  border: 5px solid #3f3f3f;
+}
+
+
+#links {
+	  display: -moz-box;
+	  display: -webkit-box;
+	  width: 100%;
+}
+
+.linksbox {
+	  -webkit-box-shadow: 1px 1px 20px 0px #acd0d3;
+	  -moz-box-shadow: 1px 1px 20px 0px #acd0d3;
+	  box-shadow: 1px 1px 20px 0px #acd0d3;
+	  -moz-box-flex: 1;
+	  -webkit-box-flex: 1;
+	  margin: 4px;
+	  padding: 8px 8px 8px 8px;
+	  background-color: #3f3f3f;
+	  border: 5px solid #3f3f3f;
+}
+
+.linksbox h3 {
+	  padding-bottom: 5px;
+}
+
+.linksbox a{
+	  display: block;
+	  text-decoration: none;
+	  font-weight: bold;
+}
+
+.linksbox a.cyan:hover {
+	  color: #93e0e3;
+	  text-decoration: underline;
+}
+
+.linksbox a.red:hover {
+	  color: #dca3a3;
+	  text-decoration: underline;
+}
+
+h3 {
+	  font-size: 14px;
+	  padding-bottom: 0;
+	  margin-bottom: 0;
+	  margin-top: 0;
+}
+
+.cyan {
+	  color: #acd0d3;
+	  padding: 0;
+}
+
+.blue {
+	  color: #6ca0a3;
+	  padding: 0;
+}
+
+.green {
+	  font-weight: bold;
+	  padding: 0;
+	  color: #7f9f7f;
+}
+
+.pink {
+	  padding: 0;
+	  color: #dc8cc3;
+}
+
+.red {
+	  padding: 0;
+	  color: #cc9393;
+}
+
+form {
+	  display: inline;
+}
+
+input 	{
+	  display: inline;
+	  background: none;
+	  display: inline;
+	  border: none;
+	  color: #dcdccc;
+	  width: 70%;
+	  font-size: 14px;
+}
