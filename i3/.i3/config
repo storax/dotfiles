@@ -37,8 +37,7 @@ set $i3cibin ~/.i3ci/bin
 set $updatebar killall -USR1 i3status
 # wallpaper
 set $lockwall ~/.img/mrrobot.png
-set $wall ~/.img/annapuma.jpg
-set $wallpaper feh --bg-fill $wall
+set $wallpaper feh --bg-fill ~/.img/annapuma.jpg
 
 workspace_auto_back_and_forth yes
 # ========================================================================

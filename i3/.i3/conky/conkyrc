@@ -1,4 +1,13 @@
-{"full_text": "${if_mpd_playing}♫  ${mpd_artist} -  ${mpd_title}${endif}", "separator_block_width": 20},
+background no
+out_to_x no
+out_to_console yes
+update_interval 2
+total_run_times 0
+use_spacer none
+
+TEXT
+
+[{"full_text": "${if_mpd_playing}♫  ${mpd_artist} -  ${mpd_title}${endif}", "separator_block_width": 20},
 
  {"full_text": "", "color": "\#7f9f7f", "separator": false},
  {"full_text": "${downspeedf wlan0}", "color": "\#7f9f7f", "align": "right", "separator": false},
@@ -60,4 +69,4 @@
  ${endif}
 
  {"full_text": "   ${time %a %b %d}", "separator": false},
- {"full_text": "  ${time %H:%M}"}
+ {"full_text": "  ${time %H:%M}"}],
