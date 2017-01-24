@@ -75,10 +75,29 @@ So this section stays empty.
 
 *** i3
 My i3 config is simple but I love it.
-Most of the time i3 takes up only a single key on my keyboard - the right =ALT= key.
-When you press it, you enter the main mode, which allows for quick window and workspace movement,
-killing of windows, opening shells etc.
-The movement bindings are always =h j k l=. From the main mode you can go to other mode, like =move= mode,
-to move windows around.
-This has the advantage that I can reuse keys. Also I can display the keybindings in my i3 status bar.
-To quit any mode just hit the spacebar, which is a very comfortable and quick movement.
+
+**** Requirements
+- =urxvt= as a terminal emulator
+- =i3status= (ships with =i3= for the status bar
+- =unclutter= to hide the mouse after a period of inactivity
+- =gnome-settings-daemon=
+- =feh= for wallpapers
+- =compton= as a composite manager to render transparency
+- =amixer= and =pulse= for audio control
+
+**** Keybindings
+The keybindings rely heavily on modes.
+The default mode only has one keybinding =Alt-R= (as in the right =ALT= key) configured to enter the main mode.
+You can always go back to the default mode with =ESC= or =SPC=
+
+I chose this setup because I mostly have to press one key at a time.
+=SPC= is always in reach, so quitting is really fast and becomes
+part of the muscle memory really fast.
+
+=Backspace= will always go to the parent mode.
+
+For moving =i= =j= =k= =l= is used in multiple contexts.
+
+**** Credits
+This config is heavily inspired by [[https://github.com/syl20bnr/i3ci][syl20bnr's config]].
+It helped me a lot putting this together.
