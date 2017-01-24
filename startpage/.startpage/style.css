@@ -9,12 +9,8 @@
 html, body{
 	  margin: 0;
 	  padding: 0;
-    background: url('bg.gif') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-	  color: #dcdccc;
+    background-color: #2f2f2f;
+   	color: #dcdccc;
 	  font-size: 14px;
 }
 
@@ -36,9 +32,9 @@ html, body{
 }
 
 #header {
-	  -webkit-box-shadow: 1px 1px 20px 0px #acd0d3;
-	  -moz-box-shadow: 1px 1px 20px 0px #acd0d3;
-	  box-shadow: 1px 1px 20px 0px #acd0d3;
+	  -webkit-box-shadow: 1px 1px 20px 0px #000000;
+	  -moz-box-shadow: 1px 1px 20px 0px #000000;
+	  box-shadow: 1px 1px 20px 0px #000000;
 	  background-color: #3f3f3f;
 	  margin: 4px;
 	  padding: 8px;
@@ -53,9 +49,9 @@ html, body{
 }
 
 .linksbox {
-	  -webkit-box-shadow: 1px 1px 20px 0px #acd0d3;
-	  -moz-box-shadow: 1px 1px 20px 0px #acd0d3;
-	  box-shadow: 1px 1px 20px 0px #acd0d3;
+	  -webkit-box-shadow: 1px 1px 20px 0px #000000;
+	  -moz-box-shadow: 1px 1px 20px 0px #000000;
+	  box-shadow: 1px 1px 20px 0px #000000;
 	  -moz-box-flex: 1;
 	  -webkit-box-flex: 1;
 	  margin: 4px;
