@@ -91,10 +91,8 @@ type = internal/backlight
 ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
 
-format = <label> <bar>
+format = <ramp> <bar>
 format-underline = ${colors.byellow}
-
-label = BL
 
 bar-foreground-0 = #ffff00
 
@@ -102,6 +100,16 @@ bar-width = 5
 bar-indicator = |
 bar-fill = ─
 bar-empty = ─
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill-foreground = #bb
+bar-fill-font = 2
+bar-empty-foreground = #44
+bar-empty-font = 2
 
 [module/i3]
 type = internal/i3
