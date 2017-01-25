@@ -1,0 +1,289 @@
+;  ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;  ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;  ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;  ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;  ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;  ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+; polybar
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30
+
+[colors]
+background = #2f2f2f
+foreground = #dcdccc
+lbackground = #3f3f3f
+white = $ffffff
+grey = #aaaaaa
+cyan = #acd0d3
+red = #cc9393
+green = #7f9f7f
+yellow = #d0bf8f
+blue = #6ca0a3
+pink = #dc8cc3
+bcyan = #93e0e3
+bred = #dca3a3
+bgreen = #bfebbf
+byellow = #f0dfaf
+dred = #cc9393
+skin = #ffcfaf
+
+[bar/top]
+monitor = eDP1
+width = 100%
+height = 24
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.foreground}
+line-size = 2
+spacing = 1
+
+module-margin-left = 3
+module-margin-right = 3
+
+font-0 = NotoSans:size=8;0
+font-1 = FontAwesome:size=9;0
+font-2 = MaterialIcons:size=10;0
+font-3 = SauceCodePro:size=9;0
+font-4 = NotoSans:size=8:weight=bold;0
+
+
+modules-left = i3
+modules-center = mpd
+modules-right = down up wireless-network cpu temperature volume battery backlight date
+
+border-bottom-size = 1
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+label-charging = %percentage%%
+
+label-discharging = %percentage%%
+
+label-full = %percentage%%
+
+format-charging =  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <label-full>
+
+format-charging-underline = ${colors.red}
+format-discharging-underline = ${colors.red}
+format-full-underline = ${colors.red}
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.dred}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.bred}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.skin}
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/backlight]
+type = internal/backlight
+
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+
+format = <label> <bar>
+format-underline = ${colors.byellow}
+
+label = BL
+
+bar-foreground-0 = #ffff00
+
+bar-width = 5
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[module/i3]
+type = internal/i3
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 8: ~;
+ws-icon-5 = 9: music;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.red}
+label-mode-border-color =${colors.red}
+label-mode-font = 5
+
+label-focused = %icon%
+label-focused-foreground = ${colors.white}
+label-focused-background = ${colors.lbackground}
+label-focused-underline = ${colors.grey}
+label-focused-padding = 3
+
+label-unfocused = %icon%
+label-unfocused-padding = 3
+
+label-visible = %icon%
+label-visible-padding = 3
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 3
+label-urgent-underline = #{colors.red}
+
+[module/cpu]
+type = internal/cpu
+
+format = <label> <ramp-coreload>
+format-underline = ${colors.blue}
+
+label = CPU %percentage%%
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+ramp-coreload-0-foreground = ${colors.green}
+ramp-coreload-1-foreground = ${colors.green}
+ramp-coreload-2-foreground = ${colors.green}
+ramp-coreload-3-foreground = ${colors.green}
+ramp-coreload-4-foreground = ${colors.yellow}
+ramp-coreload-5-foreground = ${colors.yellow}
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+date = %a %b %d
+time = %H:%M
+
+date-alt = %Y-%m-%d
+time-alt = %H:%M:%S
+
+format = <label>
+format-underline = ${colors.pink}
+
+label =    %date%      %time%
+
+[module/mpd]
+type = internal/mpd
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground =
+toggle-off-foreground = #55
+
+bar-progress-width = 15
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-fill = ─
+bar-progress-fill-foreground = #bb
+bar-progress-empty = ─
+bar-progress-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = ${colors.green}
+label-connected = %signal%%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.red}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.foreground}
+animation-packetloss-framerate = 500
+
+[module/down]
+type = internal/network
+interface = wlan0
+interval = 3.0
+ping-interval = 10
+
+format-connected =  <label-connected>
+format-packetloss =  <label-connected>
+format-disconnected =  -
+format-connected-underline = ${colors.green}
+label-connected = %upspeed%
+
+[module/up]
+type = internal/network
+interface = wlan0
+interval = 3.0
+ping-interval = 10
+
+format-connected =  <label-connected>
+format-packetloss =  <label-connected>
+format-disconnected =  -
+format-connected-underline = ${colors.red}
+label-connected = %upspeed%
+
+[module/temperature]
+type = internal/temperature
+
+interval = 2
+
+thermal-zone = 0
+
+warn-temperature = 80
+
+format = <label>
+format-warn = <label-warn>
+format-underline = ${colors.yellow}
+format-warn-underline = ${colors.dred}
+label =  %temperature%
+label-foreground = ${colors.yellow}
+label-warn =  %temperature%
+label-warn-foreground = ${colors.dred}
+
+[module/volume]
+type = internal/volume
+
+master-mixer = Master
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.cyan}
+format-muted-underline = ${colors.cyan}
+
+label-volume = %percentage%
+
+label-muted =  muted
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 

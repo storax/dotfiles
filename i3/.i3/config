@@ -67,28 +67,6 @@ bindsym F12 workspace "8: ~"
 
 for_window [instance="guake"] floating enable
 
-# i3 bar --------
-bar {
-    id                      main
-    status_command          $HOME/.i3/conky/conky.sh
-    position                top
-    mode                    dock
-    modifier                $mod2
-    workspace_buttons       yes
-    binding_mode_indicator  yes
-    tray_output             primary
-    font pango: M+ 1m, FontAwesome, Ionicons, 10
-    colors {
-         background #2f2f2f
-         statusline #dcdccc
-         separator  #dcdccc
-         focused_workspace  #93b3a3 #2f2f2f #93b3a3
-         active_workspace   #ffcfaf #2f2f2f #ffcfaf
-         inactive_workspace #626262 #2f2f2f #dcdccc
-         urgent_workspace   #dca2a2 #2f2f2f #dca3a3
-    }
-}
-
 # class                     border  backgr. text    indicator
 client.focused              #7f9f7f #7f9f7f #303030 #ffcfaf
 client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
@@ -282,7 +260,7 @@ mode "$wks_mode" {
 
 
 # Mode: system  ----------------------------------------------------------
-set $system_mode                system (e) exit (s) sound (l) lock (r) i3 restart (c) i3 reload
+set $system_mode                system (e) exit (s) sound (l) lock (d) display (r) i3 restart (c) i3 reload
 set $system_exit_mode           system -> exit (l) lock (e) logout (R) restart (P) poweroff
 set $system_sound_mode          system -> sound (i) der bass muss ficken (k) psst (m) mute (s) ncmpcpp (p) play (i) prev (j) next
 set $system_display_mode        system -> display (i) brighter (k) darker
@@ -365,6 +343,8 @@ exec --no-startup-id compton -f -I 0.05 -O 0.052 -b
 exec --no-startup-id mopidy
 
 exec --no-startup-id i3-msg "workspace 8: ~"
+
+exec polybar top
 
 # screensaver
 exec --no-startup-id xset s 600 600
