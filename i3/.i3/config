@@ -341,7 +341,7 @@ exec --no-startup-id gsettings set org.freedesktop.ibus.general.hotkey triggers 
 
 # Use compton for composition (Opacity etc.)
 # -b is for daemonizing the process
-exec --no-startup-id compton -f -I 0.05 -O 0.052 -b
+exec --no-startup-id compton --backend glx -b
 exec --no-startup-id mopidy
 exec --no-startup-id polybar top
 exec --no-startup-id "parcellite -"
