@@ -45,7 +45,7 @@ workspace_auto_back_and_forth yes
 # ========================================================================
 
 # Font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:M+ 1m 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod2
@@ -80,7 +80,7 @@ client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 set $default default
 
 # Mode: main  ------------------------------------------------------------
-set $main_mode                  main (f) focus (m) move (r) resize (t) layout (x) system (w) workspace (d) dmenu (RET) term (Q) kill
+set $main_mode                  main (f) focus (m) move (r) resize (t) layout (x) system (w) workspace (d) rofi (RET) term (Q) kill
 
 mode "$main_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -96,7 +96,7 @@ mode "$main_mode" {
     bindsym  w                  mode $wks_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
     bindsym  Return             exec i3-sensible-terminal, mode $default
-    bindsym  d                  exec --no-startup-id dmenu_run,mode $default
+    bindsym  d                  exec --no-startup-id rofi -show run,mode $default
     bindsym  shift+q            kill
     bindsym  semicolon          exec i3-input -P "i3-msg ", mode $default
 
@@ -136,6 +136,7 @@ mode "$focus_mode" {
     bindsym  p                  focus parent
     bindsym  c                  focus child
     bindsym  f                  focus mode_toggle
+    bindsym  d                  exec --no-startup-id rofi -show window, mode $default
     bindsym  Tab                workspace next_on_output
     bindsym  shift+Tab          workspace prev_on_output
     # quick select switch to workspace
