@@ -58,6 +58,18 @@ modules-right = down up wireless-network cpu temperature volume battery backligh
 
 border-bottom-size = 1
 
+tray-position = right
+
+; Tray icon max size
+tray-maxsize = 16
+
+tray-transparent = false
+
+; Pad the sides of each tray icon
+tray-padding = 3
+
+; Scale factor for tray clients
+tray-scale = 1.0
 [module/battery]
 type = internal/battery
 full-at = 98

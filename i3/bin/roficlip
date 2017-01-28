@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+rofi -modi "clipboard:roficlip.py --show,persistent:roficlip.py --show --persistent,actions:roficlip.py --show --actions" -show clipboard

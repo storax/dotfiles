@@ -87,3 +87,6 @@ zstyle '*' single-ignored show
 zstyle ':filter-select' rotate-list yes # enable rotation for filter-select
 zstyle ':filter-select' case-insensitive yes # enable case-insensitive search
 zstyle ':filter-select' extended-search yes # see below
+
+# Use following ps command to get a list of processes (e.g. for kill)
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -wwo pid,user,args"

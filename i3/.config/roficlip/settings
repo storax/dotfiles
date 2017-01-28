@@ -1,0 +1,10 @@
+settings:
+  ring_size: 100        # maximum clips count.
+  preview_width: 200   # maximum preview width for rofi.
+  newline_char: '¬'    # any character for using in preview as new line marker.
+  notify: False         # allow using desktop notifications.
+  notify_timeout: 1    # notification timeout.
+
+actions:
+  'add persistent clip': 'roficlip.py -q --add' # save current clipboard as persistent.
+  'remove persistent clip': 'roficlip.py -q --remove' # remove current clipboard from persistent.

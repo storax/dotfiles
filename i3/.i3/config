@@ -99,7 +99,7 @@ mode "$main_mode" {
     bindsym  d                  exec --no-startup-id rofi -show run,mode $default
     bindsym  shift+q            kill
     bindsym  semicolon          exec i3-input -P "i3-msg ", mode $default
-
+    bindsym  c                  exec --no-startup-id roficlip, mode $default
     # make it more available
     bindsym  $left              focus left
     bindsym  $down              focus down
@@ -235,7 +235,7 @@ mode "$layout_mode" {
     bindsym  t                  floating toggle
 }
 # Mode: workspace  -------------------------------------------------------
-set $wks_mode                  workspace (r) rename (Tab) next (S-Tab) prev (0-9) goto wks
+set $wks_mode                  workspace (r) rename (Tab) next (S-Tab) prev (0-9) goto wks (d) rofi
 
 mode "$wks_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -247,6 +247,7 @@ mode "$wks_mode" {
     bindsym  Tab                workspace next_on_output
     bindsym  shift+Tab          workspace prev_on_output
     # quick select switch to workspace
+    bindsym  d                  exec --no-startup-id i3_workspace.sh, mode $default
     bindsym  1                  workspace number 1
     bindsym  2                  workspace number 2
     bindsym  3                  workspace number 3
@@ -342,12 +343,12 @@ exec --no-startup-id gsettings set org.freedesktop.ibus.general.hotkey triggers 
 # -b is for daemonizing the process
 exec --no-startup-id compton -f -I 0.05 -O 0.052 -b
 exec --no-startup-id mopidy
-
-exec --no-startup-id i3-msg "workspace 8: ~"
-
-exec polybar top
-
+exec --no-startup-id polybar top
+exec --no-startup-id "parcellite -"
+exec --no-startup-id roficlip.py --daemon
 # screensaver
 exec --no-startup-id xset s 600 600
 exec --no-startup-id xset dpms 600 600 600
 exec --no-startup-id xautolock -time 60 -locker i3lock
+
+exec --no-startup-id i3-msg "workspace 8: ~"
