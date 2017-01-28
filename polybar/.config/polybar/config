@@ -253,9 +253,9 @@ interface = wlan0
 interval = 3.0
 ping-interval = 10
 
-format-connected =  <label-connected>
-format-packetloss =  <label-connected>
-format-disconnected =  -
+format-connected =  <label-connected>
+format-packetloss =  <label-connected>
+format-disconnected =  -
 format-connected-underline = ${colors.green}
 label-connected = %upspeed%
 
