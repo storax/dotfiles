@@ -333,15 +333,12 @@ exec --no-startup-id $wallpaper
 # Use natural scrolling
 exec --no-startup-id synclient VertScrollDelta=-108
 
-#exec guake
-exec tilda
-
 # Disable ibus hotkey
 exec --no-startup-id gsettings set org.freedesktop.ibus.general.hotkey triggers []
 
 # Use compton for composition (Opacity etc.)
 # -b is for daemonizing the process
-exec --no-startup-id compton --backend glx -b
+exec --no-startup-id compton -b
 exec --no-startup-id mopidy
 exec --no-startup-id polybar top
 exec --no-startup-id "parcellite -"
@@ -352,3 +349,4 @@ exec --no-startup-id xset dpms 600 600 600
 exec --no-startup-id xautolock -time 60 -locker i3lock
 
 exec --no-startup-id i3-msg "workspace 8: ~"
+exec tilda
