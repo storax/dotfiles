@@ -90,3 +90,6 @@ zstyle ':filter-select' extended-search yes # see below
 
 # Use following ps command to get a list of processes (e.g. for kill)
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -wwo pid,user,args"
+
+# Make zsh know about hosts already accessed by SSH
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
