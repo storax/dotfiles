@@ -8,7 +8,9 @@
 
 alias xo=xdg-open
 alias wttr='curl wttr.in/london'
-
+alias p="ps -ef"
+alias -g G="| grep -i"
+alias dfe="df -ht ext4"
 # -------------------------------------------------------------------
 # use nocorrect alias to prevent auto correct from "fixing" these
 # -------------------------------------------------------------------
@@ -19,7 +21,7 @@ alias wttr='curl wttr.in/london'
 # -------------------------------------------------------------------
 alias 'bk=cd $OLDPWD'
 
-alias 'dus=du -sckx * | sort -nr' #directories sorted by size
+alias 'dus=du -sckx * | sort -n' #directories sorted by size
 
 alias 'wordy=wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
 alias 'filecount=find . -type f | wc -l' # number of files (not directories)
