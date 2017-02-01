@@ -11,6 +11,8 @@ alias wttr='curl wttr.in/london'
 alias p="ps -ef"
 alias -g G="| grep -i"
 alias dfe="df -ht ext4"
+alias zzz="sudo shutdown -P +60"
+alias cya="sudo shutdown -P now"
 # -------------------------------------------------------------------
 # use nocorrect alias to prevent auto correct from "fixing" these
 # -------------------------------------------------------------------
