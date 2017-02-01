@@ -47,8 +47,8 @@ alias off="deactivate"
 alias tmux='TERM=screen-256color-bce tmux'
 
 # alias to cat this file to display
-alias acat='< ~/.zsh/aliases.zsh'
-alias fcat='< ~/.zsh/functions.zsh'
+alias acat='< ~/.zsh.d/alias.zsh'
+alias fcat='< ~/.zsh.d/functions.zsh'
 alias sz='source ~/.zshrc'
 
 # -------------------------------------------------------------------
