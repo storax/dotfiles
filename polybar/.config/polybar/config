@@ -249,6 +249,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
+ramp-signal-foreground = ${colors.green}
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = ${colors.red}
@@ -263,9 +264,14 @@ interval = 3.0
 ping-interval = 10
 
 format-connected =  <label-connected>
-format-packetloss =  <label-connected>
-format-disconnected =  -
+format-connected-foreground = ${colors.green}
 format-connected-underline = ${colors.green}
+format-packetloss =  <label-connected>
+format-packetloss-foreground = ${colors.skin}
+format-packetloss-underline = ${colors.skin}
+format-disconnected =  -
+format-disconnected-foreground = ${colors.red}
+format-disconnected-underline = ${colors.red}
 label-connected = %upspeed%
 
 [module/up]
@@ -275,9 +281,14 @@ interval = 3.0
 ping-interval = 10
 
 format-connected =  <label-connected>
-format-packetloss =  <label-connected>
-format-disconnected =  -
+format-connected-foreground = ${colors.red}
 format-connected-underline = ${colors.red}
+format-packetloss =  <label-connected>
+format-packetloss-foreground = ${colors.red}
+format-packetloss-underline = ${colors.red}
+format-disconnected =  -
+format-disconnected-foreground = ${colors.red}
+format-disconnected-underline = ${colors.red}
 label-connected = %upspeed%
 
 [module/temperature]
