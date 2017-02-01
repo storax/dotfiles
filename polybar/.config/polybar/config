@@ -50,6 +50,7 @@ font-1 = FontAwesome:size=9;0
 font-2 = MaterialIcons:size=10;0
 font-3 = SauceCodePro:size=9;0
 font-4 = NotoSans:size=8:weight=bold;0
+font-5 = "file\-icons:size=9;0"
 
 
 modules-left = i3
@@ -70,6 +71,7 @@ tray-padding = 3
 
 ; Scale factor for tray clients
 tray-scale = 1.0
+
 [module/battery]
 type = internal/battery
 full-at = 98
@@ -126,11 +128,14 @@ bar-empty-font = 2
 [module/i3]
 type = internal/i3
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 8: ~;
-ws-icon-5 = 9: music;
+ws-icon-3 = 4;
+ws-icon-4 = 5;⁵
+ws-icon-5 = 6;⁶
+ws-icon-6 = 7;⁷
+ws-icon-7 = 8: ~;
+ws-icon-8 = 9: music;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
@@ -146,17 +151,21 @@ label-focused-foreground = ${colors.white}
 label-focused-background = ${colors.lbackground}
 label-focused-underline = ${colors.grey}
 label-focused-padding = 3
+label-focused-font = 6
 
 label-unfocused = %icon%
 label-unfocused-padding = 3
+label-unfocused-font = 6
 
 label-visible = %icon%
 label-visible-padding = 3
+label-visible-font = 6
 
 label-urgent = %icon%
 label-urgent-foreground = ${colors.red}
 label-urgent-padding = 3
 label-urgent-underline = #{colors.red}
+label-urgent-font = 6
 
 [module/cpu]
 type = internal/cpu
