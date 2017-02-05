@@ -234,7 +234,7 @@ bar-progress-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
-interface = wlan0
+interface = wlp4s0
 interval = 3.0
 ping-interval = 10
 
@@ -259,7 +259,7 @@ animation-packetloss-framerate = 500
 
 [module/down]
 type = internal/network
-interface = wlan0
+interface = wlp4s0
 interval = 3.0
 ping-interval = 10
 
@@ -276,7 +276,7 @@ label-connected = %upspeed%
 
 [module/up]
 type = internal/network
-interface = wlan0
+interface = wlp4s0
 interval = 3.0
 ping-interval = 10
 
