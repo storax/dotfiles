@@ -16,7 +16,8 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "b4b4r07/zsh-vimode-visual", defer:3
-zplug "oknowton/zsh-dwim"
+zplug "zsh-users/zaw"
+# zplug "oknowton/zsh-dwim"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -34,7 +35,6 @@ zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "rupa/z"
-zplug "zsh-users/zaw"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
