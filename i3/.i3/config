@@ -18,7 +18,7 @@
 set $mod 108
 set $mod2 Mod4
 # terminal
-set $term urxvtcd
+set $term urxvt
 # navigation keys
 set $left j
 set $right l

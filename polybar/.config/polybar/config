@@ -52,6 +52,7 @@ font-3 = SauceCodePro:size=9;0
 font-4 = NotoSans:size=8:weight=bold;0
 font-5 = "file\-icons:size=9;0"
 
+fixed-center = true
 
 modules-left = i3
 modules-center = mpd
@@ -312,7 +313,7 @@ label-warn-foreground = ${colors.dred}
 [module/volume]
 type = internal/volume
 
-master-mixer = Master
+master-mixer = IEC958
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.cyan}

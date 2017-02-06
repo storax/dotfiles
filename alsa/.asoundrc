@@ -1,4 +1,3 @@
 defaults.pcm.!card PCH
 defaults.pcm.!device 0
 defaults.pcm.!ctl PCH
-defaults.pcm.rate_converter "samplerate_best"
