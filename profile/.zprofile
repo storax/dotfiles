@@ -17,3 +17,5 @@ fi
 
 # Has to be in .profile for i3
 export TERMINAL=urxvt
+export EDITOR=vim
+export VISUAL=vim

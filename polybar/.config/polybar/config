@@ -313,7 +313,7 @@ label-warn-foreground = ${colors.dred}
 [module/volume]
 type = internal/volume
 
-master-mixer = IEC958
+master-mixer = Master
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.cyan}

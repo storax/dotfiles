@@ -70,7 +70,7 @@ alias plz='pwd'
 alias inur='locate'
 alias nomz='ps aux | less'
 alias nomnom='killall'
-alias cya='reboot'
+alias cya='sudo shutdown -r now'
 alias kthxbai='halt'
 
 # -------------------------------------------------------------------
