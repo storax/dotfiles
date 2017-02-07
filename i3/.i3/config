@@ -58,14 +58,17 @@ focus_follows_mouse no
 # Special window properties
 #for_window [class="Emacs"] border 1pixel
 #for_window [title="$term"] border 1pixel
-for_window [class="I3-exit"] floating enable; border 1pixel
-for_window [class="Tilda"] floating enable; border 1pixel
-for_window [class="Kodi"] border pixel 0
-assign [class="Conky"] "8: ~"
-assign [class="Tilda"] "8: ~"
-bindsym F12 workspace "8: ~"
+for_window [class="I3-exit"] floating enable
+for_window [class="I3-exit"] border none
+for_window [title="urxvttilda.sh"] border none
+for_window [title="urxvttilda.sh"] floating enable
+for_window [title="urxvttilda.sh"] resize set 1700 900
+for_window [title="urxvttilda.sh"] move position center
 
-for_window [instance="guake"] floating enable
+
+for_window [class="Kodi"] border none
+assign [title="urxvttilda.sh"] "8: ~"
+bindsym F12 workspace "8: ~"
 
 # class                     border  backgr. text    indicator
 client.focused              #7f9f7f #7f9f7f #303030 #ffcfaf
@@ -349,4 +352,5 @@ exec --no-startup-id xset dpms 600 600 600
 exec --no-startup-id xautolock -time 60 -locker i3lock
 
 exec --no-startup-id i3-msg "workspace 8: ~"
-exec tilda
+
+exec "urxvt -tintColor rgba:0000/0000/0000/0000 -shading 100 -e ~/bin/urxvttilda.sh" 
