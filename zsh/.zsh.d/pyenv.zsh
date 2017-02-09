@@ -8,7 +8,7 @@
 
 # Download pyenv if it is not there yet
 [ -d ~/.pyenv/bin ] || git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-[ -d ~/pyenv/plugins/pyenv-virtualenv ] || git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+[ -d ~/.pyenv/plugins/pyenv-virtualenv ] || git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 [ -d ~/.pyenv/plugins/pyenv-virtualenvwrapper ] || git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
 
 export WORKON_HOME=$HOME/.virtualenvs
