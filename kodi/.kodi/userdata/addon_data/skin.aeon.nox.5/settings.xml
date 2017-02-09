@@ -1,82 +1,119 @@
 <settings>
-    <setting id="infobar_hidetencrypt" type="bool">false</setting>
-    <setting id="Video.Plot.Cast" type="bool">false</setting>
-    <setting id="Disable.ShowBackgroundVideo" type="bool">false</setting>
-    <setting id="mainmenuicons" type="bool">true</setting>
-    <setting id="Detach.RSS" type="bool">true</setting>
-    <setting id="Disable.UnwatchedIcon" type="bool">false</setting>
-    <setting id="Disable.Videoinfo" type="bool">false</setting>
-    <setting id="Disable.Musicinfo" type="bool">true</setting>
-    <setting id="HideBackGroundFanart" type="bool">true</setting>
-    <setting id="Disable.NextAired" type="bool">true</setting>
-    <setting id="biggergap" type="bool">false</setting>
-    <setting id="HorizontalListNav" type="bool">false</setting>
-    <setting id="Enable.HideRatings" type="bool">false</setting>
-    <setting id="weatherfanart.multi" type="bool">false</setting>
-    <setting id="VideoInfoPlotToggle" type="bool">false</setting>
-    <setting id="Disable.Extrafanart" type="bool">false</setting>
-    <setting id="lowermainmenu" type="bool">true</setting>
-    <setting id="infobar_hidesignalinfo" type="bool">false</setting>
-    <setting id="KioskMode.Enabled" type="bool">false</setting>
-    <setting id="Enable.AutoScroll" type="bool">false</setting>
-    <setting id="Disable.Fanart" type="bool">false</setting>
-    <setting id="Disable.Resumable" type="bool">false</setting>
-    <setting id="Disable.Autocomplete" type="bool">false</setting>
-    <setting id="AutoScroll" type="bool">true</setting>
     <setting id="Enable.SlimList" type="bool">false</setting>
-    <setting id="nohighlist" type="bool">false</setting>
-    <setting id="Disable.ShowBackgroundVis" type="bool">false</setting>
-    <setting id="UseCustomBackground" type="bool">true</setting>
-    <setting id="HideVisualizationFanart" type="bool">true</setting>
-    <setting id="SkinHelper.EnablePVRThumbs" type="bool">false</setting>
+    <setting id="infobar_hidetencrypt" type="bool">false</setting>
+    <setting id="HorizontalListNav" type="bool">false</setting>
     <setting id="SkinShortcuts-FullMenu" type="bool">true</setting>
     <setting id="Disable.Altwidget" type="bool">false</setting>
     <setting id="SkinHelper.EnableAnimatedPosters" type="bool">false</setting>
     <setting id="infobar_hidetuners" type="bool">false</setting>
+    <setting id="Disable.Extrafanart" type="bool">false</setting>
+    <setting id="lowermainmenu" type="bool">true</setting>
+    <setting id="infobar_hidesignalinfo" type="bool">false</setting>
+    <setting id="KioskMode.Enabled" type="bool">false</setting>
+    <setting id="Detach.RSS" type="bool">true</setting>
+    <setting id="Disable.UnwatchedIcon" type="bool">false</setting>
+    <setting id="Disable.Videoinfo" type="bool">false</setting>
+    <setting id="weatherfanart.multi" type="bool">false</setting>
     <setting id="disablecontext:script.playrandomvideos" type="bool">false</setting>
+    <setting id="Disable.Resumable" type="bool">false</setting>
+    <setting id="VideoInfoPlotToggle" type="bool">false</setting>
+    <setting id="Video.Plot.Cast" type="bool">false</setting>
+    <setting id="Disable.Fanart" type="bool">false</setting>
+    <setting id="biggergap" type="bool">false</setting>
+    <setting id="Enable.HideRatings" type="bool">false</setting>
+    <setting id="nohighlist" type="bool">false</setting>
+    <setting id="Disable.ShowBackgroundVis" type="bool">false</setting>
+    <setting id="Enable.AutoScroll" type="bool">false</setting>
+    <setting id="UseCustomBackground" type="bool">true</setting>
+    <setting id="HideVisualizationFanart" type="bool">true</setting>
+    <setting id="SkinHelper.EnablePVRThumbs" type="bool">false</setting>
+    <setting id="Disable.ShowBackgroundVideo" type="bool">false</setting>
+    <setting id="mainmenuicons" type="bool">true</setting>
+    <setting id="Disable.Autocomplete" type="bool">false</setting>
+    <setting id="Disable.Musicinfo" type="bool">true</setting>
+    <setting id="HideBackGroundFanart" type="bool">true</setting>
+    <setting id="Disable.NextAired" type="bool">true</setting>
+    <setting id="AutoScroll" type="bool">true</setting>
+    <setting id="LiveTVHomeItem.SubMenu" type="string"></setting>
+    <setting id="Custom6HomeItem.WidgetType" type="string"></setting>
     <setting id="Custom4HomeItem.BGType" type="string"></setting>
+    <setting id="VideosHomeItem.SubMenu" type="string"></setting>
     <setting id="ShutdownHomeItem.WidgetType" type="string"></setting>
+    <setting id="Custom6HomeItem.BGType" type="string"></setting>
+    <setting id="ItemToEdit.MultiFanart" type="string"></setting>
+    <setting id="VideosHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
+    <setting id="LiveTVHomeItem.WidgetType" type="string"></setting>
+    <setting id="LiveTVHomeItem.InfoLine" type="string"></setting>
+    <setting id="SettingsHomeItem.InfoLine" type="string"></setting>
+    <setting id="HomeProgramButton3" type="string">plugin.video.xbmchubmaintenance</setting>
+    <setting id="Custom4HomeItem.Label" type="string"></setting>
     <setting id="ShutdownHomeItem.SubMenu" type="string"></setting>
+    <setting id="VideosHomeItem.WidgetType" type="string"></setting>
+    <setting id="VideosHomeItem.Label" type="string"></setting>
     <setting id="FavoritesHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="FavoritesHomeItem.BGType" type="string"></setting>
     <setting id="FavoritesHomeItem.WidgetLabel" type="string"></setting>
     <setting id="Custom4HomeItem.WidgetType" type="string"></setting>
+    <setting id="52.Movies.InfoPanel" type="string"></setting>
+    <setting id="ShutdownHomeItem.Icon" type="string"></setting>
+    <setting id="LiveTVHomeItem.BGType" type="string"></setting>
+    <setting id="LiveTVHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="TVShows.Fallback" type="string"></setting>
     <setting id="SettingsHomeItem.BGType" type="string">1</setting>
-    <setting id="FavoritesHomeItem.SubMenu" type="string"></setting>
+    <setting id="ProgramsHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
+    <setting id="FavoritesHomeItem.Path" type="string"></setting>
+    <setting id="WeatherHomeItem.Widget" type="string"></setting>
+    <setting id="ShutdownHomeItem.InfoLine" type="string"></setting>
+    <setting id="ShutdownHomeItem.WidgetLabel" type="string"></setting>
+    <setting id="ProgramsHomeItem.Path" type="string"></setting>
+    <setting id="ProgramsHomeItem.BGType" type="string">1</setting>
     <setting id="SettingsHomeItem.Path" type="string"></setting>
     <setting id="SettingsHomeItem.Widget" type="string"></setting>
     <setting id="Custom5HomeItem.InfoLine" type="string"></setting>
+    <setting id="FavoritesHomeItem.SubMenu" type="string"></setting>
     <setting id="ShutdownHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="Custom6HomeItem.Widget" type="string"></setting>
-    <setting id="ProgramsHomeItem.WidgetLabel" type="string"></setting>
+    <setting id="HomeVideosButton2" type="string">plugin.video.salts</setting>
     <setting id="Custom4HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="Custom5HomeItem.Icon" type="string"></setting>
     <setting id="Custom6HomeItem.InfoLine" type="string"></setting>
+    <setting id="Custom2HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="MusicVideoHomeItem.Icon" type="string"></setting>
-    <setting id="InfoPanel.Delay" type="string"></setting>
+    <setting id="Custom6HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
+    <setting id="LiveTVHomeItem.Widget" type="string"></setting>
+    <setting id="Videos.Fallback" type="string"></setting>
     <setting id="MusicVideoHomeItem.Widget" type="string"></setting>
     <setting id="System.Fallback" type="string"></setting>
-    <setting id="Custom5HomeItem.Label" type="string"></setting>
+    <setting id="HomeProgramButton1" type="string">script.navi-x</setting>
     <setting id="Custom2HomeItem.InfoLine" type="string"></setting>
     <setting id="WeatherHomeItem.Path" type="string"></setting>
+    <setting id="Custom2HomeItem.WidgetType" type="string"></setting>
     <setting id="Custom2HomeItem.Label" type="string"></setting>
     <setting id="WeatherHomeItem.SubMenu" type="string"></setting>
+    <setting id="VideosHomeItem.Icon" type="string"></setting>
+    <setting id="StudioLogos.name" type="string"></setting>
+    <setting id="VideosHomeItem.Path" type="string"></setting>
     <setting id="MusicVideoHomeItem.Label" type="string"></setting>
     <setting id="SettingsHomeItem.Label" type="string"></setting>
     <setting id="Custom1HomeItem.Widget" type="string"></setting>
     <setting id="Custom3HomeItem.Disable" type="string"></setting>
     <setting id="Custom5HomeItem.WidgetLabel" type="string"></setting>
+    <setting id="VideosHomeItem.WidgetLabel" type="string"></setting>
     <setting id="Custom2HomeItem.SubMenu" type="string"></setting>
+    <setting id="LiveTVHomeItem.Icon" type="string"></setting>
     <setting id="Custom1HomeItem.InfoLine" type="string"></setting>
+    <setting id="Custom5HomeItem.Label" type="string"></setting>
     <setting id="WeatherHomeItem.BGType" type="string"></setting>
     <setting id="Custom3HomeItem.BGType" type="string"></setting>
     <setting id="Custom3HomeItem.Widget" type="string"></setting>
     <setting id="Custom3HomeItem.Path" type="string"></setting>
-    <setting id="ItemToEdit.BGType" type="string">1</setting>
+    <setting id="LiveTVHomeItem.Label" type="string"></setting>
+    <setting id="MusicHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
+    <setting id="ItemToEdit.BGType" type="string"></setting>
     <setting id="Custom3HomeItem.Icon" type="string"></setting>
     <setting id="52.TVShows.InfoPanel" type="string"></setting>
     <setting id="WeatherHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
+    <setting id="ProgramsHomeItem.Icon" type="string"></setting>
     <setting id="MusicVideoHomeItem.InfoLine" type="string"></setting>
     <setting id="MusicVideoHomeItem.SubMenu" type="string"></setting>
     <setting id="Custom6HomeItem.Label" type="string"></setting>
@@ -91,20 +128,24 @@
     <setting id="SettingsHomeItem.SubMenu" type="string"></setting>
     <setting id="MusicVideos.Fallback" type="string"></setting>
     <setting id="Custom5HomeItem.BGType" type="string"></setting>
+    <setting id="ProgramsHomeItem.SubMenu" type="string"></setting>
     <setting id="SettingsHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="Custom6HomeItem.Icon" type="string"></setting>
+    <setting id="Custom1HomeItem.WidgetType" type="string"></setting>
     <setting id="Custom6HomeItem.WidgetLabel" type="string"></setting>
     <setting id="Custom4HomeItem.WidgetLabel" type="string"></setting>
     <setting id="MusicVideoHomeItem.WidgetType" type="string"></setting>
     <setting id="Apps.Fallback" type="string"></setting>
     <setting id="MusicGenreFanartPath" type="string"></setting>
     <setting id="53.Movies.InfoPanel" type="string"></setting>
+    <setting id="ProgramsHomeItem.Label" type="string"></setting>
     <setting id="Custom6HomeItem.SubMenu" type="string"></setting>
     <setting id="Overlay.Toggle" type="string"></setting>
     <setting id="Custom2HomeItem.WidgetLabel" type="string"></setting>
     <setting id="ProgramsHomeItem.InfoLine" type="string"></setting>
     <setting id="Custom4HomeItem.InfoLine" type="string"></setting>
     <setting id="skinshortcuts-sharedmenu" type="string">true</setting>
+    <setting id="Custom5HomeItem.WidgetType" type="string"></setting>
     <setting id="HomeVideosButton4" type="string">plugin.video.ccloudtv</setting>
     <setting id="53.TVShows.InfoPanel" type="string"></setting>
     <setting id="WeatherFanartDir" type="string">http://aeon-nox-background-packs.googlecode.com/svn/trunk/weather-fanart/default/</setting>
@@ -115,6 +156,7 @@
     <setting id="FavoritesHomeItem.Label" type="string"></setting>
     <setting id="LiveTV.InfobarType" type="string"></setting>
     <setting id="PicturesHomeItem.SubMenu" type="string"></setting>
+    <setting id="TVShowHomeItem.Path" type="string"></setting>
     <setting id="LiveTVHomeItem.Path" type="string"></setting>
     <setting id="MovieHomeItem.Disable" type="string"></setting>
     <setting id="Custom2HomeItem.Path" type="string"></setting>
@@ -125,14 +167,19 @@
     <setting id="LiveTVHomeItem.Disable" type="string">True</setting>
     <setting id="HomeMusicButton5" type="string">plugin.audio.soundcloud</setting>
     <setting id="WeatherHomeItem.WidgetType" type="string"></setting>
+    <setting id="Custom4HomeItem.SubMenu" type="string"></setting>
     <setting id="Custom1HomeItem.Disable" type="string"></setting>
+    <setting id="VideosHomeItem.InfoLine" type="string"></setting>
     <setting id="Custom1HomeItem.Path" type="string"></setting>
     <setting id="ShutdownHomeItem.BGType" type="string">1</setting>
     <setting id="Custom4HomeItem.Path" type="string"></setting>
+    <setting id="ShutdownHomeItem.Widget" type="string"></setting>
     <setting id="Custom5HomeItem.Disable" type="string"></setting>
     <setting id="TVShowHomeItem.BGType" type="string">1</setting>
     <setting id="ItemToEdit.WidgetType" type="string"></setting>
+    <setting id="WeatherHomeItem.InfoLine" type="string"></setting>
     <setting id="MusicHomeItem.Label" type="string"></setting>
+    <setting id="ProgramsHomeItem.WidgetLabel" type="string"></setting>
     <setting id="FavoritesHomeItem.WidgetType" type="string"></setting>
     <setting id="Custom5HomeItem.Path" type="string"></setting>
     <setting id="Custom6HomeItem.Disable" type="string"></setting>
@@ -143,10 +190,13 @@
     <setting id="WeatherHomeItem.WidgetLabel" type="string"></setting>
     <setting id="ShutdownHomeItem.Disable" type="string"></setting>
     <setting id="FavoritesHomeItem.Disable" type="string">True</setting>
+    <setting id="Custom1HomeItem.Label" type="string"></setting>
     <setting id="SettingsHomeItem.Icon" type="string"></setting>
     <setting id="WeatherHomeItem.Disable" type="string">True</setting>
     <setting id="PicturesHomeItem.InfoLine" type="string"></setting>
     <setting id="MusicVideoHomeItem.Path" type="string"></setting>
+    <setting id="VideosHomeItem.Widget" type="string"></setting>
+    <setting id="TVShowHomeItem.SubMenu" type="string"></setting>
     <setting id="MusicVideoHomeItem.Disable" type="string">True</setting>
     <setting id="weathericons.path" type="string"></setting>
     <setting id="weathericons.ext" type="string"></setting>
@@ -155,18 +205,25 @@
     <setting id="PicturesHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="PicturesHomeItem.WidgetLabel" type="string"></setting>
     <setting id="PicturesHomeItem.Icon" type="string"></setting>
+    <setting id="FavoritesHomeItem.Icon" type="string"></setting>
     <setting id="Custom2HomeItem.Disable" type="string"></setting>
+    <setting id="TVShowHomeItem.WidgetType" type="string"></setting>
     <setting id="PicturesHomeItem.Path" type="string"></setting>
+    <setting id="TVShowHomeItem.InfoLine" type="string"></setting>
     <setting id="PicturesHomeItem.BGType" type="string"></setting>
     <setting id="PicturesHomeItem.Widget" type="string"></setting>
     <setting id="PicturesHomeItem.WidgetType" type="string"></setting>
+    <setting id="LiveTVHomeItem.WidgetLabel" type="string"></setting>
     <setting id="ItemToEdit.WidgetLabel" type="string"></setting>
     <setting id="MusicHomeItem.Disable" type="string">True</setting>
     <setting id="MusicHomeItem.Icon" type="string"></setting>
+    <setting id="Custom4HomeItem.Widget" type="string"></setting>
+    <setting id="VideosHomeItem.BGType" type="string">1</setting>
     <setting id="MusicHomeItem.Path" type="string"></setting>
     <setting id="MusicHomeItem.BGType" type="string"></setting>
     <setting id="52.Seasons.InfoPanel" type="string"></setting>
     <setting id="MusicHomeItem.Widget" type="string"></setting>
+    <setting id="53.Sets.InfoPanel" type="string"></setting>
     <setting id="MusicHomeItem.WidgetLabel" type="string"></setting>
     <setting id="Custom2HomeItem.Widget" type="string"></setting>
     <setting id="Custom4HomeItem.Icon" type="string"></setting>
@@ -174,13 +231,14 @@
     <setting id="MusicHomeItem.WidgetType" type="string"></setting>
     <setting id="ItemToEdit.Widget" type="string"></setting>
     <setting id="HomeVideosButton1" type="string">plugin.video.exodus</setting>
-    <setting id="CustomBackgroundPath" type="string">special://home/media/SKINDEFAULT.jpg</setting>
+    <setting id="CustomBackgroundPath" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="Custom2HomeItem.Icon" type="string"></setting>
     <setting id="HomeMusicButton2" type="string">plugin.video.itunes_podcasts</setting>
     <setting id="SettingsHomeItem.WidgetLabel" type="string"></setting>
     <setting id="HomeVideosButton3" type="string">plugin.video.velocity</setting>
     <setting id="Custom1HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="Custom1HomeItem.SubMenu" type="string"></setting>
+    <setting id="InfoPanel.Delay" type="string"></setting>
     <setting id="MusicHomeItem.InfoLine" type="string"></setting>
     <setting id="Custom5HomeItem.Widget" type="string"></setting>
     <setting id="FavoritesHomeItem.Widget" type="string"></setting>
@@ -192,11 +250,14 @@
     <setting id="MovieHomeItem.Path" type="string"></setting>
     <setting id="Custom3HomeItem.WidgetType" type="string"></setting>
     <setting id="Custom3HomeItem.InfoLine" type="string"></setting>
+    <setting id="ItemToEdit.InfoLine" type="string"></setting>
     <setting id="52.Episodes.InfoPanel" type="string"></setting>
     <setting id="Custom5HomeItem.SubMenu" type="string"></setting>
     <setting id="Custom3HomeItem.Label" type="string"></setting>
     <setting id="Movies.Fallback" type="string"></setting>
     <setting id="HomeVideosButton5" type="string">plugin.video.phstreams</setting>
+    <setting id="StudioLogos.path" type="string"></setting>
+    <setting id="TVShowHomeItem.WidgetLabel" type="string"></setting>
     <setting id="ShutdownHomeItem.Label" type="string"></setting>
     <setting id="Custom3HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
     <setting id="MovieHomeItem.BGType" type="string">1</setting>
@@ -207,6 +268,7 @@
     <setting id="PicturesHomeItem.Disable" type="string">True</setting>
     <setting id="SettingsHomeItem.WidgetType" type="string"></setting>
     <setting id="MovieHomeItem.WidgetType" type="string"></setting>
+    <setting id="TVShowHomeItem.Widget" type="string"></setting>
     <setting id="52.Sets.InfoPanel" type="string"></setting>
     <setting id="MovieHomeItem.InfoLine" type="string"></setting>
     <setting id="MovieHomeItem.SubMenu" type="string"></setting>
@@ -218,66 +280,4 @@
     <setting id="ShutdownHomeItem.Path" type="string"></setting>
     <setting id="ProgramsHomeItem.WidgetType" type="string"></setting>
     <setting id="FavoritesHomeItem.InfoLine" type="string"></setting>
-    <setting id="StudioLogos.path" type="string"></setting>
-    <setting id="TVShowHomeItem.Path" type="string"></setting>
-    <setting id="TVShowHomeItem.Widget" type="string"></setting>
-    <setting id="Custom2HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="TVShowHomeItem.WidgetLabel" type="string"></setting>
-    <setting id="TVShowHomeItem.WidgetType" type="string"></setting>
-    <setting id="HomeProgramButton1" type="string">script.navi-x</setting>
-    <setting id="TVShowHomeItem.InfoLine" type="string"></setting>
-    <setting id="ShutdownHomeItem.Widget" type="string"></setting>
-    <setting id="StudioLogos.name" type="string"></setting>
-    <setting id="Custom4HomeItem.Widget" type="string"></setting>
-    <setting id="53.Sets.InfoPanel" type="string"></setting>
-    <setting id="TVShowHomeItem.SubMenu" type="string"></setting>
-    <setting id="HomeProgramButton3" type="string">plugin.video.xbmchubmaintenance</setting>
-    <setting id="Custom1HomeItem.Label" type="string"></setting>
-    <setting id="LiveTVHomeItem.Label" type="string"></setting>
-    <setting id="LiveTVHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="LiveTVHomeItem.Icon" type="string"></setting>
-    <setting id="Videos.Fallback" type="string"></setting>
-    <setting id="FavoritesHomeItem.Icon" type="string"></setting>
-    <setting id="LiveTVHomeItem.BGType" type="string"></setting>
-    <setting id="LiveTVHomeItem.Widget" type="string"></setting>
-    <setting id="LiveTVHomeItem.WidgetLabel" type="string"></setting>
-    <setting id="LiveTVHomeItem.WidgetType" type="string"></setting>
-    <setting id="LiveTVHomeItem.InfoLine" type="string"></setting>
-    <setting id="LiveTVHomeItem.SubMenu" type="string"></setting>
-    <setting id="WeatherHomeItem.Widget" type="string"></setting>
-    <setting id="SettingsHomeItem.InfoLine" type="string"></setting>
-    <setting id="VideosHomeItem.Label" type="string"></setting>
-    <setting id="FavoritesHomeItem.Path" type="string"></setting>
-    <setting id="ShutdownHomeItem.WidgetLabel" type="string"></setting>
-    <setting id="ShutdownHomeItem.InfoLine" type="string"></setting>
-    <setting id="52.Movies.InfoPanel" type="string"></setting>
-    <setting id="VideosHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="HomeVideosButton2" type="string">plugin.video.salts</setting>
-    <setting id="VideosHomeItem.Icon" type="string"></setting>
-    <setting id="Custom2HomeItem.WidgetType" type="string"></setting>
-    <setting id="VideosHomeItem.Path" type="string"></setting>
-    <setting id="VideosHomeItem.BGType" type="string">1</setting>
-    <setting id="VideosHomeItem.Widget" type="string"></setting>
-    <setting id="VideosHomeItem.WidgetLabel" type="string"></setting>
-    <setting id="ProgramsHomeItem.SubMenu" type="string"></setting>
-    <setting id="Custom1HomeItem.WidgetType" type="string"></setting>
-    <setting id="WeatherHomeItem.InfoLine" type="string"></setting>
-    <setting id="Custom5HomeItem.WidgetType" type="string"></setting>
-    <setting id="VideosHomeItem.WidgetType" type="string"></setting>
-    <setting id="Custom4HomeItem.Label" type="string"></setting>
-    <setting id="VideosHomeItem.InfoLine" type="string"></setting>
-    <setting id="ItemToEdit.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="MusicHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="VideosHomeItem.SubMenu" type="string"></setting>
-    <setting id="Custom4HomeItem.SubMenu" type="string"></setting>
-    <setting id="ProgramsHomeItem.Label" type="string"></setting>
-    <setting id="ProgramsHomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="Custom6HomeItem.WidgetType" type="string"></setting>
-    <setting id="ProgramsHomeItem.Icon" type="string"></setting>
-    <setting id="Custom6HomeItem.BGType" type="string"></setting>
-    <setting id="ProgramsHomeItem.Path" type="string"></setting>
-    <setting id="ShutdownHomeItem.Icon" type="string"></setting>
-    <setting id="ProgramsHomeItem.BGType" type="string">1</setting>
-    <setting id="Custom6HomeItem.MultiFanart" type="string">/home/david/.img/annapuma.jpg</setting>
-    <setting id="ItemToEdit.InfoLine" type="string"></setting>
 </settings>
