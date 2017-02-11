@@ -14,7 +14,7 @@ _main() {
     for file in "/etc/X11/Xresources" "$HOME/.Xresources"; do
         if [ -f "$file" ]; then
             echo "Loading resource: $file"
-            xrdb -nocpp -merge "$file"
+            xrdb -merge "$file"
         fi
     done
 
@@ -51,7 +51,6 @@ _main() {
     fi
 
     echo "X session wrapper complete, running session"
-
     exec i3
 }
 
