@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+emerge --sync
+layman -S
+eix-update
+
+emerge --update --deep --changed-use -av --with-bdeps=y @world
