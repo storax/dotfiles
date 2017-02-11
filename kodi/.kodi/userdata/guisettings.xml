@@ -100,7 +100,7 @@
             <level>0</level>
             <showhigherlevels>true</showhigherlevels>
         </eventlog>
-        <systemtotaluptime>15436</systemtotaluptime>
+        <systemtotaluptime>15639</systemtotaluptime>
     </general>
     <input>
         <enablejoystick default="true">true</enablejoystick>
@@ -171,7 +171,7 @@
     <mymusic>
         <defaultlibview default="true"></defaultlibview>
         <songthumbinvis default="true">false</songthumbinvis>
-        <startwindow default="true">10501</startwindow>
+        <startwindow>10502</startwindow>
         <playlist>
             <repeat>false</repeat>
             <shuffle>false</shuffle>

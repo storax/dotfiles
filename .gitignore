@@ -1,2 +1,7 @@
 /ncmpcpp/.ncmpcpp/error.log
 /kodi/.kodi/temp/
+/kodi/.kodi/userdata/addon_data/
+/kodi/.kodi/userdata/Database/
+kodi/.kodi/userdata/Thumbnails/
+kodi/.kodi/userdata/keymaps
+kodi/.kodi/addons/
