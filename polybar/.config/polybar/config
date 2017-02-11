@@ -144,7 +144,7 @@ format = <label-state> <label-mode>
 label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = ${colors.red}
-label-mode-border-color =${colors.red}
+label-mode-border-color = ${colors.red}
 label-mode-font = 5
 
 label-focused = %icon%
@@ -165,7 +165,7 @@ label-visible-font = 6
 label-urgent = %icon%
 label-urgent-foreground = ${colors.red}
 label-urgent-padding = 3
-label-urgent-underline = #{colors.red}
+label-urgent-underline = ${colors.red}
 label-urgent-font = 6
 
 [module/cpu]

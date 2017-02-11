@@ -64,6 +64,7 @@ for_window [title="urxvttilda.sh"] border none
 
 for_window [class="Kodi"] border none
 assign [title="urxvttilda.sh"] "8: ~"
+assign [title="Streamlink Twitch GUI"] "5"
 bindsym F12 workspace "8: ~"
 
 # class                     border  backgr. text    indicator
