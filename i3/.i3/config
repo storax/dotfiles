@@ -61,10 +61,6 @@ focus_follows_mouse no
 for_window [class="I3-exit"] floating enable
 for_window [class="I3-exit"] border none
 for_window [title="urxvttilda.sh"] border none
-for_window [title="urxvttilda.sh"] floating enable
-for_window [title="urxvttilda.sh"] resize set 1700 900
-for_window [title="urxvttilda.sh"] move position center
-
 
 for_window [class="Kodi"] border none
 assign [title="urxvttilda.sh"] "8: ~"
@@ -349,8 +345,8 @@ exec --no-startup-id roficlip.py --daemon
 # screensaver
 exec --no-startup-id xset s 600 600
 exec --no-startup-id xset dpms 600 600 600
-exec --no-startup-id xautolock -time 60 -locker i3lock
+exec --no-startup-id xautolock -time 10 -locker i3lock
 
 exec --no-startup-id i3-msg "workspace 8: ~"
 
-exec "urxvt -tintColor rgba:0000/0000/0000/0000 -shading 100 -e ~/bin/urxvttilda.sh" 
+exec "urxvt -tintColor rgba:0000/0000/0000/0000 -shading 100 -b 100 -e ~/bin/urxvttilda.sh" 
