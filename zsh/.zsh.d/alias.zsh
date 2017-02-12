@@ -16,6 +16,18 @@ alias dfe="df -ht ext4"
 alias zzz="sudo shutdown -P +60"
 alias bye="sudo shutdown -P now"
 # -------------------------------------------------------------------
+# Gentoo
+# -------------------------------------------------------------------
+[ $(id -u) = 0 ] || SUDO=sudo
+
+# gentoo
+alias esync="$SUDO emerge --sync && eix-update"
+alias unmerge="$SUDO emerge -avtC"
+alias eup="$SUDO emerge -av --deep --changed-use --with-bdeps=y world"
+alias edepc="$SUDO emerge --depclean"
+alias update-config="$SUDO dispatch-conf; $SUDO etc-update"
+
+# -------------------------------------------------------------------
 # use nocorrect alias to prevent auto correct from "fixing" these
 # -------------------------------------------------------------------
 #alias foobar='nocorrect foobar'
