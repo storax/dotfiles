@@ -11,7 +11,7 @@
 Emacs*useXIM: false
 
 ! Using Xft
-URxvt.font:           xft:Sauce Code Pro:size=10
+URxvt.font:           xft:Sauce Code Pro:style=Nerd Font Complete:size=10
 !-*- Perl extensions -*-
 URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
 URxvt.keysym.M-u: perl:url-select:select_next

@@ -4,6 +4,16 @@
     </programs>
     <video>
         <default pathversion="1"></default>
+        <source>
+            <name>Movies</name>
+            <path pathversion="1">/home/david/Videos/movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>TV Shows</name>
+            <path pathversion="1">/home/david/Videos/tvshows/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </video>
     <music>
         <default pathversion="1"></default>
