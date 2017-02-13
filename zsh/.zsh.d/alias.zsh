@@ -21,11 +21,12 @@ alias bye="sudo shutdown -P now"
 [ $(id -u) = 0 ] || SUDO=sudo
 
 # gentoo
-alias esync="$SUDO emerge --sync && eix-update"
+alias esync="$SUDO emerge --sync && $SUDO eix-update"
 alias unmerge="$SUDO emerge -avtC"
-alias eup="$SUDO emerge -av --deep --changed-use --with-bdeps=y world"
+alias eup="$SUDO emerge -av --update --deep --changed-use --with-bdeps=y @world"
 alias edepc="$SUDO emerge --depclean"
 alias update-config="$SUDO dispatch-conf; $SUDO etc-update"
+alias esizes="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n | numfmt --to=iec-i"
 
 # -------------------------------------------------------------------
 # use nocorrect alias to prevent auto correct from "fixing" these
