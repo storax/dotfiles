@@ -5,15 +5,26 @@
 #  ███████╗███████║██║  ██║██║  ██║╚██████╗
 #  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
-source ~/.zsh.d/export.zsh
-source ~/.zsh.d/functions.zsh
-source ~/.zsh.d/zplug.zsh
-source ~/.zsh.d/setopt.zsh
-source ~/.zsh.d/zaw.zsh
-source ~/.zsh.d/alias.zsh
-source ~/.zsh.d/bindkey.zsh
-source ~/.zsh.d/colors.zsh
-source ~/.zsh.d/completion.zsh
-source ~/.zsh.d/history.zsh
-source ~/.zsh.d/prompt.zsh
-source ~/.zsh.d/pyenv.zsh
+typeset -a sources
+CONFIG_DIR="$HOME/.zsh.d"
+
+sources+="$CONFIG_DIR/environment.zsh"
+sources+="$CONFIG_DIR/setopt.zsh"
+sources+="$CONFIG_DIR/functions.zsh"
+sources+="$CONFIG_DIR/zplug.zsh"
+sources+="$CONFIG_DIR/zaw.zsh"
+sources+="$CONFIG_DIR/alias.zsh"
+sources+="$CONFIG_DIR/bindkey.zsh"
+sources+="$CONFIG_DIR/colors.zsh"
+sources+="$CONFIG_DIR/completion.zsh"
+sources+="$CONFIG_DIR/history.zsh"
+sources+="$CONFIG_DIR/prompt.zsh"
+sources+="$CONFIG_DIR/pyenv.zsh"
+
+for file in $sources[@]; do
+    if [[ -a $file ]]; then
+       source $file
+    else
+        echo "config file not found: $file"
+    fi
+done
