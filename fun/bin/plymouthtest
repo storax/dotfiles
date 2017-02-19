@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+plymouthd --mode=boot --debug --debug-file=/tmp/plymouth-debug-out
+plymouth --show-splash
+for i in {1..100}
+do
+    plymouth system-update --progress=$i
+    plymouth update --status="${i} A quick brown fox jumps over the lazy dog."
+    plymouth display-message --text="$i"
+    sleep 0.05
+done
+plymouth quit
