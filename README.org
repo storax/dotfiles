@@ -4,9 +4,39 @@ It's 2017 and time for a new dotfile management system.
 This time I went with [[http://www.gnu.org/software/stow/][GNU stow]] and not [[https://github.com/technicalpickles/homesick][homesick]].
 I made some additions heavily inspired by [[https://github.com/xero/dotfiles][xero's dotfiles.]]
 
-The main reason I chose [[http://www.gnu.org/software/stow/][GNU stow]] is it's minimal dependencies. No ruby!
-Since I'm slowly planning on moving to Gentoo, that will make the first step a lot easier.
+The main reason I chose [[http://www.gnu.org/software/stow/][GNU stow]] is it's minimal dependencies. No ruby - just a little bit of perl!
+It made moving to Gentoo much easier and faster.
 On the other hand, a lot of nice commands, especially the track command, are missing.
+
+This repo is not meant to be used verbatim.
+These are my personal dotfiles and they only work for my setup.
+But if you are crafting your own dotfiles, you might find one or two interesting things in here.
+
+Features:
+- [[http://www.alsa-project.org/][alsa]] config to set my soundcard (hardware dependent)
+- [[https://dunst-project.org/][dunst]] notification daemon config
+- [[https://www.gnu.org/software/emacs/][Emacs]] configuration using [[http://spacemacs.org/][Spacemacs]]
+- Fonts
+- fun shell scripts
+- Gentoo management scripts
+- [[https://git-scm.com/][git]] configuration
+- [[https://www.gtk.org/][gtk]] configuration to set the theme
+- [[http://hisham.hm/htop/][htop]] configuration
+- [[https://i3wm.org/][i3]] tiling window manager configuration which makes heavy use of modes
+- [[https://irssi.org/][irssi]] irc client configuration
+- [[https://kodi.tv/][kodi]] media center configuration
+- [[https://rybczak.net/ncmpcpp/][ncmpcpp]] ncurses mpd client configuration
+- [[http://parcellite.sourceforge.net/][parcellite]] clipboard manager configuration
+- [[https://github.com/jaagr/polybar][polybar]] status-bar configuration
+- [[https://docs.python.org/2/library/pdb.html][pdb]] python debugger configuration
+- browser startpage
+- [[https://tmux.github.io/][tmux]] terminal multiplexer configuration
+- [[https://github.com/streamlink/streamlink-twitch-gui][steamlink-twitch-gui]] configuration
+- wallpapers
+- [[https://www.x.org/wiki/][x11]] =startx= and =.Xresources= script for [[http://software.schmorp.de/pkg/rxvt-unicode.html][urxvt]] and [[https://davedavenport.github.io/rofi/][rofi]]
+- [[https://www.freedesktop.org/wiki/Software/xdg-utils/][xdg]] configuration for mimetypes and user directories
+- [[https://www.x.org/archive/current/doc/man/man1/xmodmap.1.xhtml][xmodmap]] configuration to make =Cap Lock= a second =Ctrl= key
+- [[http://www.zsh.org/][zsh]] configuration using [[https://github.com/zplug/zplug][zplug]]
 
 This repo deprecates:
 [[https://github.com/storax/storaxcastle][storaxcastle]]
@@ -22,12 +52,15 @@ stow -t ~/ -D <directory>
 #+END_SRC
 
 I added a simple script to automate most of the required steps.
+#+BEGIN_SRC sh :exports code
+./install.zsh
+#+END_SRC
 
 ** Packages
 Here is some little documentation about each package.
 *** zsh
-For =zsh= I migrated to [[
-https://github.com/zplug/zplug][zplug]] from [[https://github.com/zsh-users/antigen][antigen]].
+For =zsh= I migrated from [[https://github.com/zsh-users/antigen][antigen]] to [[
+https://github.com/zplug/zplug][zplug]].
 The installation is completely automated.
 At the moment I use these plugins:
 #+BEGIN_SRC sh :exports both
@@ -36,12 +69,11 @@ zplug list
 
 #+RESULTS:
 #+BEGIN_EXAMPLE
-zsh-users/zaw => none
 plugins/cp => from:"oh-my-zsh"
+zsh-users/zaw => none
 zsh-users/zsh-completions => none
 plugins/python => from:"oh-my-zsh"
 themes/kphoen => as:"theme", from:"oh-my-zsh"
-oknowton/zsh-dwim => none
 plugins/pip => from:"oh-my-zsh"
 plugins/dirhistory => from:"oh-my-zsh"
 plugins/copydir => from:"oh-my-zsh"
@@ -57,7 +89,6 @@ rupa/z => none
 plugins/gem => from:"oh-my-zsh"
 plugins/command-not-found => from:"oh-my-zsh"
 plugins/sudo => from:"oh-my-zsh"
-plugins/common-aliases => from:"oh-my-zsh"
 plugins/git-flow => from:"oh-my-zsh"
 plugins/git => from:"oh-my-zsh"
 #+END_EXAMPLE
@@ -65,10 +96,12 @@ plugins/git => from:"oh-my-zsh"
 I use vim bindings with a right prompt to signal the normal or insert mode.
 Still haven't configured the visual mode yet.
 
+There are a tons of options set, so it's best to just go over the files.
+They are fairly well organized.
 
 *** emacs
 I spent way to much time on my emacs dotfile.
-It's using spacemacs with vim bindings and uses a couple built-in layers.
+It's using spacemacs with vim bindings and use a couple built-in layers.
 There are a lot of private layers and tons of hand-written or hackish elisp code.
 I already forgot about half of it and unless I consolidate it, will be of little use to anyone.
 So this section stays empty.
@@ -77,14 +110,21 @@ So this section stays empty.
 My i3 config is simple but I love it.
 
 **** Requirements
-- =urxvt= as a terminal emulator
-- =i3status= (ships with =i3= for the status bar
-- =unclutter= to hide the mouse after a period of inactivity
-- =gnome-settings-daemon=
-- =feh= for wallpapers
-- =compton= as a composite manager to render transparency
-- =amixer= and =pulse= for audio control
-
++ =urxvt= as a terminal emulator
++ =feh= for wallpapers
++ =rofi= for dmenu and window selection
++ [[https://github.com/seamus-45/roficlip][roficlip]] for clipboard selection
++ =i3lock= for screensaver/lock screen
++ =ncmpcpp= for starting the music client
++ =mpc= for controlling the =mpd= media player daemon
++ =alsa-utils= for controlling the volume
++ =xbacklight= for controlling the display brightness
++ =unclutter= to hide the mouse after a period of inactivity
++ =gnome-settings-daemon=
++ =compton= as a composite manager to render transparency
++ =polybar= as a statusbar replacement
++ =xautolock= for activating i3lock
++ =xset= for setting display sleep mode
 **** Keybindings
 The keybindings rely heavily on modes.
 The default mode only has one keybinding =Alt-R= (as in the right =ALT= key) configured to enter the main mode.
