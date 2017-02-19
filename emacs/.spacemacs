@@ -33,7 +33,6 @@ values."
      emacs-lisp
      (erc :packages (not persp-mode))
      git
-     github
      html
      javascript
      latex
@@ -109,6 +108,7 @@ values."
      storax-yasnippet
      storax-notmuch
      storax-dired
+     storax-magit
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
