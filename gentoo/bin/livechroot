@@ -1,0 +1,14 @@
+#! /bin/bash
+
+if [ ! -d "/mnt/gentoo" ]; then
+  echo "/mnt/gentoo not found! Are you using a live cd?"
+  exit 1
+fi
+
+echo "mounting sys dev & proc"
+mount -t proc proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+
+echo "changing root"
+chroot /mnt/gentoo bash
