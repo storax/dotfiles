@@ -33,8 +33,6 @@ set $upmode 22
 
 # paths
 set $i3cibin ~/.i3ci/bin
-# force an update of the i3 status bar
-set $updatebar killall -USR1 i3status
 # wallpaper
 set $lockwall ~/.img/mrrobot.png
 set $wallpaper feh --bg-fill ~/.img/annapuma.jpg
@@ -303,9 +301,9 @@ mode "$system_sound_mode" {
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $system_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  $up                exec --no-startup-id "amixer -c 1 -q sset Master 5%+ unmute; $updatebar"
-    bindsym  $down              exec --no-startup-id "amixer -c 1 -q sset Master 5%- unmute; $updatebar"
-    bindsym  m                  exec --no-startup-id "amixer -c 1 -q sset Master toggle; amixer -c 1 -q sset Speaker toggle; $updatebar"
+    bindsym  $up                exec --no-startup-id "amixer -c 1 -q sset Master 5%+ unmute"
+    bindsym  $down              exec --no-startup-id "amixer -c 1 -q sset Master 5%- unmute"
+    bindsym  m                  exec --no-startup-id "amixer -c 1 -q sset Master toggle; amixer -c 1 -q sset Speaker toggle"
     bindsym  s                  workspace 9: music, exec $term -name ncmpcpp -e ncmpcpp, mode $default
     bindsym  p                  exec --no-startup-id "mpc toggle"
     bindsym  $left              exec --no-startup-id "mpc prev"
