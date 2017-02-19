@@ -1,17 +1,6 @@
 from __future__ import print_function
 
 import sys
-# Command line history:
-import readline
-histfile = ".pdb-pyhist"
-try:
-    readline.read_history_file(histfile)
-except IOError:
-    pass
-import atexit
-atexit.register(readline.write_history_file, histfile)
-del histfile
-readline.set_history_length(200)
 
 import rlcompleter
 import pdb
@@ -62,12 +51,10 @@ if home != os.path.realpath(os.curdir) + os.sep:
 
 # Cleanup any variables that could otherwise clutter up the namespace.
 try:
-    del atexit
     del home
     del info
     del os
     del pdb
-    del readline
     del rlcompleter
     # careful here:
     del _already_loaded
