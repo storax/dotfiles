@@ -301,8 +301,8 @@ mode "$system_sound_mode" {
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $system_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  $up                exec --no-startup-id "amixer -c 1 -q sset Master 5%+ unmute"
-    bindsym  $down              exec --no-startup-id "amixer -c 1 -q sset Master 5%- unmute"
+    bindsym  $up                exec --no-startup-id "amixer -c 1 -q sset Master 1%+ unmute"
+    bindsym  $down              exec --no-startup-id "amixer -c 1 -q sset Master 1%- unmute"
     bindsym  m                  exec --no-startup-id "amixer -c 1 -q sset Master toggle; amixer -c 1 -q sset Speaker toggle"
     bindsym  s                  workspace 9: music, exec $term -name ncmpcpp -e ncmpcpp, mode $default
     bindsym  p                  exec --no-startup-id "mpc toggle"

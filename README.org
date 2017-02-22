@@ -100,11 +100,11 @@ There are a tons of options set, so it's best to just go over the files.
 They are fairly well organized.
 
 *** emacs
-I spent way to much time on my emacs dotfile.
+I spent way to much time on my emacs dotfiles.
 It's using spacemacs with vim bindings and use a couple built-in layers.
 There are a lot of private layers and tons of hand-written or hackish elisp code.
 I already forgot about half of it and unless I consolidate it, will be of little use to anyone.
-So this section stays empty.
+So this section stays empty for now.
 
 *** i3
 My i3 config is simple but I love it.

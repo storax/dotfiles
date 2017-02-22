@@ -34,7 +34,7 @@ zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
-zplug "rupa/z"
+# zplug "rupa/z"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
