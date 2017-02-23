@@ -33,13 +33,11 @@ values."
      (erc :packages (not persp-mode))
      git
      html
-     javascript
      latex
      markdown
      org
      (python :variables
              python-test-runner nil)
-     ruby
      search-engine
      (shell :variables
             shell-default-height 30
