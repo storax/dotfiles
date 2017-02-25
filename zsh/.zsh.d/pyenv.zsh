@@ -13,12 +13,13 @@
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects/
-source /usr/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper_lazy.sh
 
 # build python with enable shared
 export PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs4 --enable-shared"
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv virtualenvwrapper_lazy
+pyi () {
+    eval "$(pyenv init -)"
+    pyenv virtualenvwrapper_lazy
+}

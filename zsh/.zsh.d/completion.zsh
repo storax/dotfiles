@@ -26,7 +26,13 @@ zstyle :compinstall filename '~/.zsh.d/syntax.zsh'
 fpath=(~/.zsh.d/completions $fpath)
 autoload -U ~/.zsh.d/completions*(:t)
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+    compinit;
+else
+    compinit -C;
+fi;
+
 autoload -Uz bashcompinit && bashcompinit
 [ -d ~/.bash-completions ] && source ~/.bash-completions/*
 
