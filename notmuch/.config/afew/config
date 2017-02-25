@@ -1,0 +1,6 @@
+#default filter chain
+[SpamFilter]
+[ClassifyingFilter]
+[KillThreadsFilter]
+[ArchiveSentMailsFilter]
+[InboxFilter]

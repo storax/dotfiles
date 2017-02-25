@@ -26,6 +26,7 @@ Features:
 - [[https://irssi.org/][irssi]] irc client configuration
 - [[https://kodi.tv/][kodi]] media center configuration
 - [[https://rybczak.net/ncmpcpp/][ncmpcpp]] ncurses mpd client configuration
+- [[https://notmuchmail.org/][notmuch]] for mail with [[https://github.com/afewmail/afew][afew]] for filtering
 - [[http://parcellite.sourceforge.net/][parcellite]] clipboard manager configuration
 - [[https://github.com/jaagr/polybar][polybar]] status-bar configuration
 - [[https://docs.python.org/2/library/pdb.html][pdb]] python debugger configuration
@@ -141,3 +142,12 @@ For moving =i= =j= =k= =l= is used in multiple contexts.
 **** Credits
 This config is heavily inspired by [[https://github.com/syl20bnr/i3ci][syl20bnr's config]].
 It helped me a lot putting this together.
+*** notmuch
+[[https://notmuchmail.org/][notmuch]] is my email system of choice.
+It is very fast, has good Emacs integration and nice plugins.
+For sending emails I use [[http://msmtp.sourceforge.net/][msmtp]] and for receiving email [[http://isync.sourceforge.net/][isync]].
+I won't post the config files for those, as they contain sensitive information.
+Notmuch uses a tagging system instead, which is fast and powerful.
+[[https://github.com/afewmail/afew][afew]] helps with the initial tagging.
+
+I lost my old notmuch config, so for now the tagging is quite basic.

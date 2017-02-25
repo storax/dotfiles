@@ -1,0 +1,23 @@
+# .notmuch-config - Configuration file for the notmuch mail system
+#
+# For more information about notmuch, see https://notmuchmail.org
+
+[database]
+path=/home/david/Documents/mail
+
+[user]
+name=David Zuber
+primary_email=zuber.david@gmx.de
+
+[new]
+tags=new;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg
