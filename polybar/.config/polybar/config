@@ -273,7 +273,7 @@ format-packetloss-underline = ${colors.skin}
 format-disconnected =  -
 format-disconnected-foreground = ${colors.red}
 format-disconnected-underline = ${colors.red}
-label-connected = %upspeed%
+label-connected = %downspeed%
 
 [module/up]
 type = internal/network
