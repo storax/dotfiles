@@ -15,7 +15,7 @@
 
 
 # The notmuch search that will generate subjects you want
-SEARCH="tag:unread"
+SEARCH="tag:unread AND NOT tag:web"
 
 # set some other things you might want to change
 
