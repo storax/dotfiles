@@ -48,7 +48,7 @@
       (setq message-kill-buffer-on-exit t
             sendmail-program "msmtp"
             send-mail-function 'sendmail-send-it
-            notmuch-fcc-dirs '(("zuber.david@gmx.de" . "gmx/sent/"))
+            notmuch-fcc-dirs '(("zuber.david@gmx.de" . "gmx/Gesendet/"))
             notmuch-search-oldest-first nil
             notmuch-hello-thousands-separator ". "
             message-sendmail-envelope-from 'header

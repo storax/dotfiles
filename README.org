@@ -151,3 +151,9 @@ Notmuch uses a tagging system instead, which is fast and powerful.
 [[https://github.com/afewmail/afew][afew]] helps with the initial tagging.
 
 I lost my old notmuch config, so for now the tagging is quite basic.
+**** Requirements
++ notmuch
++ isync
++ msmtp
++ afew
++ recode
