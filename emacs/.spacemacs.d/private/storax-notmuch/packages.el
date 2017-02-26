@@ -58,15 +58,39 @@
             mml2015-encrypt-to-self t
             mml2015-sign-with-sender t
             mail-interactive t
-            notmuch-show-indent-messages-width 4))
+            notmuch-show-indent-messages-width 4)
+      (spacemacs/set-leader-keys "am" 'notmuch))
     :config
     (progn
-      (define-key notmuch-show-mode-map "S" 'storax-notmuch/mark-spam-show)
-      (define-key notmuch-search-mode-map "S" 'storax-notmuch/mark-spam-search)
-      (define-key notmuch-show-mode-map "d" 'storax-notmuch/mark-deleted-show)
-      (define-key notmuch-search-mode-map "d" 'storax-notmuch/mark-deleted-search)
-      (spacemacs/set-leader-keys "am" 'notmuch)
-      (add-hook 'message-setup-hook 'mml-secure-message-sign-pgpmime))))
+      (evilified-state-evilify-map notmuch-search-mode-map
+        :mode notmuch-search-mode
+        :bindings
+        (kbd "q") 'notmuch-bury-or-kill-this-buffer
+        (kbd "r") 'notmuch-search-reply-to-thread
+        (kbd "R") 'notmuch-search-reply-to-thread-sender
+        (kbd "S") 'storax-notmuch/mark-spam-search
+        (kbd "d") 'storax-notmuch/mark-deleted-search
+        )
 
+      (evilified-state-evilify-map notmuch-show-mode-map
+        :mode notmuch-show-mode
+        :bindings
+        (kbd "S") 'storax-notmuch/mark-spam-show
+        (kbd "d") 'storax-notmuch/mark-deleted-show)
+
+      (evilified-state-evilify-map notmuch-tree-mode-map
+        :mode notmuch-tree-mode
+        :bindings
+        (kbd "q") 'notmuch-bury-or-kill-this-buffer
+        (kbd "?") 'notmuch-help
+        (kbd "RET") 'notmuch/tree-show-message
+        (kbd "}") 'notmuch-tree-scroll-or-next
+        (kbd "{") 'notmuch-tree-scroll-message-window-back)
+      (evilified-state-evilify-map notmuch-hello-mode-map
+        :mode notmuch-hello-mode
+        :bindings
+        (kbd "?") 'notmuch-help
+        (kbd "i") 'evil-insert-state
+        (kbd "q") 'notmuch-bury-or-kill-this-buffer))))
 
 ;;; packages.el ends here

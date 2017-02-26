@@ -346,7 +346,12 @@ layers configuration. You are free to put any user code."
   (setq helm-M-x-fuzzy-match nil
         helm-buffers-fuzzy-matching nil
         helm-recentf-fuzzy-match nil
-        undo-tree-visualizer-diff nil))
+        undo-tree-visualizer-diff nil
+        spacemacs-useful-buffers-regexp
+        '("\\*\\(ansi-term\\|eshell\\|shell\\|terminal.+\\)\\(-[0-9]+\\)?\\*"
+          "\\*scratch\\*"
+          "\\*magit:"
+          "\\*notmuch")))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -365,11 +370,12 @@ layers configuration. You are free to put any user code."
    (quote
     ((:name "inbox" :query "tag:inbox" :key "i")
      (:name "unread" :query "tag:unread" :key "u")
-     (:name "flagged" :query "tag:flagged" :key "f")
      (:name "sent" :query "tag:sent" :key "t")
      (:name "drafts" :query "tag:draft" :key "d")
      (:name "all mail" :query "*" :key "a")
-     (:name "mpc" :query "tag:mpc" :key "m"))))
+     (:name "mpc" :query "tag:mpc" :key "m")
+     (:name "gmx" :query "tag:gmx" :key "g")
+     (:name "web" :query "tag:web" :key "w"))))
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
    (quote
