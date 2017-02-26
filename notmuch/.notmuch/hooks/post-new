@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+notmuch tag +gmx -- tag:new and to:zuber.david@gmx.de
+notmuch tag +web -new -- tag:new and to:zuber.david@web.de
+notmuch tag +bills -- tag:new and from:no-reply@rechnung.o2online.de
+notmuch tag +spam -- tag:new and from:mailings@gmxnet.de
+notmuch tag +hlrs -new -- tag:new and from:rabenseifner@hlrs.de
+notmuch tag +travis -new -- tag:new and from:builds@travis-ci.org
+afew -tn
