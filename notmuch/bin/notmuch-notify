@@ -9,8 +9,8 @@
 # Most of the settings are set below.
 
 # USAGE:
-#   checkmail [--show-none]
-#   
+#   notmuch-notify [--show-none]
+#
 #   --show-none  show a notification even if there are no new messages.
 
 
@@ -32,6 +32,7 @@ SORT="newest-first"
 
 # have notmuch count the number of messages in the search
 UNREAD_COUNT=$(notmuch count --output=messages "$SEARCH")
+
 if [ "$UNREAD_COUNT" -gt 0 ]; then
   # have notmuch pull the specified number of mail subjects from the search.
   # also, do some rought formatting of the result, to pull thread string,
