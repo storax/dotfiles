@@ -17,6 +17,13 @@ kernelprep() {
 
 kernelmake() {
     kernelprep
-    sudo make && sudo make modules_install && sudo make install
-    sudo umount /boot
+    sudo make -j7 modules_prepare
+    sudo emerge --ask @module-rebuild
+    sudo make -j7 && sudo make -j7 modules_install && sudo make -j7 install
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+}
+
+kernelclean() {
+    sudo emerge --ask --depclean gentoo-sources
+    echo "Run: eclean-kernel -n X"
 }

@@ -1,0 +1,27 @@
+#!/bin/sh
+lock() {
+    i3lock -d -i ~/.img/mrrobot.png
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    hibernate)
+        lock && sudo /usr/sbin/pm-hibernate
+        ;;
+    reboot)
+        sudo shutdown -r now
+        ;;
+    shutdown)
+        sudo shutdown -P now
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0

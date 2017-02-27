@@ -34,7 +34,6 @@ set $upmode 22
 # paths
 set $i3cibin ~/.i3ci/bin
 # wallpaper
-set $lockwall ~/.img/mrrobot.png
 set $wallpaper feh --bg-fill ~/.img/annapuma.jpg
 
 workspace_auto_back_and_forth yes
@@ -263,7 +262,7 @@ mode "$wks_mode" {
 
 # Mode: system  ----------------------------------------------------------
 set $system_mode                system (e) exit (s) sound (l) lock (d) display (r) i3 restart (c) i3 reload
-set $system_exit_mode           system -> exit (l) lock (e) logout (R) restart (P) poweroff
+set $system_exit_mode           system -> exit (l) lock (e) logout (h) hibernate (R) restart (P) poweroff
 set $system_sound_mode          system -> sound (i) der bass muss ficken (k) psst (m) mute (s) ncmpcpp (p) play (i) prev (j) next
 set $system_display_mode        system -> display (i) brighter (k) darker
 
@@ -276,7 +275,7 @@ mode "$system_mode" {
     bindsym  s                  mode $system_sound_mode
     bindsym  d                  mode $system_display_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  l                  exec --no-startup-id "i3lock -d -i $lockwall", mode $default
+    bindsym  l                  exec --no-startup-id "i3exit lock", mode $default
     bindsym  r                  exec $wallpaper, restart, mode $default
     bindsym  c                  reload, mode $default
 }
@@ -287,12 +286,11 @@ mode "$system_exit_mode" {
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $system_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym l                   exec --no-startup-id "i3lock -d -i $lockwall", mode $default
-    bindsym e                   exec --no-startup-id "i3-msg exit", mode $default
-    #bindsym s                  suspend??, mode $default
-    #bindsym h                  hibernate???, mode "default"
-    bindsym shift+r             exec --no-startup-id "sudo shutdown -r now", mode $default
-    bindsym shift+p             exec --no-startup-id "sudo shutdown -P now", mode $default
+    bindsym l                   exec --no-startup-id "i3exit lock", mode $default
+    bindsym e                   exec --no-startup-id "i3exit logout", mode $default
+    bindsym h                   exec --no-startup-id "i3exit hibernate", mode "default"
+    bindsym shift+r             exec --no-startup-id "i3exit reboot", mode $default
+    bindsym shift+p             exec --no-startup-id "i3exit shutdown", mode $default
 }
 
 mode "$system_sound_mode" {
