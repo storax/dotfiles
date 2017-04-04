@@ -348,5 +348,5 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock -d -i $lockwall"
 
 exec --no-startup-id i3-msg "workspace 8: ~"
 
-exec "urxvt -tintColor rgba:0000/0000/0000/0000 -shading 100 -b 100 -e ~/bin/urxvttilda.sh" 
+exec "urxvt -tintColor rgba:ffff/ffff/ffff/ffff -shading 100 -b 100 -e ~/bin/urxvttilda.sh"
 exec --no-startup-id notmuch new
