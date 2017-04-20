@@ -1,0 +1,19 @@
+--   ██████╗ ██╗  ██╗ ██████╗██╗
+--  ██╔════╝ ██║  ██║██╔════╝██║
+--  ██║  ███╗███████║██║     ██║
+--  ██║   ██║██╔══██║██║     ██║
+--  ╚██████╔╝██║  ██║╚██████╗██║
+--   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝
+-- GHCi configuration 
+
+-- Surround a string in single quotes.
+let single_quote s = concat ["'", s, "'"]
+
+-- Escape a single quote in the shell. (This mess actually works.)
+let escape_single_quote c = if c == '\'' then "'\"'\"'" else [c]
+
+-- Simple heuristic to escape shell command arguments.
+let simple_shell_escape = single_quote . (concatMap escape_single_quote)
+
+:def hoogle \x -> return $ ":!hoogle --color " ++ (simple_shell_escape x)
+:def doc \x -> return $ ":!hoogle --info --color " ++ (simple_shell_escape x)
