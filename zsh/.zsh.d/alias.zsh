@@ -34,14 +34,13 @@ alias -g M='| most'
 alias -g C='| wc -l'
 alias -g H='| head'
 alias -g T='| tail'
-alias -g G='| grep'
+alias -g G="| grep -i"
 alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 
 alias xo=xdg-open
 alias wttr='curl wttr.in/london'
 alias p="ps -ef"
-alias -g G="| grep -i"
 alias peg="ps -ef | grep -v '00:00:00 grep' | grep -i"
 alias pug="ps aux | grep -v '0:00 grep' | grep -i"
 alias dfe="df -ht ext4"
