@@ -7,7 +7,7 @@
 #  ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝     ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝
 # original script from https://github.com/natmey/dotfiles
 
-# This is a simple script which uses notmuch and the standard 'notify-send' 
+# This is a simple script which uses notmuch and the standard 'notify-send'
 # utility to create notification popups with email subjects.
 # Due to the way notify-send handles special characters you will also need
 # the recode utility to change from UTF-8 to HTML.
@@ -19,6 +19,8 @@
 #
 #   --show-none  show a notification even if there are no new messages.
 
+# Example crontab:
+# */30 * * * * /bin/zsh -c "export DISPLAY=:0; notmuch new" > /dev/null 2>&1
 
 # The notmuch search that will generate subjects you want
 SEARCH="tag:unread AND NOT tag:web"

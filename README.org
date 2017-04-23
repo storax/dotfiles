@@ -23,10 +23,8 @@ Features:
 - [[https://www.gtk.org/][gtk]] configuration to set the theme
 - [[http://hisham.hm/htop/][htop]] configuration
 - [[https://i3wm.org/][i3]] tiling window manager configuration which makes heavy use of modes
-- [[https://irssi.org/][irssi]] irc client configuration
-- [[https://kodi.tv/][kodi]] media center configuration
 - [[https://rybczak.net/ncmpcpp/][ncmpcpp]] ncurses mpd client configuration
-- [[https://notmuchmail.org/][notmuch]] for mail with [[https://github.com/afewmail/afew][afew]] for filtering
+- [[https://notmuchmail.org/][notmuch]] for mail
 - [[http://parcellite.sourceforge.net/][parcellite]] clipboard manager configuration
 - [[https://github.com/jaagr/polybar][polybar]] status-bar configuration
 - [[https://docs.python.org/2/library/pdb.html][pdb]] python debugger configuration
@@ -148,12 +146,23 @@ It is very fast, has good Emacs integration and nice plugins.
 For sending emails I use [[http://msmtp.sourceforge.net/][msmtp]] and for receiving email [[http://isync.sourceforge.net/][isync]].
 I won't post the config files for those, as they contain sensitive information.
 Notmuch uses a tagging system instead, which is fast and powerful.
-[[https://github.com/afewmail/afew][afew]] helps with the initial tagging.
 
 I lost my old notmuch config, so for now the tagging is quite basic.
 **** Requirements
 + notmuch
 + isync
 + msmtp
-+ afew
 + recode
+**** Notifications
+I have a cronjob that runs every 10 minutes and checks for new mails.
+Checking for new mails will also notify in case of unread mails.
+To set it up edit your crontab:
+#+BEGIN_SRC sh
+crontab -e
+#+END_SRC
+Add the following line to it:
+#+BEGIN_SRC sh
+*/30 * * * * /bin/zsh -c "export DISPLAY=:0; notmuch new" > /dev/null 2>&1
+#+END_SRC
+This calls the notify script =notmuch/bin/notmuch-notify=.
+Edit this file for custom searches.
