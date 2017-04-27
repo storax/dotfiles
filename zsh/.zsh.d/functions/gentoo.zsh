@@ -20,6 +20,7 @@ kernelmake() {
     sudo make -j7 modules_prepare
     sudo emerge --ask @module-rebuild
     sudo make -j7 && sudo make -j7 modules_install && sudo make -j7 install
+    sudo genkernel --lvm initramfs
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
