@@ -162,8 +162,7 @@ I mostly use the [[https://github.com/tmux-plugins/tpm][Tmux Plugin Manager]] wi
 *** zsh
 [[file:.assets/zshprompt.jpg]]
 
-For [[http://www.zsh.org/][zsh]] I migrated from [[https://github.com/zsh-users/antigen][antigen]] to [[
-https://github.com/zplug/zplug][zplug]].
+For [[http://www.zsh.org/][zsh]] I migrated from [[https://github.com/zsh-users/antigen][antigen]] to [[https://github.com/zplug/zplug][zplug]].
 The installation is completely automated.
 At the moment I use these plugins:
 #+BEGIN_SRC sh :exports both
