@@ -20,4 +20,3 @@ setopt magic_equal_subst
 
 # ===== Scripts and Functions
 setopt multios # perform implicit tees or cats when multiple redirections are attempted
-

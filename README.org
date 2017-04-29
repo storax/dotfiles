@@ -57,50 +57,9 @@ I added a simple script to automate most of the required steps.
 
 ** Packages
 Here is some little documentation about each package.
-*** zsh
-For =zsh= I migrated from [[https://github.com/zsh-users/antigen][antigen]] to [[
-https://github.com/zplug/zplug][zplug]].
-The installation is completely automated.
-At the moment I use these plugins:
-#+BEGIN_SRC sh :exports both
-zplug list
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_EXAMPLE
-plugins/cp => from:"oh-my-zsh"
-zsh-users/zaw => none
-zsh-users/zsh-completions => none
-plugins/python => from:"oh-my-zsh"
-themes/kphoen => as:"theme", from:"oh-my-zsh"
-plugins/pip => from:"oh-my-zsh"
-plugins/dirhistory => from:"oh-my-zsh"
-plugins/copydir => from:"oh-my-zsh"
-b4b4r07/zsh-vimode-visual => defer:"3"
-zsh-users/zsh-syntax-highlighting => defer:"2"
-plugins/copyfile => from:"oh-my-zsh"
-plugins/emacs => from:"oh-my-zsh"
-plugins/colored-man-pages => from:"oh-my-zsh"
-plugins/vagrant => from:"oh-my-zsh"
-plugins/nyan => from:"oh-my-zsh"
-plugins/colorize => from:"oh-my-zsh"
-rupa/z => none
-plugins/gem => from:"oh-my-zsh"
-plugins/command-not-found => from:"oh-my-zsh"
-plugins/sudo => from:"oh-my-zsh"
-plugins/git-flow => from:"oh-my-zsh"
-plugins/git => from:"oh-my-zsh"
-#+END_EXAMPLE
-
-I use vim bindings with a right prompt to signal the normal or insert mode.
-Still haven't configured the visual mode yet.
-
-There are a tons of options set, so it's best to just go over the files.
-They are fairly well organized.
-
 *** emacs
 I spent way to much time on my emacs dotfiles.
-It's using spacemacs with vim bindings and use a couple built-in layers.
+It's using [[http://spacemacs.org/][spacemacs]] with vim bindings and use a couple built-in layers.
 There are a lot of private layers and tons of hand-written or hackish elisp code.
 I already forgot about half of it and unless I consolidate it, will be of little use to anyone.
 So this section stays empty for now.
@@ -108,6 +67,11 @@ So this section stays empty for now.
 *** i3
 My i3 config is simple but I love it.
 
+Startscreen:
+[[file:.assets/startscreen.jpg]]
+
+Rofi run menu:
+[[file:.assets/rofi.jpg]]
 **** Requirements
 + =urxvt= as a terminal emulator
 + =feh= for wallpapers
@@ -166,3 +130,72 @@ Add the following line to it:
 #+END_SRC
 This calls the notify script =notmuch/bin/notmuch-notify=.
 Edit this file for custom searches.
+*** polybar
+[[file:.assets/polybar2.jpg]]
+With active =i3= mode:
+[[file:.assets/polybar.jpg]]
+
+From left to right:
+- workspaces
+- i3 mode line
+- mpd status
+- download/upload speed
+- wifi connectivity
+- CPU usage
+- temperature
+- volume
+- battery
+- brightness
+- date/time
+- tray icons
+*** tmux
+[[file:.assets/tmux.jpg]]
+
+I mostly use the [[https://github.com/tmux-plugins/tpm][Tmux Plugin Manager]] with a bunch of plugins:
+- [[https://github.com/tmux-plugins/tmux-sensible][tmux-sensible]]: Basic tmux settings everyone can agree on.
+- [[https://github.com/tmux-plugins/tmux-prefix-highlight][tmux-prefix-highlight]]: Plugin that highlights when you press tmux prefix key Plugin that highlights when you press tmux prefix key. 
+- [[https://github.com/tmux-plugins/tmux-resurrect][tmux-resurrect]]: Persists tmux environment across system restarts. 
+- [[https://github.com/tmux-plugins/tmux-continuum][tmux-continuum]]: Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
+- [[https://github.com/tmux-plugins/tmux-sessionist][tmux-sessionist]]: Lightweight tmux utils for manipulating sessions.
+- [[https://github.com/tmux-plugins/tmux-pain-control][tmux-pain-control]]: Standard pane key-bindings for tmux.
+- [[https://github.com/tmux-plugins/tmux-yank][tmux-yank]]: Tmux plugin for copying to system clipboard. Works on OSX, Linux and Cygwin.
+*** zsh
+[[file:.assets/zshprompt.jpg]]
+
+For [[http://www.zsh.org/][zsh]] I migrated from [[https://github.com/zsh-users/antigen][antigen]] to [[
+https://github.com/zplug/zplug][zplug]].
+The installation is completely automated.
+At the moment I use these plugins:
+#+BEGIN_SRC sh :exports both
+zplug list
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXAMPLE
+plugins/cp => from:"oh-my-zsh"
+zsh-users/zaw => none
+zsh-users/zsh-completions => none
+plugins/python => from:"oh-my-zsh"
+themes/kphoen => as:"theme", from:"oh-my-zsh"
+plugins/pip => from:"oh-my-zsh"
+plugins/dirhistory => from:"oh-my-zsh"
+plugins/copydir => from:"oh-my-zsh"
+b4b4r07/zsh-vimode-visual => defer:"3"
+zsh-users/zsh-syntax-highlighting => defer:"2"
+plugins/copyfile => from:"oh-my-zsh"
+plugins/emacs => from:"oh-my-zsh"
+plugins/colored-man-pages => from:"oh-my-zsh"
+plugins/vagrant => from:"oh-my-zsh"
+plugins/nyan => from:"oh-my-zsh"
+plugins/colorize => from:"oh-my-zsh"
+rupa/z => use:"z.sh"
+plugins/gem => from:"oh-my-zsh"
+plugins/command-not-found => from:"oh-my-zsh"
+plugins/sudo => from:"oh-my-zsh"
+plugins/git-flow => from:"oh-my-zsh"
+plugins/git => from:"oh-my-zsh"
+#+END_EXAMPLE
+
+=.zshrc= only contains a list of files to source.
+The order matters for some files.
+I use vim bindings with a right prompt to signal the normal or insert mode.
