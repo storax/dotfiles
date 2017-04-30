@@ -1,5 +1,6 @@
 * Dotfiles
 [[file:.assets/neofetch.jpg]]
+
 It's 2017 and time for a new dotfile management system.
 This time I went with [[http://www.gnu.org/software/stow/][GNU stow]] and not [[https://github.com/technicalpickles/homesick][homesick]].
 I made some additions heavily inspired by [[https://github.com/xero/dotfiles][xero's dotfiles.]]
