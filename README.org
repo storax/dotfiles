@@ -59,11 +59,34 @@ I added a simple script to automate most of the required steps.
 ** Packages
 Here is some little documentation about each package.
 *** emacs
-I spent way to much time on my emacs dotfiles.
-It's using [[http://spacemacs.org/][spacemacs]] with vim bindings and use a couple built-in layers.
-There are a lot of private layers and tons of hand-written or hackish elisp code.
-I already forgot about half of it and unless I consolidate it, will be of little use to anyone.
-So this section stays empty for now.
+The main features:
+- [[http://spacemacs.org/][spacemacs]] with vim bindings.
+- [[https://github.com/emacs-helm/helm][helm]] over [[https://github.com/abo-abo/swiper][ivy]] because =helm= has a couple of advanced features that are quite nice.
+  Although I have to say =ivy= looks very good but so far there was no reason to change.
+- [[https://github.com/magit/magit][magit]] completely replaces the git commandline interface or any other GUI.
+- [[http://orgmode.org/][org-mode]] for taking notes, and organizing. Agendas etc have been configured but I rarely use it anymore.
+- [[https://github.com/bbatsov/zenburn-emacs][zenburn]]: I like low contrast themes and this on of the best.
+- =python= has the most configuration because it is my main programming language.
+- some 'advanced' [[https://github.com/joaotavora/yasnippet][yasnippets]]
+- [[https://notmuchmail.org/][notmuch]] for mail
+- icons for dired/helm-find-file/modes/...
+- [[https://github.com/areina/helm-dash][helm-dash]] for browsing documentation
+
+I've written some emacs plugins that I sometimes use (or use at work):
+- [[https://github.com/storax/org-tfl][org-tfl]]: Transport for London meets org-mode
+- [[https://github.com/storax/emaci][emaci]]: A silly CI-server inside emacs
+- [[https://github.com/storax/lame][lame]]: Manual task streamlining
+**** Python
+I use the spacemacs python layer with a couple of customizations.
+Running tests has been customized to run tests at point/module/project
+with tox and pdb.
+
+The GUD interface has been extended.
+There is support for setting breakpoints at point,
+printing variables/region and a couple helm sources for navigating breakpoints etc.
+Most of the pdb functions are accessible via keybindings.
+It's not as good as [[https://github.com/inducer/pudb][pudb]] but I like it as I can stay in emacs and browse files
+with all my keybindings and settings.
 
 *** i3
 My i3 config is simple but I love it.
