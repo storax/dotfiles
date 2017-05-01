@@ -179,13 +179,14 @@ mode "$move_mode" {
 }
 
 # Mode: resize  ----------------------------------------------------------
-set $resize_mode                resize (ijkl) grow shrink (f) fullscreen (h) hide (s) show
+set $resize_mode                resize (ijkl) grow shrink (f) fullscreen (h) hide (s) show (m) move
 
 mode "$resize_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
     bindsym  Escape             mode $default
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $main_mode
+    bindsym m                   mode $move_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
     bindsym  $left              resize shrink width 10 px or 10 ppt
     bindsym  $down              resize grow height 10 px or 10 ppt
@@ -195,18 +196,6 @@ mode "$resize_mode" {
     bindsym  h                  move scratchpad
     bindsym  s                  scratchpad show
 }
-
-# Mode: term  ------------------------------------------------------------
-#set $term_mode                  main term
-#
-#mode "$term_mode" {
-#    # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
-#    bindsym  Escape             mode $default
-#    bindcode $quitmode          mode $default
-#    bindcode $upmode            mode $default
-#    # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-#    
-#}
 
 # Mode: layout  ----------------------------------------------------------
 set $layout_mode                layout (m) move (d) default (h) splith (v) splitv (e) toggle (s) stacking (w) tabbed (f) fullscreen (t) float (ijkl) focus (p) parent (c) child

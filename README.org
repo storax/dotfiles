@@ -91,7 +91,7 @@ Rofi run menu:
 + =xset= for setting display sleep mode
 **** Keybindings
 The keybindings rely heavily on modes.
-The default mode only has one keybinding =Alt-R= (as in the right =ALT= key) configured to enter the main mode.
+The default mode only has one keybinding =AltR= (as in the right =ALT= key) configured to enter the main mode.
 You can always go back to the default mode with =ESC= or =SPC=
 
 I chose this setup because I mostly have to press one key at a time.
@@ -99,9 +99,120 @@ I chose this setup because I mostly have to press one key at a time.
 part of the muscle memory really fast.
 
 =Backspace= will always go to the parent mode.
+=Escape= will always go to the default mode.
 
 For moving =i= =j= =k= =l= is used in multiple contexts.
 
+=F-12= is bound in default mode and switches to my 'quiet place'.
+It is the startscreen shown above, which is a transparent urxvt terminal.
+I was a big fan of dropdown consoles. When they are semitransparent you can type while
+reading something.
+But I now use this only for certain actions. In other cases I quickly open a new terminal
+side by side the browser/other application.
+***** Main mode 
+To enter the main mode press =AltR=. This gives you quick access to switch focus and workspaces.
+Other modes can be entered from here.
+| Key     | Action                   |
+|---------+--------------------------|
+| =i j k l= | focus up/left/down/right |
+| =0-9=     | switch workspace         |
+| =Return=  | open terminal            |
+| =d=       | rofi run mode            |
+| =Q=       | quit application         |
+| =;=       | i3-message               |
+| =c=       | roficlip                 |
+| =f=       | focus mode               |
+| =m=       | move mode                |
+| =r=       | resize mode              |
+| =t=       | layout mode              |
+| x       | system mode              |
+| w       | workspace mode           |
+***** Focus mode
+Mode focus changing keybindings
+| Key     | Action                        |
+|---------+-------------------------------|
+| =i j k l= | focus up/left/down/right      |
+| =0-9=     | switch workspace              |
+| =p=       | focus parent                  |
+| =c=       | focus child                   |
+| =f=       | toggle between floating focus |
+| =d=       | rofi window mode              |
+| =Tab=     | next workspace                |
+| =S-Tab=   | previous workspace            |
+| =m=       | move mode                     |
+***** Move mode
+Move windows
+| Key     | Action                  |
+|---------+-------------------------|
+| =i j k l= | move up/left/down/right |
+| =0-9=     | move to workspace       |
+| =t=       | floating toggle         |
+| =f=       | focus mode              |
+***** Resize mode
+Resize windows
+| Key     | Action                     |
+|---------+----------------------------|
+| =i j k l= | resize window in direction |
+| =f=       | fullscreen                 |
+| =h=       | hide                       |
+| =s=       | show                       |
+***** Layout mode
+Change layouts
+| Key     | Action                   |
+|---------+--------------------------|
+| =i j k l= | focus up/left/down/right |
+| =p=       | focus parent             |
+| =c=       | focus child              |
+| =f=       | fullscreen               |
+| =d=       | default layout           |
+| =h=       | horizontal split         |
+| =v=       | vertical split           |
+| =s=       | stacking                 |
+| =w=       | tabbed                   |
+| =e=       | toggle split             |
+| =t=       | floating toggle          |
+| =m=       | move mode                |
+***** Workspace mode
+Manage workspaces
+| Key   | Action               |
+|-------+----------------------|
+| =r=     | rename workspace     |
+| =Tab=   | next workspace       |
+| =S-Tab= | previous workspace   |
+| =d=     | rofi workspaces mode |
+| =0-9=   | swith to workspace   |
+***** System mode
+| Key | Action           |
+|-----+------------------|
+| =e=   | exit mode        |
+| =s=   | sound mode       |
+| =d=   | display mode     |
+| =l=   | lock             |
+| =r=   | restart i3       |
+| =c=   | reload i3 config |
+***** Exit mode
+| Key | Action    |
+|-----+-----------|
+| =l=   | lock      |
+| =e=   | logout    |
+| =h=   | hibernate |
+| =R=   | reboot    |
+| =P=   | shutdown  |
+***** Sound mode
+| Key | Action        |
+|-----+---------------|
+| =i=   | volume up     |
+| =k=   | volume down   |
+| =m=   | mute          |
+| =s=   | ncmpcpp       |
+| =p=   | play/pause    |
+| =j=   | previous song |
+| =l=   | next song     |
+***** Display mode
+| Key | Action          |
+|-----+-----------------|
+| =i=   | brightness up   |
+| =k=   | brightness down |
 **** Credits
 This config is heavily inspired by [[https://github.com/syl20bnr/i3ci][syl20bnr's config]].
 It helped me a lot putting this together.
