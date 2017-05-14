@@ -69,9 +69,9 @@ alias esizes="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n 
 # -------------------------------------------------------------------
 alias 'bk=cd $OLDPWD'
 
-alias 'dus=du -sckx * | sort -n' #directories sorted by size
-
-alias 'wordy=wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
+function dus(){
+    du -sckx $@ | sort -n
+}
 alias 'filecount=find . -type f | wc -l' # number of files (not directories)
 
 # -------------------------------------------------------------------
