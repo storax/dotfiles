@@ -93,7 +93,6 @@ values."
      storax-hydra
      storax-smartparens
      storax-flycheck
-     storax-projectile
      storax-python
      storax-org
      ;;storax-latex
@@ -429,6 +428,22 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(desktop-auto-save-timeout nil)
  '(erc-nickserv-identify-mode nil)
+ '(evil-surround-pairs-alist
+   (quote
+    ((40 "(" . ")")
+     (91 "[" . "]")
+     (123 "{" . "}")
+     (41 "(" . ")")
+     (93 "[" . "]")
+     (125 "{" . "}")
+     (35 "#{" . "}")
+     (98 "(" . ")")
+     (66 "{" . "}")
+     (62 "<" . ">")
+     (116 . evil-surround-read-tag)
+     (60 . evil-surround-read-tag)
+     (102 . evil-surround-function))))
+ '(global-evil-surround-mode t)
  '(magit-repository-directories
    (quote
     (("/home/david/projects/" . 1)

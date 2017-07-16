@@ -1,0 +1,56 @@
+#!/usr/bin/env zsh
+
+# check if boot is mounted
+mount | grep -q /boot
+if [ $? -eq 1 ]; then
+    mount /boot
+    BOOT_MOUNTED=1
+fi
+
+echo "Saving old config"
+cp /usr/src/linux/.config ~/.gentoo/kernel-config-`uname -r`
+
+echo "Set the symlink..."
+eselect kernel list
+
+echo "Enter the selection for the latest kernel"
+echo
+read PICKED
+eselect kernel set $PICKED
+
+echo "Copying previous configuration..."
+cp ~/.gentoo/kernel-config-`uname -r` /usr/src/linux/.config
+
+cd /usr/src/linux
+
+echo "Configuring new kernel..."
+make silentoldconfig
+
+echo "Compiling the new kernel..."
+make -j5
+
+echo "Preparing Modules..."
+make modules_prepare
+
+echo "Installing Modules..."
+make modules_install
+
+echo "Installing the kernel..."
+make install
+
+echo "Rebuilding Packages..."
+emerge @module-rebuild
+
+echo "Generating initramfs..."
+genkernel --install --lvm initramfs
+
+echo "Please Remove Old Files from /boot Before Continuing"
+read
+
+echo "Updating GRUB..."
+grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "Cleaning Old Kernel Sources..."
+emerge --ask --depclean gentoo-sources
+
+[[ -v BOOT_MOUNTED ]] && umount /boot
