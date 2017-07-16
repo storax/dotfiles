@@ -24,7 +24,7 @@ cp ~/.gentoo/kernel-config-`uname -r` /usr/src/linux/.config
 cd /usr/src/linux
 
 echo "Configuring new kernel..."
-make silentoldconfig
+make oldconfig
 
 echo "Compiling the new kernel..."
 make -j5
