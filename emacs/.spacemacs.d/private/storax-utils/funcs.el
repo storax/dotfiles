@@ -35,4 +35,27 @@ remove the entry if the new value is `eql' to DEFAULT."
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
+(defcustom storax/buffers-to-keep nil
+  "List of regexp for buffers to not kill."
+  :type '(repeat string))
+
+(defun storax/declare-buffer-bancrupcy ()
+  "Kill a lot of buffers that you don't need."
+  (interactive)
+  (mapc
+   (lambda (buffer)
+     (let (save)
+       (if (get-buffer-window buffer)
+           (setq save t)
+         (catch 'break
+           (mapc
+            (lambda (regexp)
+              (when (string-match-p regexp (buffer-name buffer))
+                (setq save t)
+                (throw 'break nil)))
+            storax/buffers-to-keep)))
+          (unless save
+            (kill-buffer buffer))))
+   (buffer-list)))
+
 ;;; funcs.el ends here
