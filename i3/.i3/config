@@ -314,14 +314,10 @@ mode "$system_display_mode" {
 
 # hide mouse after period of inactivity
 exec --no-startup-id unclutter
-exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id $wallpaper
 
 # Use natural scrolling
 exec --no-startup-id synclient VertScrollDelta=-108
-
-# Disable ibus hotkey
-exec --no-startup-id gsettings set org.freedesktop.ibus.general.hotkey triggers []
 
 # Use compton for composition (Opacity etc.)
 # -b is for daemonizing the process

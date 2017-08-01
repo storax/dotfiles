@@ -8,7 +8,7 @@ if [ $? -eq 1 ]; then
 fi
 
 echo "Saving old config"
-cp /usr/src/linux/.config ~/.gentoo/kernel-config-`uname -r`
+cp /usr/src/linux/.config /home/david/.gentoo/kernel-config-`uname -r`
 
 echo "Set the symlink..."
 eselect kernel list
@@ -19,7 +19,7 @@ read PICKED
 eselect kernel set $PICKED
 
 echo "Copying previous configuration..."
-cp ~/.gentoo/kernel-config-`uname -r` /usr/src/linux/.config
+cp /home/david/.gentoo/kernel-config-`uname -r` /usr/src/linux/.config
 
 cd /usr/src/linux
 
