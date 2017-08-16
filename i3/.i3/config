@@ -324,7 +324,6 @@ exec --no-startup-id synclient VertScrollDelta=-108
 exec --no-startup-id compton -b
 exec --no-startup-id mopidy
 exec --no-startup-id polybar top
-exec --no-startup-id "parcellite -"
 exec --no-startup-id roficlip.py --daemon
 # screensaver
 exec --no-startup-id xset s 600 600

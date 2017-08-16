@@ -113,7 +113,7 @@ Use FIELDINDEX as a starting number for generating new fields."
               (val (cdr x))
               (type (cond
                      ((string-match-p "^['\"]" val) ":str")
-                     ((or (string= "^True$" val) (string= "^False$" val)) ":bool")
+                     ((or (string-match-p "^True$" val) (string-match-p "^False$" val)) ":bool")
                      ((string-match-p "^[+-]*[0-9]+\\.[0-9]*$" val) ":float")
                      ((string-match-p "^[+-]*[0-9]+$" val) ":int")
                      (t ":type"))))
