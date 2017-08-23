@@ -102,12 +102,12 @@ values."
       '("Ansible" "Bash" "Boost" "C" "C++" "CMake" "Chef" "Common_Lisp" "Clojure"
         "Django" "Docker" "ElasticSearch" "Emacs_Lisp" "Flask" "Jinja"
         "LaTeX" "PostgreSQL" "Python_2" "Python_3" "SQLAlchemy"
-        "Vagrant" ("Qt_4" . "Qt") ("Emacs" . "emacs"))
+        "Vagrant" ("Qt_4" . "Qt"))
       storax/user-docsets-to-install
       '("Alembic" "Packer" "PyMel" "Requests" "Sphinx")
       storax/dash-common-docsets
       '("Bash" "Common Lisp" "Clojure" "Emacs Lisp" "Packer" "Python 2" "Python 3"
-        "Qt" "Requests" "Sphinx" "Vagrant" "emacs"))
+        "Qt" "Requests" "Sphinx" "Vagrant"))
      storax-visual-regexp-steroids
      ;; storax-major-mode-icons
      ;;storax-mode-icons
@@ -118,7 +118,7 @@ values."
      storax-yasnippet
      storax-notmuch
      storax-dired
-     storax-magit
+     ;; storax-magit
      storax-i3
      )
    ;; List of additional packages that will be installed without being
