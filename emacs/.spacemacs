@@ -404,6 +404,7 @@ layers configuration. You are free to put any user code."
     (persp-add-buffer ".spacemacs"))
   ;; Builtin Auto Modes
   (add-to-list 'auto-mode-alist '("\\.qss$" . css-mode))
+  (remove-hook 'emacs-lisp-mode-hook 'semantic-mode)
   ;; Aliases
   (defalias 'rs 'replace-string)
   (defalias 'jo 'just-one-space)
