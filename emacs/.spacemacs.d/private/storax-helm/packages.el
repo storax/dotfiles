@@ -28,7 +28,6 @@
     :config
     (bind-key "M-i" 'helm-swoop-from-isearch isearch-mode-map)
     (helm-adaptive-mode 1)
-    (helm-push-mark-mode 1)
     (advice-add #'helm-preselect :around #'storax/helm-skip-dots)
     (advice-add #'helm-ff-move-to-first-real-candidate :around #'storax/helm-skip-dots)))
 
