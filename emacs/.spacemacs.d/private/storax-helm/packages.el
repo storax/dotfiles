@@ -26,10 +26,15 @@
           helm-kill-ring-threshold 2
           helm-candidate-number-limit 400)
     :config
-    (bind-key "M-i" 'helm-swoop-from-isearch isearch-mode-map)
-    (helm-adaptive-mode 1)
-    (advice-add #'helm-preselect :around #'storax/helm-skip-dots)
-    (advice-add #'helm-ff-move-to-first-real-candidate :around #'storax/helm-skip-dots)))
+    (progn
+      (bind-key "M-i" 'helm-swoop-from-isearch isearch-mode-map)
+      (helm-adaptive-mode 1)
+      (advice-add #'helm-preselect :around #'storax/helm-skip-dots)
+      (advice-add #'helm-ff-move-to-first-real-candidate :around #'storax/helm-skip-dots)
+      (defun completing-read-with-properties (prompt collection &optional predicate require-match initial-input hist def inheri-input-method)
+        "Completing read with text properties."
+        (helm-comp-read prompt collection :test predicate :initial-input initial-input :must-match require-match :history hist :default def :alistp nil))
+      (setq completing-read-function 'completing-read-with-properties))))
 
 (defun storax-helm/post-init-helm-ag ()
   (use-package helm-ag
