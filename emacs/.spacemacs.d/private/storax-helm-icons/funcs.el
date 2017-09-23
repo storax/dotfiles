@@ -24,8 +24,10 @@
 
 (defun storax/add-icons-to-files (oldfunc file)
   "Add icons to the candidates of OLDFUNC called with REQUIRE-MATCH."
-  (let ((oldval (funcall oldfunc file)))
-    (if oldval
-	(cons (concat (storax/icon-for-file (cdr oldval)) " " (car oldval)) (cdr oldval)))))
+  (let* ((oldval (funcall oldfunc file))
+         (dr (if (consp oldval) (cdr oldval) oldval))
+         (ar (if (consp oldval) (car oldval) oldval)))
+    (when oldval
+      (cons (concat (storax/icon-for-file dr) " " ar) dr))))
 
 ;;; funcs.el ends here
