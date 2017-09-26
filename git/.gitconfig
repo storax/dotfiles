@@ -10,3 +10,5 @@
 	st = status
 [push]
 	default = simple
+[magit]
+	hideCampaign = true
