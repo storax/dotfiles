@@ -4,6 +4,6 @@ Type=Application
 Comment=Watch Twitch streams
 Exec=twitch
 TryExec=twitch
-Icon=twitch
+Icon=streamlink-twitch-gui
 Categories=AudioVideo;Video;
 X-Desktop-File-Install-Version=0.23
