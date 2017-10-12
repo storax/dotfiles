@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=ncmpcpp
+GenericName=Music Player
+Comment=Interface for MPD
+Exec=i3-msg "workspace 9: music, exec urxvt -name ncmpcpp -e ncmpcpp"
+Icon=ncmpcpp
+Terminal=true
+Type=Application
+Categories=AudioVideo;Audio;Player;
+X-Desktop-File-Install-Version=0.23

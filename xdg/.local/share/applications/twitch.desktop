@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Twitch
+Type=Application
+Comment=Watch Twitch streams
+Exec=twitch
+TryExec=twitch
+Icon=twitch
+Categories=AudioVideo;Video;
+X-Desktop-File-Install-Version=0.23

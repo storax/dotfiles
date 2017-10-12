@@ -95,7 +95,7 @@ mode "$main_mode" {
     bindsym  w                  mode $wks_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
     bindsym  Return             exec i3-sensible-terminal, mode $default
-    bindsym  d                  exec --no-startup-id rofi -show run,mode $default
+    bindsym  d                  exec --no-startup-id "rofi -show drun",mode $default
     bindsym  shift+q            kill
     bindsym  semicolon          exec i3-input -P "i3-msg ", mode $default
     bindsym  c                  exec --no-startup-id roficlip, mode $default

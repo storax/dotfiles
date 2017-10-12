@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PlayOnLinux Optirun
+Type=Application
+Comment=Set of scripts to easily install and use Windows games and software
+Exec=optirun playonlinux
+TryExec=playonlinux
+Icon=playonlinux
+Categories=Game;
+X-Desktop-File-Install-Version=0.23

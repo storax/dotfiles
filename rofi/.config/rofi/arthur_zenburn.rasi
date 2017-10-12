@@ -23,7 +23,7 @@ configuration {
 * {
     foreground:  #dcdccc;
     backlight:   #ccffeedd;
-    background-color:  transparent;
+    background-color:  #3f3f3f44;
     dark: #1c1c1c;
     // Black
     black:       #3d352a;
@@ -68,11 +68,12 @@ configuration {
     location: center;
     anchor:   center;
     transparency: "real";
-    padding: 300px;
+    fullscreen: true;
+    padding: 30% 20%;
     border:  0px;
     border-radius: 10px;
     color: @magenta;
-    background-color: @transparent;
+    background-color: @background-color;
     spacing: 0;
     children:  [vertb, mainbox];
     orientation: horizontal;
@@ -88,7 +89,7 @@ configuration {
     border:  0px 2px 2px 2px;
 //    border-radius: 10px;
     padding: 5;
-    background-color: @tcyan;
+    background-color: @background-color;
 }
 #message {
     font: "Sauce Code Powerline ExtraLight 8";
