@@ -1,5 +1,5 @@
 * Dotfiles
-[[file:.assets/neofetch.jpg]]
+[[file:.assets/neofetch.png]]
 
 It's 2017 and time for a new dotfile management system.
 This time I went with [[http://www.gnu.org/software/stow/][GNU stow]] and not [[https://github.com/technicalpickles/homesick][homesick]].
@@ -95,7 +95,7 @@ Startscreen:
 [[file:.assets/startscreen.jpg]]
 
 Rofi run menu:
-[[file:.assets/rofi.jpg]]
+[[file:.assets/rofi.png]]
 **** Requirements
 + =urxvt= as a terminal emulator
 + =feh= for wallpapers
