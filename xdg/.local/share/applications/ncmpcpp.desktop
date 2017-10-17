@@ -5,7 +5,6 @@ GenericName=Music Player
 Comment=Interface for MPD
 Exec=i3-msg "workspace 9: music, exec urxvt -name ncmpcpp -e ncmpcpp"
 Icon=multimedia-audio-player
-Terminal=true
 Type=Application
 Categories=AudioVideo;Audio;Player;
 X-Desktop-File-Install-Version=0.23
