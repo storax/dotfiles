@@ -19,7 +19,7 @@ fi
 # fi
 
 # Has to be in .profile for i3
-export TERMINAL="urxvt -e tmux new-session -A -s main"
+export TERMINAL="urxvt"
 export EDITOR=vim
 export VISUAL=vim
 
