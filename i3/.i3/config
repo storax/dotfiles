@@ -58,12 +58,12 @@ focus_follows_mouse no
 for_window [class="I3-exit"] floating enable
 for_window [class="I3-exit"] border none
 for_window [title="urxvttilda.sh"] border none
-
 for_window [class="Kodi"] border none
 assign [title="urxvttilda.sh"] "8: ~"
 assign [class="streamlink-twitch-gui"] "5"
-assign [class="Kodi"] "5"
 assign [class="Vlc"] "5"
+assign [class="Firefox"] "1"
+assign [class="Emacs"] "2"
 bindsym F12 workspace "8: ~"
 
 # class                     border  backgr. text    indicator
@@ -94,7 +94,7 @@ mode "$main_mode" {
     bindsym  x                  mode $system_mode
     bindsym  w                  mode $wks_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  Return             exec i3-sensible-terminal, mode $default
+    bindsym  Return             exec "urxvt -e tmux new-session -A -s main", mode $default
     bindsym  d                  exec --no-startup-id "rofi -show drun",mode $default
     bindsym  shift+q            kill
     bindsym  semicolon          exec i3-input -P "i3-msg ", mode $default
