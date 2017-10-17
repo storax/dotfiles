@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=tmux
+Comment=Terminal multiplexer
+Exec=urxvt -e tmux new-session -A -s main
+TryExec=tmux
+Icon=tmux
+Type=Application
+Categories=System;TerminalEmulator;
+X-Desktop-File-Install-Version=0.23
