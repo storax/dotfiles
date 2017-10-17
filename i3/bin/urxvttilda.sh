@@ -18,7 +18,4 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo ""
-echo ""
-echo ""
 exec zsh
