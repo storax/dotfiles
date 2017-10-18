@@ -14,6 +14,8 @@ fi
 if [ -z $SSH_AGENT_PID ] && [ -z $SSH_TTY ]; then  # if no agent & not in ssh
     eval `ssh-agent -s` > /dev/null
 fi
+keychain ~/.ssh/id_github4096_rsa
+. ~/.keychain/${HOSTNAME}-sh
 # if [ "$0" = "/usr/sbin/lightdm-session" -a "$DESKTOP_SESSION" = "i3" ]; then
 #     export $(gnome-keyring-daemon -s)
 # fi
