@@ -5,7 +5,7 @@
 ! ██╔╝ ██╗██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║   ███████║
 ! ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝   ╚══════╝
 ! Xdefaults
-
+Xcursor.theme: Numix
 ! Had issues causing deadlocks when scrolling in Emacs.
 ! Might be resolved by now.
 Emacs*useXIM: false
