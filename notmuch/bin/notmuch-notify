@@ -32,7 +32,7 @@ SEARCH="tag:unread AND NOT tag:web"
 LIMIT=3
 
 # the icon in the notification window
-NOTIFICATION_ICON='/usr/share/icons/Arc/actions/24/mail-unread.png'
+NOTIFICATION_ICON='/usr/share/icons/Numix/24/actions/mail-unread.svg'
 
 # the sort order of subjects
 #   corresponds to the --sort option of notmuch search
