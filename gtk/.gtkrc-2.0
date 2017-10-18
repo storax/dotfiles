@@ -1,7 +1,7 @@
 gtk-theme-name="Arc-Dark"
 gtk-icon-theme-name="Numix"
 gtk-font-name="Sans 10"
-gtk-cursor-theme-name="Adwaita"
+gtk-cursor-theme-name="Numix"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
