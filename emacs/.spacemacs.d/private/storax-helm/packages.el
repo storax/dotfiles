@@ -34,11 +34,7 @@
       (defun completing-read-with-properties (prompt collection &optional predicate require-match initial-input hist def inheri-input-method)
         "Completing read with text properties."
         (helm-comp-read prompt collection :test predicate :initial-input initial-input :must-match require-match :history hist :default def :alistp nil))
-      (setq completing-read-function 'completing-read-with-properties)
-      (defun storax/helm--updating-p (orig-fun &rest args)
-        "Force candidate even if DISPLAY IS NOT READY."
-        nil)
-      (advice-add 'helm--updating-p :around #'storax/helm--updating-p))))
+      (setq completing-read-function 'completing-read-with-properties))))
 
 (defun storax-helm/post-init-helm-ag ()
   (use-package helm-ag
