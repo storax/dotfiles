@@ -81,7 +81,7 @@ set $default default
 
 # Mode: main  ------------------------------------------------------------
 set $main_mode                  main
-set $main_mode_help             exec --no-startup-id i3_help.sh "main" "\<b\>f:\</b\> focus	\<b\>m:\</b\> move\n\<b\>r:\</b\> resize	\<b\>t:\</b\> layout\n\<b\>x:\</b\> system	\<b\>w:\</b\> workspace\n\<b\>d:\</b\> rofi		\<b\>RET:\</b\> term\n\<b\>Q:\</b\> kill"
+set $main_mode_help             exec --no-startup-id i3_help.sh "main" "\<b\>ijkl:\</b\> focus move\n\<b\>f:\</b\> focus	\<b\>m:\</b\> move\n\<b\>r:\</b\> resize	\<b\>t:\</b\> layout\n\<b\>x:\</b\> system	\<b\>w:\</b\> workspace\n\<b\>d:\</b\> rofi		\<b>c:\</b\> clip\n\<b\>RET:\</b\> term	\<b\>Q:\</b\> kill\n\<b\>semicolon:\</b\> i3-msg"
 
 mode "$main_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
