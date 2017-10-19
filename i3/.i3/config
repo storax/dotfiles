@@ -268,7 +268,7 @@ set $system_mode_help           exec --no-startup-id i3_help.sh "system" "\<b\>e
 set $system_exit_mode           system -> exit
 set $system_exit_mode_help      exec --no-startup-id i3_help.sh "system -> exit" "\<b\>l:\</b\> lock		\<b\>e:\</b\> logout\n\<b\>h:\</b\> hibernate	\<b\>R:\</b\> restart\n\<b\>P:\</b\> poweroff" 
 set $system_sound_mode          system -> sound
-set $system_sound_mode_help     exec --no-startup-id i3_help.sh "system -> sound" "\<b\>i:\</b\> der bass muss ficken\n\<b\>k:\</b\> psst		\<b\>m:\</b\> mute\n\<b\>s:\</b\> ncmpcpp	\<b\>p:\</b\> play\n\<b\>i:\</b\> prev		\<b\>j:\</b\> next" 
+ set $system_sound_mode_help     exec --no-startup-id i3_help.sh "system -> sound" "\<b\>i:\</b\> der bass muss ficken\n\<b\>k:\</b\> psst		\<b\>m:\</b\> mute\n\<b\>s:\</b\> ncmpcpp	\<b\>p:\</b\> play\n\<b\>i:\</b\> prev		\<b\>j:\</b\> next" 
 set $system_display_mode        system -> display
 set $system_display_mode_help   exec --no-startup-id i3_help.sh "system -> display" "\<b\>i:\</b\> brighter	\<b\>k:\</b\> darker"
 
@@ -326,7 +326,7 @@ mode "$system_display_mode" {
     bindsym  $up                exec --no-startup-id "xbacklight -inc 10"
     bindsym  $down              exec --no-startup-id "xbacklight -dec 10"
     bindsym shift+slash         $system_display_mode_help
-
+}
 
 # hide mouse after period of inactivity
 exec --no-startup-id unclutter
