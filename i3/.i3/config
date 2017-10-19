@@ -77,11 +77,11 @@ client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 # ========================================================================
 #                                  Modes
 # ========================================================================
-
 set $default default
 
 # Mode: main  ------------------------------------------------------------
-set $main_mode                  main (f) focus (m) move (r) resize (t) layout (x) system (w) workspace (d) rofi (RET) term (Q) kill
+set $main_mode                  main
+set $main_mode_help             exec --no-startup-id i3_help.sh "main" "\<b\>f:\</b\> focus	\<b\>m:\</b\> move\n\<b\>r:\</b\> resize	\<b\>t:\</b\> layout\n\<b\>x:\</b\> system	\<b\>w:\</b\> workspace\n\<b\>d:\</b\> rofi		\<b\>RET:\</b\> term\n\<b\>Q:\</b\> kill"
 
 mode "$main_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -117,11 +117,13 @@ mode "$main_mode" {
     bindsym 8                   workspace number 8
     bindsym 9                   workspace number 9
     bindsym 0                   workspace number 10
+    bindsym shift+slash         $main_mode_help
 }
 bindcode $mod mode $main_mode
 
 # Mode: focus  -----------------------------------------------------------
-set $focus_mode                 focus (m) move (ijkl) focus move (p) parent (c) child (f) float (Tab) next wks (S-Tab) prev wks
+set $focus_mode                 focus
+set $focus_mode_help            exec --no-startup-id i3_help.sh "focus" "\<b\>m:\</b\> move		\<b\>ijkl:\</b\> focus move\n\<b\>p:\</b\> parent	\<b\>c:\</b\> child\n\<b\>f:\</b\> float	\<b\>Tab:\</b\> next wks\n\<b\>S-Tab:\</b\> prev wks"
 
 mode "$focus_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -151,10 +153,12 @@ mode "$focus_mode" {
     bindsym 8                   workspace number 8
     bindsym 9                   workspace number 9
     bindsym 0                   workspace number 10
+    bindsym shift+slash         $focus_mode_help
 }
 
 # Mode: move  ------------------------------------------------------------
-set $move_mode                  move (f) focus (t) floating toggle (ijkl) move win (0-9) workspace
+set $move_mode                  move
+set $move_mode_help             exec --no-startup-id i3_help.sh "move" "\<b\>f:\</b\> focus	\<b\>t:\</b\> floating toggle\n\<b\>ijkl:\</b\> move win	\<b\>0-9:\</b\> workspace"
 
 mode "$move_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -178,10 +182,12 @@ mode "$move_mode" {
     bindsym  8                  move container to workspace number 8, workspace number 8
     bindsym  9                  move container to workspace number 9, workspace number 9
     bindsym  0                  move container to workspace number 10, workspace number 10
+    bindsym shift+slash         $move_mode_help
 }
 
 # Mode: resize  ----------------------------------------------------------
-set $resize_mode                resize (ijkl) grow shrink (f) fullscreen (h) hide (s) show (m) move
+set $resize_mode                resize
+set $resize_mode_help           exec --no-startup-id i3_help.sh "resize" "\<b\>ijkl:\</b\> grow shrink	\<b\>f:\</b\> fullscreen\n\<b\>h:\</b\> hide			\<b\>s:\</b\> show\n\<b\>m:\</b\> move"
 
 mode "$resize_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -197,10 +203,12 @@ mode "$resize_mode" {
     bindsym  f                  fullscreen, mode $default
     bindsym  h                  move scratchpad
     bindsym  s                  scratchpad show
+    bindsym shift+slash         $resize_mode_help
 }
 
 # Mode: layout  ----------------------------------------------------------
-set $layout_mode                layout (m) move (d) default (h) splith (v) splitv (e) toggle (s) stacking (w) tabbed (f) fullscreen (t) float (ijkl) focus (p) parent (c) child
+set $layout_mode                layout
+set $layout_mode_help           exec --no-startup-id i3_help.sh "layout" "\<b\>f:\</b\> focus	\<b\>t:\</b\> floating toggle\n\<b\>ijkl:\</b\> move win	\<b\>0-9:\</b\> workspace\n\<b\>m:\</b\> move		\<b\>d:\</b\> default\n\<b\>h:\</b\> splith	\<b\>v:\</b\> splitv\n\<b\>e:\</b\> toggle	\<b\>s:\</b\> stacking\n\<b\>w:\</b\> tabbed	\<b\>f:\</b\> fullscreen\n\<b\>t:\</b\> float	\<b\>ijkl:\</b\> focus\n\<b\>p:\</b\> parent	\<b\>c:\</b\> child"
 
 mode "$layout_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -223,9 +231,11 @@ mode "$layout_mode" {
     bindsym  e                  layout toggle split
     bindsym  v                  layout splitv
     bindsym  t                  floating toggle
+    bindsym shift+slash         $layout_mode_help
 }
 # Mode: workspace  -------------------------------------------------------
-set $wks_mode                  workspace (r) rename (Tab) next (S-Tab) prev (0-9) goto wks (d) rofi
+set $wks_mode                  workspace
+set $wks_mode_help             exec --no-startup-id i3_help.sh "workspace" "\<b\>r:\</b\> rename	\<b\>Tab:\</b\> next\n\<b\>S-Tab:\</b\> prev	\<b\>0-9:\</b\> goto wks\n\<b\>d:\</b\> rofi"
 
 mode "$wks_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -248,14 +258,19 @@ mode "$wks_mode" {
     bindsym  8                  workspace number 8
     bindsym  9                  workspace number 9
     bindsym  0                  workspace number 10
+    bindsym shift+slash         $wks_mode_help
 }
 
 
 # Mode: system  ----------------------------------------------------------
-set $system_mode                system (e) exit (s) sound (l) lock (d) display (r) i3 restart (c) i3 reload
-set $system_exit_mode           system -> exit (l) lock (e) logout (h) hibernate (R) restart (P) poweroff
-set $system_sound_mode          system -> sound (i) der bass muss ficken (k) psst (m) mute (s) ncmpcpp (p) play (i) prev (j) next
-set $system_display_mode        system -> display (i) brighter (k) darker
+set $system_mode                system
+set $system_mode_help           exec --no-startup-id i3_help.sh "system" "\<b\>e:\</b\> exit		\<b\>s:\</b\> sound\n\<b\>l:\</b\> lock		\<b\>d:\</b\> display\n\<b\>r:\</b\> i3 restart	\<b\>c:\</b\> i3 reload"
+set $system_exit_mode           system -> exit
+set $system_exit_mode_help      exec --no-startup-id i3_help.sh "system -> exit" "\<b\>l:\</b\> lock		\<b\>e:\</b\> logout\n\<b\>h:\</b\> hibernate	\<b\>R:\</b\> restart\n\<b\>P:\</b\> poweroff" 
+set $system_sound_mode          system -> sound
+set $system_sound_mode_help     exec --no-startup-id i3_help.sh "system -> sound" "\<b\>i:\</b\> der bass muss ficken\n\<b\>k:\</b\> psst		\<b\>m:\</b\> mute\n\<b\>s:\</b\> ncmpcpp	\<b\>p:\</b\> play\n\<b\>i:\</b\> prev		\<b\>j:\</b\> next" 
+set $system_display_mode        system -> display
+set $system_display_mode_help   exec --no-startup-id i3_help.sh "system -> display" "\<b\>i:\</b\> brighter	\<b\>k:\</b\> darker"
 
 mode "$system_mode" {
     # - - - - - - - - - - - - - - Sub Modes  - - - - - - - - - - - - - - - 
@@ -269,6 +284,7 @@ mode "$system_mode" {
     bindsym  l                  exec --no-startup-id "i3exit lock", mode $default
     bindsym  r                  exec $wallpaper, restart, mode $default
     bindsym  c                  reload, mode $default
+    bindsym shift+slash         $system_mode_help
 }
 
 mode "$system_exit_mode" {
@@ -282,6 +298,7 @@ mode "$system_exit_mode" {
     bindsym h                   exec --no-startup-id "i3exit hibernate", mode "default"
     bindsym shift+r             exec --no-startup-id "i3exit reboot", mode $default
     bindsym shift+p             exec --no-startup-id "i3exit shutdown", mode $default
+    bindsym shift+slash         $system_exit_mode_help
 }
 
 mode "$system_sound_mode" {
@@ -297,6 +314,7 @@ mode "$system_sound_mode" {
     bindsym  p                  exec --no-startup-id "mpc toggle"
     bindsym  $left              exec --no-startup-id "mpc prev"
     bindsym  $right             exec --no-startup-id "mpc next"
+    bindsym shift+slash         $system_sound_mode_help
 }
 
 mode "$system_display_mode" {
@@ -307,12 +325,8 @@ mode "$system_display_mode" {
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
     bindsym  $up                exec --no-startup-id "xbacklight -inc 10"
     bindsym  $down              exec --no-startup-id "xbacklight -dec 10"
-}
+    bindsym shift+slash         $system_display_mode_help
 
-
-# ========================================================================
-#                                    Startup
-# ========================================================================
 
 # hide mouse after period of inactivity
 exec --no-startup-id unclutter
