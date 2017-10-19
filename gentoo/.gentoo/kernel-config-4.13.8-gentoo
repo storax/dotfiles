@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.13.7-gentoo Kernel Configuration
+# Linux/x86 4.13.8-gentoo Kernel Configuration
 #
 
 #
@@ -3052,7 +3052,7 @@ CONFIG_SND_AC97_CODEC=y
 CONFIG_SND_DRIVERS=y
 # CONFIG_SND_PCSP is not set
 # CONFIG_SND_DUMMY is not set
-# CONFIG_SND_ALOOP is not set
+CONFIG_SND_ALOOP=y
 # CONFIG_SND_VIRMIDI is not set
 # CONFIG_SND_MTPAV is not set
 # CONFIG_SND_SERIAL_U16550 is not set
