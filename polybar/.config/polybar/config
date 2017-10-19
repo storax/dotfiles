@@ -52,7 +52,7 @@ font-3 = SauceCodePro:size=9;0
 font-4 = NotoSans:size=8:weight=bold;0
 font-5 = "file\-icons:size=9;0"
 
-fixed-center = true
+fixed-center = false
 
 modules-left = i3
 modules-center = mpd
@@ -211,7 +211,7 @@ label =    %date%      %time%
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random> <label-time>  <label-song>
 
 icon-play = 
 icon-pause = 
@@ -224,14 +224,17 @@ icon-repeat = 
 toggle-on-foreground =
 toggle-off-foreground = #55
 
-bar-progress-width = 15
-bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
-bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
-bar-progress-fill = ─
-bar-progress-fill-foreground = #bb
-bar-progress-empty = ─
-bar-progress-empty-foreground = #44
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+; bar-progress-width = 15
+; bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+; bar-progress-indicator = |
+; bar-progress-indicator-foreground = #ff
+; bar-progress-fill = ─
+; bar-progress-fill-foreground = #bb
+; bar-progress-empty = ─
+; bar-progress-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
