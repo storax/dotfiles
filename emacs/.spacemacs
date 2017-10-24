@@ -537,6 +537,7 @@ This function is called at the very end of Spacemacs initialization."
      (60 . evil-surround-read-tag)
      (102 . evil-surround-function))))
  '(global-evil-surround-mode t)
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(magit-repository-directories
    (quote
     (("/home/david/projects/" . 1)
