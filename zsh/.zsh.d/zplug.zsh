@@ -38,7 +38,9 @@ zplug "rupa/z", use:z.sh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "mafredri/zsh-async", on:sindresorhus/pure
+#zplug "mafredri/zsh-async", on:sindresorhus/pure
+
+zplug "themes/kphoen", as:theme, from:oh-my-zsh
 
 # if ! zplug check; then
 #     zplug install
