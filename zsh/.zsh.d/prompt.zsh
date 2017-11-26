@@ -66,7 +66,7 @@ prompt_asp_preprompt_render() {
 	setopt localoptions noshwordsplit
 	# set color for git branch/dirty status, change color if dirty checking has
 	# been delayed.
-	local git_color=blue
+	local git_color=green
 	[[ -n ${prompt_asp_git_last_dirty_check_timestamp+x} ]] && git_color=red
 
 	# initialize the preprompt array.
@@ -79,7 +79,7 @@ prompt_asp_preprompt_render() {
 	# add git branch and dirty status info.
 	typeset -gA prompt_asp_vcs_info
 	if [[ -n $prompt_asp_vcs_info[branch] ]]; then
-		  preprompt_parts+=("%F{white}on %F{$git_color}"'${prompt_asp_vcs_info[branch]}${prompt_asp_git_dirty}%f')
+		  preprompt_parts+=("%F{white} %F{$git_color}"'${prompt_asp_vcs_info[branch]}${prompt_asp_git_dirty}%f')
 	fi
 	# git pull/push arrows.
 	if [[ -n $prompt_asp_git_arrows ]]; then
@@ -434,6 +434,7 @@ prompt_asp_setup() {
 
 	# prompt turns red if the previous command didn't exit with 0
 	PROMPT='%(?.%F{white}.%F{red})${ASP_PROMPT_SYMBOL:-%%}%f '
+  SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [(y)es (n)o (a)bort (e)dit]? "
 }
 
 prompt_asp_setup "$@"
