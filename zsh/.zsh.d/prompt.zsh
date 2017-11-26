@@ -302,7 +302,7 @@ prompt_asp_async_refresh() {
 	if (( time_since_last_dirty_check > ${ASP_GIT_DELAY_DIRTY_CHECK:-1800} )); then
 		unset prompt_asp_git_last_dirty_check_timestamp
 		# check check if there is anything to pull
-		async_job "prompt_asp" prompt_asp_async_git_dirty ${ASP_GIT_UNTRACKED_DIRTY:-1} $PWD
+		async_job "prompt_asp" prompt_asp_async_git_dirty ${ASP_GIT_UNTRACKED_DIRTY:-0} $PWD
 	fi
 }
 
