@@ -3,4 +3,4 @@
 emerge --sync
 eix-update
 
-emerge --update --deep --changed-use -av --with-bdeps=y @world
+emerge --update --deep --newuse -av --with-bdeps=y @world
