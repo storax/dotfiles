@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : pdb
+#key : pdb
+#contributor : David Zuber
+# --
+import pdb; pdb.set_trace()
