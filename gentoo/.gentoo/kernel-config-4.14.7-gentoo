@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.14.1-gentoo Kernel Configuration
+# Linux/x86 4.14.7-gentoo Kernel Configuration
 #
 
 #
@@ -352,6 +352,7 @@ CONFIG_ARCH_HAS_STRICT_KERNEL_RWX=y
 CONFIG_STRICT_KERNEL_RWX=y
 CONFIG_ARCH_HAS_STRICT_MODULE_RWX=y
 CONFIG_STRICT_MODULE_RWX=y
+CONFIG_ARCH_HAS_REFCOUNT=y
 # CONFIG_REFCOUNT_FULL is not set
 
 #
