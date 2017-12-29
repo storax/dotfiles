@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst storax-dired-packages
-  '(dired dired-narrow dired+)
+  '(dired dired-narrow)
   "The list of Lisp packages required by the storax-dired layer.")
 
 (defun storax-dired/post-init-dired ()
@@ -42,8 +42,5 @@
   (use-package dired-narrow
     :bind (:map dired-mode-map
                 ("/" . dired-narrow))))
-
-(defun storax-dired/init-dired+ ()
-  (use-package dired-+))
 
 ;;; packages.el ends here
