@@ -11,4 +11,5 @@ notmuch tag +bills -- tag:new and from:no-reply@rechnung.o2online.de
 notmuch tag +spam -- tag:new and from:mailings@gmxnet.de
 notmuch tag +hlrs -new -- tag:new and from:rabenseifner@hlrs.de
 notmuch tag +travis -new -- tag:new and from:builds@travis-ci.org
+notmuch tag +house -- tag:new and from:autoresponder@rightmove.com
 ~/bin/notmuch-notify

@@ -14,7 +14,7 @@ Emacs*useXIM: false
 URxvt.font:           xft:Sauce Code Pro:style=Nerd Font Complete:size=10
 URxvt.letterSpace: 0
 !-*- Perl extensions -*-
-URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.underlineURLs: True
