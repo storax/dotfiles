@@ -1,0 +1,5 @@
+default_context:
+    full_name: "David Zuber"
+    email: "zuber.david@gmx.de"
+    website: "http://storax.github.io"
+    github_username: "storax"
