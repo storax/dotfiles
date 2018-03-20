@@ -8,6 +8,7 @@ pdb.Pdb.complete = rlcompleter.Completer(locals()).complete
 
 # return to debugger after fatal exception (Python cookbook 14.5):
 def info(type, value, tb):
+    import sys
     if hasattr(sys, 'ps1') or not sys.stderr.isatty():
         sys.__excepthook__(type, value, tb)
     import traceback, pdb

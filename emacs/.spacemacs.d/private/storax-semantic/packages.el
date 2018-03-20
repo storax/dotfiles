@@ -34,14 +34,6 @@
 
 (setq storax-semantic-excluded-packages '(stickyfunc-enhance))
 
-(defun semantic/enable-semantic-mode (mode)
-  (let ((hook (intern (concat (symbol-name mode) "-hook"))))
-    (add-hook hook (lambda ()
-                     (require 'semantic)
-                     (add-to-list 'semantic-default-submodes
-                                  'global-semantic-idle-summary-mode)
-                     (semantic-mode 1)))))
-
 (defun storax-semantic/post-init-helm ()
   (use-package helm
     :defer t
