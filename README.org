@@ -1,12 +1,11 @@
 * Dotfiles
 [[file:.assets/neofetch.png]]
 
-It's 2017 and time for a new dotfile management system.
-This time I went with [[http://www.gnu.org/software/stow/][GNU stow]] and not [[https://github.com/technicalpickles/homesick][homesick]].
+This repository contains my personal dotfiles managed with [[http://www.gnu.org/software/stow/][GNU stow]].
 I made some additions heavily inspired by [[https://github.com/xero/dotfiles][xero's dotfiles.]]
 
-The main reason I chose [[http://www.gnu.org/software/stow/][GNU stow]] is it's minimal dependencies. No ruby - just a little bit of perl!
-It made moving to Gentoo much easier and faster.
+The main reason I chose [[http://www.gnu.org/software/stow/][GNU stow]] is it's minimal dependencies. I used homesick before but it requires ruby.
+Choosing GNU stow made moving to Gentoo much easier and faster.
 On the other hand, a lot of nice commands, especially the track command, are missing.
 
 This repo is not meant to be used verbatim.
