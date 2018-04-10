@@ -14,11 +14,12 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
+bindkey '^k' sudo-command-line
 
 # Faster esc timeout
 export KEYTIMEOUT=1
 
 # zaw
 bindkey '^R' zaw-history
-# C-g
-bindkey "\eg" zaw-z
+# C-z
+bindkey '^z' zaw-z
