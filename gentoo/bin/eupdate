@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-emerge --sync
-eix-update
-
-emerge --update --deep --newuse -av --with-bdeps=y @world
