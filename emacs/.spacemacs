@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
      prodigy
      (python :variables
              python-test-runner nil)
+     scala
      search-engine
      (shell :variables
             shell-default-height 30
@@ -109,13 +110,13 @@ This function should only modify configuration layer settings."
       storax/docsets-to-install
       '("Ansible" "Bash" "Boost" "C" "C++" "CMake" "Chef" "Common_Lisp" "Clojure"
         "Django" "Docker" "ElasticSearch" "Emacs_Lisp" "Flask" "Jinja"
-        "LaTeX" "PostgreSQL" "Python_2" "Python_3" "SQLAlchemy"
+        "LaTeX" "PostgreSQL" "Python_2" "Python_3" "Scala" "SQLAlchemy"
         "Vagrant" ("Qt_4" . "Qt"))
       storax/user-docsets-to-install
       '("Alembic" "Packer" "PyMel" "Requests" "Sphinx")
       storax/dash-common-docsets
       '("Bash" "Common Lisp" "Clojure" "Emacs Lisp" "Packer" "Python 2" "Python 3"
-        "Qt" "Requests" "Sphinx" "Vagrant"))
+        "Qt" "Requests" "Scala" "Sphinx" "Vagrant"))
      storax-visual-regexp-steroids
      ;; storax-major-mode-icons
      ;;storax-mode-icons
@@ -162,6 +163,25 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
+   ;; If non-nil then enable support for the portable dumper. You'll need
+   ;; to compile Emacs 27 from source following the instructions in file
+   ;; EXPERIMENTAL.org at to root of the git repository.
+   ;; (default nil)
+   dotspacemacs-enable-emacs-pdumper nil
+
+   ;; File path pointing to emacs 27.1 executable compiled with support
+   ;; for the portable dumper (this is currently the branch pdumper).
+   ;; (default "emacs-27.0.50")
+   dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
+
+   ;; Name of the Spacemacs dump file. This is the file will be created by the
+   ;; portable dumper in the cache directory under dumps sub-directory.
+   ;; To load it when starting Emacs add the parameter `--dump-file'
+   ;; when invoking Emacs 27.1 executable on the command line, for instance:
+   ;;   ./emacs --dump-file=~/.emacs.d/.cache/dumps/spacemacs.pdmp
+   ;; (default spacemacs.pdmp)
+   dotspacemacs-emacs-dumper-dump-file "spacemacs.pdmp"
+
    ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
    ;; environment, otherwise it is strongly recommended to let it set to t.
@@ -209,6 +229,23 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
+
+   ;; If non-nil then Spacemacs will import your PATH and environment variables
+   ;; from your default shell on startup. This is enabled by default for macOS
+   ;; users and X11 users.
+   dotspacemacs-import-env-vars-from-shell (and (display-graphic-p)
+                                                (or (eq system-type 'darwin)
+                                                    (eq system-type 'gnu/linux)
+                                                    (eq window-system 'x)))
+
+   ;; If nil then use the default shell is used to fetch the environment
+   ;; variables. Set this variable to a different shell executable path to
+   ;; import the environment variables from this shell. Note that
+   ;; `file-shell-name' is preserved and always points to the default shell. For
+   ;; instance to use your fish shell environment variables set this variable to
+   ;; `/usr/local/bin/fish'.
+   ;; (default nil)
+   dotspacemacs-import-env-vars-shell-file-name nil
 
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
@@ -298,21 +335,6 @@ It should only modify the values of Spacemacs settings."
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
 
-   ;; If non-nil `Y' is remapped to `y$' in Evil states. (default nil)
-   dotspacemacs-remap-Y-to-y$ nil
-
-   ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
-   ;; there. (default t)
-   dotspacemacs-retain-visual-state-on-shift t
-
-   ;; If non-nil, `J' and `K' move lines up and down when in visual mode.
-   ;; (default nil)
-   dotspacemacs-visual-line-move-text nil
-
-   ;; If non-nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
-   ;; (default nil)
-   dotspacemacs-ex-substitute-global nil
-
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
 
@@ -341,23 +363,6 @@ It should only modify the values of Spacemacs settings."
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
-
-   ;; If non-nil, `helm' will try to minimize the space it uses. (default nil)
-   dotspacemacs-helm-resize nil
-
-   ;; if non-nil, the helm header is hidden when there is only one source.
-   ;; (default nil)
-   dotspacemacs-helm-no-header nil
-
-   ;; define the position to display `helm', options are `bottom', `top',
-   ;; `left', or `right'. (default 'bottom)
-   dotspacemacs-helm-position 'bottom
-
-   ;; Controls fuzzy matching in helm. If set to `always', force fuzzy matching
-   ;; in all non-asynchronous sources. If set to `source', preserve individual
-   ;; source settings. Else, disable fuzzy matching in all sources.
-   ;; (default 'always)
-   dotspacemacs-helm-use-fuzzy 'always
 
    ;; If non-nil, the paste transient-state is enabled. While enabled, pressing
    ;; `p' several times cycles through the elements in the `kill-ring'.
@@ -415,7 +420,9 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil show the color guide hint for transient state keys. (default t)
    dotspacemacs-show-transient-state-color-guide t
 
-   ;; If non-nil unicode symbols are displayed in the mode line. (default t)
+   ;; If non-nil unicode symbols are displayed in the mode line.
+   ;; If you use Emacs as a daemon and wants unicode characters only in GUI set
+   ;; the value to quoted `display-graphic-p'. (default t)
    dotspacemacs-mode-line-unicode-symbols t
 
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
@@ -457,7 +464,15 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-highlight-delimiters 'all
 
    ;; If non-nil, start an Emacs server if one is not already running.
+   ;; (default nil)
    dotspacemacs-enable-server t
+
+   ;; Set the emacs server socket location.
+   ;; If nil, uses whatever the Emacs default is, otherwise a directory path
+   ;; like \"~/.emacs.d/server\". It has no effect if
+   ;; `dotspacemacs-enable-server' is nil.
+   ;; (default nil)
+   dotspacemacs-server-socket-dir nil
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
@@ -518,6 +533,13 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         vs-follow-symlinks t ; When following sysmlinks always go to the destination
         require-final-newline t
         indicate-empty-lines t))
+
+(defun dotspacemacs/user-load ()
+  "Library to load while dumping.
+This function is called while dumping Spacemacs configuration. You can
+`require' or `load' the libraries of your choice that will be included
+in the dump."
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -652,7 +674,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
    (quote
-    (ox-ioslide diredfl helm-purpose pacmacs intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode xpm markdown-mode link-hint hide-comnt eyebrowse dumb-jump dired-narrow packed deferred highlight log4e projectile magit-popup hydra f visual-regexp org org-download notmuch live-py-mode evil-ediff dired+ anaconda-mode smartparens evil flycheck company helm helm-core multiple-cursors avy alert magit git-commit async yasnippet inf-ruby haml-mode js2-mode i3wm phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode exwm cycle-quotes ox-reveal epc refine counsel prodigy rainbow-mode minimap zenburn-theme yaml-mode xterm-color xkcd ws-butler window-numbering which-key web-mode web-beautify volatile-highlights visual-regexp-steroids vimish-fold vagrant-tramp vagrant use-package toc-org tagedit srefactor spotify spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-yapf pretty-mode popwin pony-mode pip-requirements persp-mode pdf-tools paradox page-break-lines ox-rst ox-jira orgit orgbox org-tfl org-repo-todo org-present org-pomodoro org-plus-contrib org-page org-bullets org-alert open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hyperbole hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-notmuch helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fold-dwim flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks engine-mode emmet-mode elisp-slime-nav electric-operator drag-stuff diff-hl deft define-word cython-mode company-web company-tern company-statistics company-quickhelp company-auctex company-anaconda coffee-mode clean-aindent-mode chruby calfw bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk ansible-doc ansible aggressive-indent adoc-mode adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (lsp-javascript-typescript typescript-mode lsp-mode livid-mode skewer-mode json-snatcher json-reformat helm-gtags ggtags counsel-gtags tern add-node-modules-path pacmacs intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode xpm markdown-mode link-hint hide-comnt eyebrowse dumb-jump dired-narrow packed deferred highlight log4e projectile magit-popup hydra f visual-regexp org org-download notmuch live-py-mode evil-ediff dired+ anaconda-mode smartparens evil flycheck company helm helm-core multiple-cursors avy alert magit git-commit async yasnippet inf-ruby haml-mode js2-mode i3wm phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode exwm cycle-quotes ox-reveal epc refine counsel prodigy rainbow-mode minimap zenburn-theme yaml-mode xterm-color xkcd ws-butler window-numbering which-key web-mode web-beautify volatile-highlights visual-regexp-steroids vimish-fold vagrant-tramp vagrant use-package toc-org tagedit srefactor spotify spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-yapf pretty-mode popwin pony-mode pip-requirements persp-mode pdf-tools paradox page-break-lines ox-rst ox-jira orgit orgbox org-tfl org-repo-todo org-present org-pomodoro org-plus-contrib org-page org-bullets org-alert open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hyperbole hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-notmuch helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fold-dwim flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks engine-mode emmet-mode elisp-slime-nav electric-operator drag-stuff diff-hl deft define-word cython-mode company-web company-tern company-statistics company-quickhelp company-auctex company-anaconda coffee-mode clean-aindent-mode chruby calfw bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk ansible-doc ansible aggressive-indent adoc-mode adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t)
  '(send-mail-function (quote sendmail-send-it))
  '(storax/buffers-to-keep

@@ -361,7 +361,7 @@
      (ruby . t)
      (gnuplot . t)
      (clojure . t)
-     (sh . t)
+     (shell . t)
      (org . t)
      (plantuml . t)
      (latex . t)
