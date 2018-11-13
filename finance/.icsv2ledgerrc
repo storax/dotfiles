@@ -1,0 +1,11 @@
+[LLOYDS]
+account=Assets:Bank:LLC
+currency=GBP
+csv_date_format=%d/%m/%Y
+ledger_date_format=%Y/%m/%d
+mapping_file=/home/david/Documents/banking/ledger/icsv2ledger/ll.mappings
+date=1
+desc=5
+credit=7
+debit=6
+default_expense=Expenses:Food

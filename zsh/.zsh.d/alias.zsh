@@ -198,3 +198,8 @@ if is-at-least 4.2.0; then
   alias -s tar.gz="echo "
   alias -s ace="unace l"
 fi
+
+#############
+# Ledger
+#############
+alias money='cat $(ls ~/Documents/banking/ledger/*.ledger) | ledger -f -'
