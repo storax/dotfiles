@@ -69,6 +69,11 @@ prompt_asp_preprompt_render() {
   if [[ -n $VIRTUAL_ENV ]]; then
       preprompt_parts+=('%F{cyan} ${VIRTUAL_ENV:t}%f')
   fi
+
+  if [[ -n $ZSH_KUBECTL_PROMPT ]]; then
+      rprompt_parts+=('%F{cyan}(${ZSH_KUBECTL_PROMPT})%f')
+  fi
+
   # execution time.
   [[ -n $prompt_asp_cmd_exec_time ]] && rprompt_parts+=('%F{yellow}${prompt_asp_cmd_exec_time}%f')
   # show exit status in right prompt
@@ -282,6 +287,8 @@ prompt_asp_async_refresh() {
     # check check if there is anything to pull
     async_job "prompt_asp" prompt_asp_async_git_dirty ${ASP_GIT_UNTRACKED_DIRTY:-0} $PWD
   fi
+
+  async_job "prompt_asp" prompt_asp_k8s
 }
 
 prompt_asp_check_git_arrows() {
@@ -293,6 +300,46 @@ prompt_asp_check_git_arrows() {
 
     [[ -n $arrows ]] || return
     typeset -g REPLY=$arrows
+}
+
+prompt_asp_k8s() {
+    local kubeconfig updated_at now context namespace ns separator modified_time_fmt
+
+    kubeconfig="$HOME/.kube/config"
+    if [[ -n "$KUBECONFIG" ]]; then
+        kubeconfig="$KUBECONFIG"
+    fi
+
+    zstyle -s ':zsh-kubectl-prompt:' modified_time_fmt modified_time_fmt
+    if ! now="$(stat -L $modified_time_fmt "$kubeconfig" 2>/dev/null)"; then
+        print "kubeconfig is not found"
+        return 1
+    fi
+
+    zstyle -s ':zsh-kubectl-prompt:' updated_at updated_at
+    if [[ "$updated_at" == "$now" ]]; then
+        return 0
+    fi
+    zstyle ':zsh-kubectl-prompt:' updated_at "$now"
+
+    if ! context="$(kubectl config current-context 2>/dev/null)"; then
+        print "current-context is not set"
+        return 1
+    fi
+
+    zstyle -s ':zsh-kubectl-prompt:' namespace namespace
+    if [[ "$namespace" != true ]]; then
+        print "${context}"
+        return 0
+    fi
+
+    ns="$(kubectl config view -o "jsonpath={.contexts[?(@.name==\"$context\")].context.namespace}")"
+    [[ -z "$ns" ]] && ns="default"
+
+    zstyle -s ':zsh-kubectl-prompt:' separator separator
+    print "${context}${separator}${ns}"
+
+    return 0
 }
 
 prompt_asp_async_callback() {
@@ -371,6 +418,14 @@ prompt_asp_async_callback() {
         fi
       fi
       ;;
+    prompt_asp_k8s)
+        if (( code == 0)); then
+            typeset -g ZSH_KUBECTL_PROMPT=$output
+            do_render=1
+        else
+            unset ZSH_KUBECTL_PROMPT=""
+        fi
+      ;;
   esac
   if (( next_pending )); then
     (( do_render )) && typeset -g prompt_asp_async_render_requested=1
@@ -387,6 +442,29 @@ prompt_asp_keymap_select(){
     zle reset-prompt
 }
 
+prompt_asp_k8s_setup() {
+    local namespace separator modified_time_fmt
+
+    # Specify the separator between context and namespace
+    zstyle -s ':zsh-kubectl-prompt:' separator separator
+    if [[ -z "$separator" ]]; then
+        zstyle ':zsh-kubectl-prompt:' separator '/'
+    fi
+
+    # Display the current namespace if `namespace` is true
+    zstyle -s ':zsh-kubectl-prompt:' namespace namespace
+    if [[ -z "$namespace" ]]; then
+        zstyle ':zsh-kubectl-prompt:' namespace true
+    fi
+
+    # Check the stat command because it has a different syntax between GNU coreutils and FreeBSD.
+    if stat --help >/dev/null 2>&1; then
+        modified_time_fmt='-c%y' # GNU coreutils
+    else
+        modified_time_fmt='-f%m' # FreeBSD
+    fi
+    zstyle ':zsh-kubectl-prompt:' modified_time_fmt $modified_time_fmt
+}
 
 prompt_asp_setup() {
   # Prevent percentage showing up if output doesn't end with a newline.
@@ -405,6 +483,8 @@ prompt_asp_setup() {
     # This variable needs to be set, usually set by promptinit.
     typeset -g prompt_newline=$'\n%{\r%}'
   fi
+
+  prompt_asp_k8s_setup
 
   zmodload zsh/datetime
   zmodload zsh/zle
