@@ -53,6 +53,7 @@ This function should only modify configuration layer settings."
      haskell
      latex
      markdown
+     multiple-cursors
      notmuch
      org
      prodigy

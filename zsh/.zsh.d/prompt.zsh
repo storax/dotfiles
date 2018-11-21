@@ -423,7 +423,7 @@ prompt_asp_async_callback() {
             typeset -g ZSH_KUBECTL_PROMPT=$output
             do_render=1
         else
-            unset ZSH_KUBECTL_PROMPT=""
+            unset ZSH_KUBECTL_PROMPT
         fi
       ;;
   esac

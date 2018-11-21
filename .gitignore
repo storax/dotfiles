@@ -5,3 +5,5 @@
 kodi/.kodi/userdata/Thumbnails/
 kodi/.kodi/userdata/keymaps
 kodi/.kodi/addons/
+/emacs/.spacemacs.d/.spacemacs.env
+/fonts/.local/share/fonts/.uuid
