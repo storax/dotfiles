@@ -179,3 +179,6 @@ This performs fontification according to `typescript--class-styles'."
                                         root))))
     (when (and tslint (file-executable-p tslint))
       (setq-local flycheck-typescript-tslint-executable tslint))))
+
+(defun storax/disable-semantic-mode ()
+  (semantic-mode -1))
