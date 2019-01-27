@@ -636,6 +636,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(delete-by-moving-to-trash nil)
  '(desktop-auto-save-timeout nil)
  '(erc-nickserv-identify-mode nil)
  '(evil-surround-pairs-alist
@@ -654,6 +655,7 @@ This function is called at the very end of Spacemacs initialization."
      (60 . evil-surround-read-tag)
      (102 . evil-surround-function))))
  '(global-evil-surround-mode t)
+ '(magit-delete-by-moving-to-trash nil)
  '(magit-repository-directories
    (quote
     (("/home/david/projects/" . 1)
