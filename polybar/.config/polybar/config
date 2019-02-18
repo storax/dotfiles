@@ -308,13 +308,13 @@ format = <label>
 format-warn = <label-warn>
 format-underline = ${colors.yellow}
 format-warn-underline = ${colors.dred}
-label =  %temperature%
+label =  %temperature-c%
 label-foreground = ${colors.yellow}
-label-warn =  %temperature%
+label-warn =  %temperature-c%
 label-warn-foreground = ${colors.dred}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 master-mixer = Master
 
