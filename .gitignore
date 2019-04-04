@@ -7,3 +7,5 @@ kodi/.kodi/userdata/keymaps
 kodi/.kodi/addons/
 /emacs/.spacemacs.d/.spacemacs.env
 /fonts/.local/share/fonts/.uuid
+/gtk/.config/gtk-2.0/dbus-daemon
+/gtk/.config/gtk-2.0/.dbus-daemon.sys
