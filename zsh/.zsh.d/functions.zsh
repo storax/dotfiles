@@ -109,3 +109,8 @@ sudo-command-line() {
     fi
 }
 zle -N sudo-command-line
+
+profzsh() {
+    shell=${1-$SHELL}
+    ZPROF=true $shell -i -c exit
+}

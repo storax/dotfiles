@@ -5,9 +5,9 @@
 #  ███████╗███████║██║  ██║██║  ██║╚██████╗
 #  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
-# for profiling uncomment line below
-#zmodload zsh/zprof
-# then execute zprof for analysis after startup
+if [[ "$ZPROF" = true ]]; then
+    zmodload zsh/zprof
+fi
 
 typeset -a sources
 CONFIG_DIR="$HOME/.zsh.d"
@@ -34,3 +34,7 @@ for file in $sources[@]; do
         echo "config file not found: $file"
     fi
 done
+
+if [[ "$ZPROF" = true ]]; then
+    zprof
+fi
