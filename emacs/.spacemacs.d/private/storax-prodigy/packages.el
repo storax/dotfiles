@@ -21,7 +21,7 @@
     (progn
       (prodigy-define-tag
         :name 'flask
-        :ready-message "Running on http://127\\.0\\.0\\.1:[0-9]+/")
+        :ready-message "Running on http://127\\.0\\.0\\.1:[0-9]+")
       (prodigy-define-tag
         :name 'mongod
         :ready-message "waiting for connections on port ")

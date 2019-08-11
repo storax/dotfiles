@@ -11,7 +11,7 @@ Xcursor.theme: Numix
 Emacs*useXIM: false
 
 ! Using Xft
-URxvt.font:           xft:Sauce Code Pro:style=Nerd Font Complete:size=10
+URxvt.font:           xft:Sauce Code Pro:style=Nerd Font Complete:size=10, xft:Noto Emoji
 URxvt.letterSpace: 0
 !-*- Perl extensions -*-
 URxvt.perl-ext-common: default,selection-to-clipboard,matcher
