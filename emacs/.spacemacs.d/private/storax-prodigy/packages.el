@@ -21,7 +21,7 @@
     (progn
       (prodigy-define-tag
         :name 'flask
-        :ready-message "Running on http://127\\.0\\.0\\.1:[0-9]+")
+        :ready-message "Running on https://127\\.0\\.0\\.1:[0-9]+")
       (prodigy-define-tag
         :name 'mongod
         :ready-message "waiting for connections on port ")
@@ -36,7 +36,7 @@
         :tags '(flask)
         :kill-process-buffer-on-stop t
         :init (lambda ()
-                (pyvenv-workon "crib")))
+                (pyvenv-workon "crib2")))
       (prodigy-define-service
         :name "crib mongodb"
         :command "mongod"
