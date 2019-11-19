@@ -311,11 +311,16 @@ prompt_asp_k8s() {
     fi
 
     zstyle -s ':zsh-kubectl-prompt:' modified_time_fmt modified_time_fmt
-    if ! now="$(stat -L $modified_time_fmt "$kubeconfig" 2>/dev/null)"; then
-        print "kubeconfig is not found"
-        return 1
-    fi
-
+    DELIM=:
+    for cfgfile in ${(ps:$DELIM:)kubeconfig}; do
+        if ! newnow="$(stat -L $modified_time_fmt "$kubeconfig" 2>/dev/null)"; then
+            ZSH_KUBECTL_PROMPT "$cfgfile not found"
+            return 1
+        fi
+        # get the max modified time of all config files
+        [ "$newnow" -ge "$now" ] && now="$newnow"
+    done
+    
     zstyle -s ':zsh-kubectl-prompt:' updated_at updated_at
     if [[ "$updated_at" == "$now" ]]; then
         return 0
@@ -457,12 +462,7 @@ prompt_asp_k8s_setup() {
         zstyle ':zsh-kubectl-prompt:' namespace true
     fi
 
-    # Check the stat command because it has a different syntax between GNU coreutils and FreeBSD.
-    if stat --help >/dev/null 2>&1; then
-        modified_time_fmt='-c%y' # GNU coreutils
-    else
-        modified_time_fmt='-f%m' # FreeBSD
-    fi
+    modified_time_fmt='-c%Y' # GNU coreutils
     zstyle ':zsh-kubectl-prompt:' modified_time_fmt $modified_time_fmt
 }
 
