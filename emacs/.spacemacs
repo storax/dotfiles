@@ -32,7 +32,12 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(go
+   '((go
+      :variables
+      gofmt-command "goimports"
+      go-format-before-save t
+      go-use-golangci-lint t
+      godoc-at-point-function 'godoc-gogetdoc)
      docker
      nginx
      csv
@@ -121,14 +126,14 @@ This function should only modify configuration layer settings."
       :variables
       storax/docsets-to-install
       '("Ansible" "Bash" "Boost" "C" "C++" "CMake" "Chef" "Common_Lisp" "Clojure"
-        "Django" "Docker" "ElasticSearch" "Emacs_Lisp" "Flask" "Jinja"
+        "Django" "Docker" "ElasticSearch" "Emacs_Lisp" "Flask" "Go" "Jinja"
         "LaTeX" "PostgreSQL" "Python_2" "Python_3" "Scala" "SQLAlchemy"
         "Vagrant" ("Qt_4" . "Qt"))
       storax/user-docsets-to-install
       '("Alembic" "Packer" "PyMel" "Requests" "Sphinx" "Zsh")
       storax/dash-common-docsets
-      '("Bash" "Common Lisp" "Clojure" "Emacs Lisp" "Packer" "Python 2" "Python 3"
-        "Qt" "Requests" "Scala" "Sphinx" "Vagrant" "Zsh"))
+      '("Bash" "Emacs Lisp" "Go" "Python 3"
+        "Qt" "Requests" "Zsh"))
      storax-visual-regexp-steroids
      ;; storax-major-mode-icons
      ;;storax-mode-icons
