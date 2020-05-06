@@ -114,3 +114,7 @@ profzsh() {
     shell=${1-$SHELL}
     ZPROF=true $shell -i -c exit
 }
+
+wfh (){
+    docker run --rm -h myhost --ipc=host -v ~/projects/teradici-client/.config/:/home/myuser/.config/Teradici -v ~/projects/teradici-client/.logs:/tmp/Teradici/myuser/PCoIPClient/logs -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY pcoip
+}

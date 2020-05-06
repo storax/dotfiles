@@ -125,7 +125,7 @@ This function should only modify configuration layer settings."
      storax-prodigy
      storax-python
      storax-org
-     ;;storax-latex
+     storax-latex
      (storax-dash
       :variables
       storax/docsets-to-install
