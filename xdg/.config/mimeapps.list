@@ -17,6 +17,7 @@ text/html=firefox.desktop
 text/x-emacs-lisp=emacsclient.desktop
 text/x-cmake=emacsclient.desktop
 text/x-readme=emacsclient.desktop
+x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;

@@ -36,6 +36,9 @@ fi;
 autoload -Uz bashcompinit && bashcompinit
 [ -d ~/.bash-completions ] && source ~/.bash-completions/*
 
+# Terraform
+complete -o nospace -C /usr/bin/terraform terraform
+
 zmodload -i zsh/complist
 
 # man zshcontrib

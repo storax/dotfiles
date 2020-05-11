@@ -62,11 +62,13 @@ for_window [title="urxvttilda.sh"] border none
 for_window [class="Kodi"] border none
 assign [class="Firefox"] "1"
 assign [class="Emacs"] "2"
+assign [class="Microsoft Teams - Preview"] "4"
 assign [class="streamlink-twitch-gui"] "5"
 assign [class="Vlc"] "5"
 assign [class="Steam"] "6"
 assign [title="PlayOnLinux"] "6"
 assign [title="urxvttilda.sh"] "8: ~"
+assign [class="pcoip-client"] "10"
 bindsym F12 workspace "8: ~"
 
 # class                     border  backgr. text    indicator

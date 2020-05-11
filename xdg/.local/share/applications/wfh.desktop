@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Work from Home
+GenericName=wfh
+Comment=Work from Home
+Exec=wfh
+Icon=remote-desktop
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupNotify=true
