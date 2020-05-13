@@ -86,6 +86,7 @@ This function should only modify configuration layer settings."
      shell-scripts
      ;;spacemacs-layouts
      syntax-checking
+     (terraform :variables terraform-auto-format-on-save t)
      (theming
       :variables theming-modifications
       '((zenburn (avy-background-face :background "#3F3F3F" :foreground "#757565" :inverse-video nil)
