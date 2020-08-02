@@ -78,7 +78,7 @@ This function should only modify configuration layer settings."
      prodigy
      (python :variables
              python-test-runner nil)
-     scala
+     ;;scala
      search-engine
      (shell :variables
             shell-default-height 30
@@ -119,7 +119,7 @@ This function should only modify configuration layer settings."
      storax-fold-dwim
      storax-go
      storax-helm
-     storax-helm-icons
+     ;;storax-helm-icons
      storax-hydra
      storax-smartparens
      storax-flycheck

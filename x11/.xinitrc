@@ -51,7 +51,7 @@ _main() {
     fi
 
     echo "X session wrapper complete, running session"
-    exec i3
+    exec dbus-launch --exit-with-session /usr/bin/i3
 }
 
 _main &> ~/.xlog

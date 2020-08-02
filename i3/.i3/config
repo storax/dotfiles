@@ -336,12 +336,12 @@ exec --no-startup-id unclutter
 exec --no-startup-id $wallpaper
 
 # Use natural scrolling
-exec --no-startup-id synclient VertScrollDelta=-108
+#exec --no-startup-id synclient VertScrollDelta=-108
 
 # Use compton for composition (Opacity etc.)
 # -b is for daemonizing the process
 exec --no-startup-id compton -b
-exec --no-startup-id mopidy
+exec --no-startup-id sleep 3 0 && mopidy
 exec --no-startup-id polybar top
 exec --no-startup-id roficlip.py --daemon
 # screensaver

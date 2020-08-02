@@ -15,6 +15,7 @@ fi
 
 source ~/.zplug/init.zsh
 
+zplug "agkozak/zsh-z"
 zplug "b4b4r07/zsh-vimode-visual", defer:3
 zplug "zsh-users/zaw"
 # zplug "oknowton/zsh-dwim"
@@ -23,7 +24,7 @@ zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/copydir", from:oh-my-zsh
 zplug "plugins/copyfile", from:oh-my-zsh
-zplug "plugins/cp", from:oh-my-zsh
+#zplug "plugins/cp", from:oh-my-zsh
 zplug "plugins/dirhistory", from:oh-my-zsh
 zplug "plugins/emacs", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
@@ -38,7 +39,7 @@ zplug "rupa/z", use:z.sh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "mafredri/zsh-async"
+zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
 # if ! zplug check; then
 #     zplug install
