@@ -6,17 +6,17 @@
 #  ╚═╝  ╚═══╝ ╚═════╝╚═╝     ╚═╝╚═╝      ╚═════╝╚═╝     ╚═╝
 # ncmpcpp
 
-#def_key "shift-up"
-#  select_item
-#  scroll_up
-#
+def_key "K"
+ select_item
+ scroll_up
+
 #def_key "down"
 #  scroll_down
-#
-#def_key "shift-down"
-#  select_item
-#  scroll_down
-#
+
+def_key "J"
+ select_item
+ scroll_down
+
 #def_key "["
 #  scroll_up_album
 #
@@ -212,9 +212,16 @@
 #def_key "Z"
 #  shuffle
 #
-#def_key "x"
-#  toggle_crossfade
-#
+
+def_key "x"
+ delete_playlist_items
+
+def_key "x"
+ delete_browser_items
+
+def_key "x"
+ delete_stored_playlist
+
 #def_key "X"
 #  set_crossfade
 #
