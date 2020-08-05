@@ -326,24 +326,19 @@ mode "$system_display_mode" {
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $system_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  $up                exec --no-startup-id "xbacklight -inc 10"
-    bindsym  $down              exec --no-startup-id "xbacklight -dec 10"
+    bindsym  $up                exec --no-startup-id "/etc/acpi/actions/FnF8-brighnessup.sh"
+    bindsym  $down              exec --no-startup-id "/etc/acpi/actions/FnF7-brighnessdown.sh"
     bindsym shift+slash         $system_display_mode_help
 }
 
-# hide mouse after period of inactivity
 exec --no-startup-id unclutter
 exec --no-startup-id $wallpaper
 
-# Use natural scrolling
-#exec --no-startup-id synclient VertScrollDelta=-108
-
-# Use compton for composition (Opacity etc.)
-# -b is for daemonizing the process
 exec --no-startup-id compton -b
+exec --no-startup-id clipster -d
 exec --no-startup-id sleep 3 0 && mopidy
 exec --no-startup-id polybar top
-exec --no-startup-id roficlip.py --daemon
+
 # screensaver
 exec --no-startup-id xset s 600 600
 exec --no-startup-id xset dpms 600 600 600

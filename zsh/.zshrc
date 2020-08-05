@@ -26,6 +26,7 @@ sources+="$CONFIG_DIR/history.zsh"
 sources+="$CONFIG_DIR/prompt.zsh"
 sources+="$CONFIG_DIR/pyenv.zsh"
 sources+="$CONFIG_DIR/tmux.zsh"
+sources+="$CONFIG_DIR/vim.zsh"
 
 for file in $sources[@]; do
     if [[ -a $file ]]; then

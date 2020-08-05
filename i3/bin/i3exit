@@ -11,7 +11,10 @@ case "$1" in
         i3-msg exit
         ;;
     hibernate)
-        lock && sudo /usr/sbin/pm-hibernate
+        lock && loginctl hibernate
+        ;;
+    suspend)
+        lock && loginctl suspend
         ;;
     reboot)
         sudo shutdown -r now
