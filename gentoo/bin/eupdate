@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+eix-sync
+
+exec emerge --update --deep --newuse -av --with-bdeps=y @world

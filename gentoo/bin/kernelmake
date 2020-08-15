@@ -1,0 +1,65 @@
+#!/usr/bin/env zsh
+export PATH="/usr/lib/ccache/bin${PATH:+:}$PATH"
+export CCACHE_DIR="/media/data/gentoo/ccache"
+
+KERNEL_CONFIG=/home/david/.config/kernel/config
+ 
+if [ ! -e $KERNEL_CONFIG ]; then
+   echo "Kernel config at $KERNEL_CONFIG not found" 
+   exit 1
+fi
+
+# check if boot is mounted
+mount | grep -q /boot
+if [ $? -eq 1 ]; then
+    mount /boot
+    BOOT_MOUNTED=1
+fi
+
+echo "Set the symlink..."
+eselect kernel list
+
+echo "Enter the selection for the latest kernel"
+echo
+read PICKED
+eselect kernel set $PICKED
+
+echo "Copying previous configuration..."
+ln -sf $KERNEL_CONFIG /usr/src/linux/.config
+
+cd /usr/src/linux
+
+echo "Configuring new kernel..."
+make oldconfig
+
+echo "Saving new config"
+cp -L /usr/src/linux/.config $KERNEL_CONFIG
+
+echo "Compiling the new kernel..."
+make -j8
+
+echo "Preparing Modules..."
+make -j8 modules_prepare
+
+echo "Installing Modules..."
+make -j8 modules_install
+
+echo "Installing the kernel..."
+make -j8 install
+
+echo "Rebuilding Packages..."
+emerge @module-rebuild
+
+echo "Generating initramfs..."
+genkernel --install --lvm initramfs
+
+echo "Please Remove Old Files from /boot Before Continuing"
+read
+
+echo "Updating GRUB..."
+grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "Cleaning Old Kernel Sources..."
+emerge --ask --depclean gentoo-sources
+
+[[ -v BOOT_MOUNTED ]] && umount /boot

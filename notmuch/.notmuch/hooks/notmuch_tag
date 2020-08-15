@@ -1,11 +1,11 @@
 +gmx -- tag:new and to:zuber.david@gmx.de
 +web -new -- tag:new and to:zuber.david@web.de
-+bills -- tag:new and from:no-reply@rechnung.o2online.de
++bills -new -- tag:new and from:no-reply@rechnung.o2online.de
 +hlrs -new -- tag:new and from:rabenseifner@hlrs.de
 +travis -new -- tag:new and from:builds@travis-ci.org
-+house -- tag:new and from:autoresponder@rightmove.com
-+delivery -- tag:new and from:NoReply.ODD@dhl.com
-+flight -- tag:new and from:BA.e-ticket@email.ba.com
++house -new -- tag:new and from:autoresponder@rightmove.com
++delivery -new -- tag:new and from:NoReply.ODD@dhl.com
++flight -new -- tag:new and from:BA.e-ticket@email.ba.com
 
 +spam +confluent -new -- tag:new and from:info@confluent.io
 +deleted +deliveroo -new -- tag:new and from:noreply@t.deliveroo.com
@@ -15,4 +15,4 @@
 +spam -new -- tag:new and from:members@gmx.net
 +spam +aeroplan -new -- tag:new and from:Aeroplan@rel1.aeroplan.com
 
--new -- tag:inbox
++inbox -new -- tag:new
