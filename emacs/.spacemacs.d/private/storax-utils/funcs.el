@@ -39,7 +39,7 @@ remove the entry if the new value is `eql' to DEFAULT."
   "List of regexp for buffers to not kill."
   :type '(repeat string))
 
-(defun storax/declare-buffer-bancrupcy ()
+(defun storax/declare-buffer-bankruptcy ()
   "Kill a lot of buffers that you don't need."
   (interactive)
   (mapc

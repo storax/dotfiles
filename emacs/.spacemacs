@@ -570,6 +570,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (ido-mode -1)
   (global-subword-mode 1)
+  ;; custom bindings
+  (spacemacs/set-leader-keys "bK" 'storax/declare-buffer-bankruptcy)
   ;; nicer regexp syntax
   (use-package re-builder
     :defer t
