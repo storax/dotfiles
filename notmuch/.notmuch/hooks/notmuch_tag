@@ -10,6 +10,7 @@
 +uber -new -- tag:new and from:uber.uk@uber.com
 +amazon +bills +delivery -new -- tag:new and from:auto-confirm@amazon.co.uk and "Your Amazon.co.uk order"
 +amazon +delivery -new -- tag:new and from:shipment-tracking@amazon.co.uk
++amazon +delivery -new -- tag:new and from:order-update@amazon.co.uk
 
 +spam +confluent -new -- tag:new and from:info@confluent.io
 +deleted +deliveroo -new -- tag:new and from:noreply@t.deliveroo.com

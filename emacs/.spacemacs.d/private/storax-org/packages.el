@@ -59,6 +59,9 @@
 
         org-directory "~/Documents/org/"
         org-default-notes-file "~/Documents/org/refile.org"
+        org-agenda-files '("~/Documents/org/refile.org"
+                           "~/Documents/org/deliveries.org"
+                           "~/Documents/org/todo.org")
         org-agenda-diary-file "~/Documents/org/diary.org"
 
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -94,9 +97,9 @@
         org-todo-keyword-faces
         '(("TODO" :foreground "OrangeRed" :weight bold)
           ("NEXT" :foreground "DeepSkyBlue" :weight bold)
-          ("DONE" :foreground "SpringGreen" :weight bold)
+          ("DONE" :foreground "LawnGreen" :weight bold)
           ("WAITING" :foreground "Orange" :weight bold)
-          ("HOLD" :foreground "HotPink" :weight bold)
+          ("HOLD" :foreground "Gold" :weight bold)
           ("CANCELLED" :foreground "DarkGray" :weight bold)
           ("MEETING" :foreground "MediumSeaGreen" :weight bold))
         org-use-fast-todo-selection t
@@ -146,10 +149,14 @@
            :clock-in t :clock-resume t :immediate-finish t)
           ("n" "note" entry (file "notes.org")
            "* %? :NOTE:\n" :clock-in t :clock-resume t)
+          ("d" "Delivery" entry (file "deliveries.org")
+           "* TODO %:subject%?\nSCHEDULED: %^t\n%:link")
+          ("m" "Mails")
+          ("md" "Deliveries")
+          ("mda" "Amazon" entry (file "deliveries.org")
+           "* TODO %:subject\nSCHEDULED: %(storax/get-amazon-delivery-date)\n%:link")
           ("j" "Journal" entry (file+datetree "diary.org")
            "* %?\n%U\n" :clock-in t :clock-resume t)
-          ("m" "Meeting" entry (file "refile.org")
-           "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
           ("h" "Habit" entry (file "refile.org")
            (file ,(concat storax-org-caputre-dir "habit.org"))))
         org-reverse-note-order nil
@@ -184,7 +191,7 @@
            ((org-agenda-overriding-header "Habits")
             (org-agenda-sorting-strategy
              '(todo-state-down effort-up category-keep))))
-          (" " "Agenda"
+          ("o" "Agenda"
            ((agenda "" nil)
             (tags "Triage"
                   ((org-agenda-overriding-header "Triage")
@@ -249,8 +256,9 @@
         org-agenda-start-on-weekday 1
         ;; Enable display of the time grid so we can see the marker for the current time
         org-agenda-time-grid '((daily today remove-match)
-                               #("----------------" 0 16 (org-heading t))
-                               (0900 1100 1300 1500 1700))
+                               (0900 1100 1300 1500 1700)
+                               "......"
+                               "----------------")
         ;; Display tags farther right
         org-agenda-tags-column -102
         org-agenda-cmp-user-defined 'storax/org-agenda-sort

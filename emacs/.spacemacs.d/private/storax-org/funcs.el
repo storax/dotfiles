@@ -41,6 +41,15 @@
   (when (y-or-n-p (concat "Include " what "?"))
     (apply 'format text fmtvars)))
 
+(defun storax/get-amazon-delivery-date ()
+  "Get Amazon delivery mail from a dispatch mail notification."
+  (let* ((contents (with-current-buffer (org-capture-get :original-buffer)
+                     (buffer-string)))
+         (arrival (save-match-data ; is usually a good idea
+                    (and (string-match "Arriving:\n\\(.*\\)" contents)
+                         (org-read-date nil nil (match-string 1 contents))))))
+    (format "<%s>" arrival)))
+
 (defalias 'oc/prmt 'storax/capture-prompt)
 (defalias 'oc/ins 'storax/capture-insert)
 (defalias 'oc/inc 'storax/capture-include)
@@ -407,7 +416,7 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
           (subtree-end (save-excursion (org-end-of-subtree t))))
       (if (member (org-get-todo-state) org-todo-keywords-1)
           (if (member (org-get-todo-state) org-done-keywords)
-              (let* ((daynr (string-to-int (format-time-string "%d" (current-time))))
+              (let* ((daynr (string-to-number (format-time-string "%d" (current-time))))
                      (a-month-ago (* 60 60 24 (+ daynr 1)))
                      (last-month (format-time-string "%Y-%m-" (time-subtract (current-time) (seconds-to-time a-month-ago))))
                      (this-month (format-time-string "%Y-%m-" (current-time)))
