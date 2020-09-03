@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+oldpath="$PATH"
 export PATH="/usr/lib/ccache/bin${PATH:+:}$PATH"
 export CCACHE_DIR="/media/data/gentoo/ccache"
 
@@ -51,6 +52,7 @@ echo "Rebuilding Packages..."
 emerge @module-rebuild
 
 echo "Generating initramfs..."
+export PATH="$oldpath"
 genkernel --install --lvm initramfs
 
 echo "Please Remove Old Files from /boot Before Continuing"

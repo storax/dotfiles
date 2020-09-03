@@ -1,16 +1,33 @@
 +gmx -- tag:new and to:zuber.david@gmx.de
 +web -new -- tag:new and to:zuber.david@web.de
+
 +bills -new -- tag:new and from:no-reply@rechnung.o2online.de
 +hlrs -new -- tag:new and from:rabenseifner@hlrs.de
 +travis -new -- tag:new and from:builds@travis-ci.org
 +house -new -- tag:new and from:autoresponder@rightmove.com
+
 +delivery -new -- tag:new and from:NoReply.ODD@dhl.com
+
 +flight -new -- tag:new and from:BA.e-ticket@email.ba.com
 +flight -new -- tag:new and from:BritishAirways@fly.ba.com
-+uber -new -- tag:new and from:uber.uk@uber.com
++flight -new -- tag:new and from:customerservices@messages.ba.com
+
++uber -- tag:new and from:uber.uk@uber.com
++bills -new -- tag:uber and "Deine Fahrt mit Uber"
+
 +amazon +bills +delivery -new -- tag:new and from:auto-confirm@amazon.co.uk and "Your Amazon.co.uk order"
 +amazon +delivery -new -- tag:new and from:shipment-tracking@amazon.co.uk
 +amazon +delivery -new -- tag:new and from:order-update@amazon.co.uk
+
++phone -new -- tag:new and from:no_reply@giffgaff.com and "Check out your monthly usage today"
++bills +phone -new -- tag:new and from:no_reply@giffgaff.com and "goodybag purchase confirmation"
+
++bills +house -new -- tag:new and from:hello@octoenergy.com and "FYI: Your energy statement"
+
++etsy -- tag:new and from:*etsy.com
++bills -- tag:new and tag:etsy and "Your Etsy Purchase from"
+
++quadrature -- tag:new and from:*@quadrature.ai
 
 +spam +confluent -new -- tag:new and from:info@confluent.io
 +deleted +deliveroo -new -- tag:new and from:noreply@t.deliveroo.com
@@ -19,5 +36,6 @@
 +spam -new -- tag:new and from:mailings@mailings.gmx.net
 +spam -new -- tag:new and from:members@gmx.net
 +spam +aeroplan -new -- tag:new and from:Aeroplan@rel1.aeroplan.com
++spam -new --  tag:new and from:jordan.hayward@amicusjobs.co.uk
 
 +inbox -new -- tag:new

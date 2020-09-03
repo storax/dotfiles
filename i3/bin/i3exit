@@ -1,6 +1,7 @@
 #!/bin/sh
 lock() {
     i3lock -d -i ~/.img/mrrobot.png
+    xset dpms force off
 }
 
 case "$1" in
