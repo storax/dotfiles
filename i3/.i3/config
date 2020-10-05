@@ -67,6 +67,7 @@ for_window [class="Kodi"] border none
 assign [class="Firefox"] "1"
 assign [class="Emacs"] "2"
 assign [class="Microsoft Teams - Preview"] "4"
+assign [class="ringcentral"] "4"
 assign [class="streamlink-twitch-gui"] "5"
 assign [class="Vlc"] "5"
 assign [class="Steam"] "6"
