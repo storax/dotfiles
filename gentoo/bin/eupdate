@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 eix-sync
-
+mount /boot
 exec emerge --update --deep --newuse -av --with-bdeps=y @world

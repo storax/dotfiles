@@ -36,6 +36,10 @@ set $i3cibin ~/.i3ci/bin
 # wallpaper
 set $wallpaper feh --bg-fill ~/.img/annapuma.jpg
 
+# monitors
+set $mon1 eDP
+set $mon2 HDMI-A-0
+
 # ========================================================================
 #                             System Preferences
 # ========================================================================
@@ -71,6 +75,16 @@ assign [title="urxvttilda.sh"] "8: ~"
 assign [class="pcoip-client"] "10"
 assign [instance="ncmpcpp"] "9: music"
 bindsym F12 workspace "8: ~"
+
+workspace "1" output $mon1
+workspace "2" output $mon2
+workspace "3" output $mon2
+workspace "4" output $mon1
+workspace "5" output $mon1
+workspace "6" output $mon1
+workspace "7" output $mon2
+workspace "8: ~" output $mon1
+workspace "9: music" output $mon1
 
 # class                     border  backgr. text    indicator
 client.focused              #7f9f7f #7f9f7f #303030 #ffcfaf
@@ -327,8 +341,8 @@ mode "$system_display_mode" {
     bindcode $quitmode          mode $default
     bindcode $upmode            mode $system_mode
     # - - - - - - - - - - - - - - Key Map  - - - - - - - - - - - - - - - -
-    bindsym  $up                exec --no-startup-id "/etc/acpi/actions/FnF8-brighnessup.sh"
-    bindsym  $down              exec --no-startup-id "/etc/acpi/actions/FnF7-brighnessdown.sh"
+    bindsym  $up                exec --no-startup-id "/etc/acpi/actions/FnF8-brightnessup.sh"
+    bindsym  $down              exec --no-startup-id "/etc/acpi/actions/FnF7-brightnessdown.sh"
     bindsym shift+slash         $system_display_mode_help
 }
 
@@ -338,12 +352,12 @@ exec --no-startup-id $wallpaper
 exec --no-startup-id compton -b
 exec --no-startup-id clipster -d
 exec --no-startup-id sleep 3 0 && mopidy
-exec --no-startup-id polybar top
+exec --no-startup-id launch_polybar.sh
 
 # screensaver
-exec --no-startup-id xset s 600 600
+exec --no-startup-id xset s off
 exec --no-startup-id xset dpms 600 600 600
-exec --no-startup-id xautolock -time 10 -locker "i3lock -d -i $lockwall"
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "i3exit lock" -notify 30 -notifier "notify-send -t 30000 -- 'Locking screen in 30 seconds'"
 
 exec --no-startup-id i3-msg "workspace 8: ~"
 

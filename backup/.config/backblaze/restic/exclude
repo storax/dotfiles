@@ -1,0 +1,9 @@
+*.log
+*.swp
+/home/*/.local/share/Trash
+/home/*/.Trash
+/home/*/.thumbnails
+**.log
+**.qlog
+/media/data/gentoo/ccache
+/media/data/heavy

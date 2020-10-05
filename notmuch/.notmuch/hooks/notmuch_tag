@@ -1,13 +1,18 @@
 +gmx -- tag:new and to:zuber.david@gmx.de
 +web -new -- tag:new and to:zuber.david@web.de
 
++gmx +backup +restic +dzslim +failure -- tag:new and from:zuber.david@gmx.de and "Errors running Restic Backup on host: dzslim"
++gmx +backup +restic +dzslim +success -new -- tag:new and from:zuber.david@gmx.de and "Restic Backup OK on: dzslim"
+
 +bills -new -- tag:new and from:no-reply@rechnung.o2online.de
 +hlrs -new -- tag:new and from:rabenseifner@hlrs.de
 +travis -new -- tag:new and from:builds@travis-ci.org
 +house -new -- tag:new and from:autoresponder@rightmove.com
 
 +delivery -new -- tag:new and from:NoReply.ODD@dhl.com
++delivery -new -- tag:new and from:pkginfo@ups.com
 
++flight -new -- tag:new and from:Ba.CustSvcs@email.ba.com and "Confirmation of changes to Booking Reference:"
 +flight -new -- tag:new and from:BA.e-ticket@email.ba.com
 +flight -new -- tag:new and from:BritishAirways@fly.ba.com
 +flight -new -- tag:new and from:customerservices@messages.ba.com
@@ -26,6 +31,8 @@
 
 +etsy -- tag:new and from:*etsy.com
 +bills -- tag:new and tag:etsy and "Your Etsy Purchase from"
+
++backblaze -- tag:new and from:*@backblaze.com
 
 +quadrature -- tag:new and from:*@quadrature.ai
 

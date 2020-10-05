@@ -52,9 +52,8 @@ alias bye="sudo shutdown -P now"
 [ $(id -u) = 0 ] || SUDO=sudo
 
 # gentoo
-alias esync="$SUDO emerge --sync && $SUDO eix-update"
-alias unmerge="$SUDO emerge -avtC"
-alias eup="$SUDO emerge -av --update --deep --newuse --with-bdeps=y @world"
+alias eup="$SUDO ~/bin/eupdate"
+alias makekernel="$SUDO ~/bin/kernelmake"
 alias edepc="$SUDO emerge --depclean"
 alias update-config="$SUDO dispatch-conf; $SUDO etc-update"
 alias esizes="equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | sort -n | numfmt --to=iec-i"
