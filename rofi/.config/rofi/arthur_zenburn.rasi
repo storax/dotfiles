@@ -156,6 +156,10 @@ configuration {
 
 }
 
+#element-icon {
+    size: 3.0ch;
+}
+
 #vertb {
     expand: false;
     children: [ dummy0, sidebar, dummy1  ];

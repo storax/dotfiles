@@ -25,7 +25,7 @@ configuration {
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "xkill -id {window}";*/
-	drun-icon-theme: "Numix-Circle";
+	icon-theme: "Numix-Square";
 /*	disable-history: false;*/
 /*	sort: false;*/
 /*	levenshtein-sort: false;*/
