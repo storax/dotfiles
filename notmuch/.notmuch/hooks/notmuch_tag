@@ -1,8 +1,10 @@
 +gmx -- tag:new and to:zuber.david@gmx.de
 +web -new -- tag:new and to:zuber.david@web.de
 
-+gmx +backup +restic +dzslim +failure -- tag:new and from:zuber.david@gmx.de and "Errors running Restic Backup on host: dzslim"
-+gmx +backup +restic +dzslim +success -new -- tag:new and from:zuber.david@gmx.de and "Restic Backup OK on: dzslim"
++gmx +backup +restic +failure -- tag:new and from:zuber.david@gmx.de and "Errors running Restic Backup on host:"
++gmx +backup +restic +success -- tag:new and from:zuber.david@gmx.de and "Restic Backup OK on host:"
++dzslim -- tag:new and tag:restic and tag:backup and "on host: dzslim"
+-new -- tag:new and tag:restic and tag:success
 
 +bills -new -- tag:new and from:no-reply@rechnung.o2online.de
 +hlrs -new -- tag:new and from:rabenseifner@hlrs.de

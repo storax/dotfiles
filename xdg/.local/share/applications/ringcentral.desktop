@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=RingCentral
+Comment=Ring Central Launcher
+Exec=/home/david/software/ringcentral/opt/ringcentral/RingcentralLauncher
+Icon=ringcentral-office
+Terminal=false
+Type=Application
+Categories=Network;Telephony;
+StartupNotify=true
