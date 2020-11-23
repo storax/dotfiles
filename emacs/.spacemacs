@@ -240,7 +240,6 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
    ;; (default t)
    dotspacemacs-verify-spacelpa-archives t
-
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
@@ -583,6 +582,11 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  (setq configuration-layer-elpa-archives
+      `(("melpa" . ,(concat user-home-directory ".emacs.d/elpa-mirror/melpa/"))
+        ("org"   . ,(concat user-home-directory ".emacs.d/elpa-mirror/org/"))
+        ("gnu"   . ,(concat user-home-directory ".emacs.d/elpa-mirror/gnu/"))))
   (setq user-full-name "David Zuber"
         user-mail-address "zuber.david@gmx.de"
         vs-follow-symlinks t ; When following sysmlinks always go to the destination
