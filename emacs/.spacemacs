@@ -52,14 +52,14 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      ;;django
-     dap
+     ;;dap
      deft
      emacs-lisp
      (erc :packages (not persp-mode))
      git
      html
      helm
-     haskell
+     ;;haskell
      lsp
      java
      (javascript
@@ -70,7 +70,7 @@ This function should only modify configuration layer settings."
      (typescript
       :variables
       typescript-indent-level 2)
-     latex
+     ;;latex
      markdown
      multiple-cursors
      notmuch
@@ -86,7 +86,7 @@ This function should only modify configuration layer settings."
      shell-scripts
      ;;spacemacs-layouts
      syntax-checking
-     (terraform :variables terraform-auto-format-on-save t)
+     ;;(terraform :variables terraform-auto-format-on-save t)
      (theming
       :variables theming-modifications
       '((zenburn (avy-background-face :background "#3F3F3F" :foreground "#757565" :inverse-video nil)
@@ -109,7 +109,7 @@ This function should only modify configuration layer settings."
      ;; version-control
      xkcd
      yaml
-     clojure
+     ;;clojure
      storax-icons
      storax-utils
      storax-unkillable-scratch
@@ -582,7 +582,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-
+  (setq package-check-signature nil)
   (setq configuration-layer-elpa-archives
       `(("melpa" . ,(concat user-home-directory ".emacs.d/elpa-mirror/melpa/"))
         ("org"   . ,(concat user-home-directory ".emacs.d/elpa-mirror/org/"))
@@ -640,55 +640,6 @@ before packages are loaded."
           "\\*magit:"
           "\\*notmuch")))
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(desktop-auto-save-timeout nil)
- '(erc-nickserv-identify-mode nil)
- '(evil-surround-pairs-alist
-   (quote
-    ((40 "(" . ")")
-     (91 "[" . "]")
-     (123 "{" . "}")
-     (41 "(" . ")")
-     (93 "[" . "]")
-     (125 "{" . "}")
-     (35 "#{" . "}")
-     (98 "(" . ")")
-     (66 "{" . "}")
-     (62 "<" . ">")
-     (116 . evil-surround-read-tag)
-     (60 . evil-surround-read-tag)
-     (102 . evil-surround-function))))
- '(global-evil-surround-mode t)
- '(magit-repository-directories
-   (quote
-    (("/home/david/projects/" . 1)
-     ("/home/david/.homesick/repos/" . 1))))
- '(notmuch-saved-searches
-   (quote
-    ((:name "inbox" :query "tag:inbox" :key "i")
-     (:name "unread" :query "tag:unread" :key "u")
-     (:name "sent" :query "tag:sent" :key "t")
-     (:name "drafts" :query "tag:draft" :key "d")
-     (:name "all mail" :query "*" :key "a")
-     (:name "mpc" :query "tag:mpc" :key "m")
-     (:name "gmx" :query "tag:gmx" :key "g")
-     (:name "web" :query "tag:web" :key "w"))))
- '(org-agenda-files (quote ("~/Documents/org/todo.org")))
- '(package-selected-packages
-   (quote
-    (pacmacs intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode xpm markdown-mode link-hint hide-comnt eyebrowse dumb-jump dired-narrow packed deferred highlight log4e projectile magit-popup hydra f visual-regexp org org-download notmuch live-py-mode evil-ediff dired+ anaconda-mode smartparens evil flycheck company helm helm-core multiple-cursors avy alert magit git-commit async yasnippet inf-ruby haml-mode js2-mode i3wm phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode exwm cycle-quotes ox-reveal epc refine counsel prodigy rainbow-mode minimap zenburn-theme yaml-mode xterm-color xkcd ws-butler window-numbering which-key web-mode web-beautify volatile-highlights visual-regexp-steroids vimish-fold vagrant-tramp vagrant use-package toc-org tagedit srefactor spotify spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-yapf pretty-mode popwin pony-mode pip-requirements persp-mode pdf-tools paradox page-break-lines ox-rst ox-jira orgit orgbox org-tfl org-repo-todo org-present org-pomodoro org-plus-contrib org-page org-bullets org-alert open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hyperbole hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-org-rifle helm-notmuch helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fold-dwim flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks engine-mode emmet-mode elisp-slime-nav electric-operator drag-stuff diff-hl deft define-word cython-mode company-web company-tern company-statistics company-quickhelp company-auctex company-anaconda coffee-mode clean-aindent-mode chruby calfw bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk ansible-doc ansible aggressive-indent adoc-mode adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(paradox-github-token t)
- '(send-mail-function (quote sendmail-send-it))
- '(storax/buffers-to-keep
-   (quote
-    ("\\*Messsage\\*" "\\*scratch\\*" "\\*anaconda-mode\\*" "\\*http")))
- '(vc-follow-symlinks t))
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -719,8 +670,13 @@ This function is called at the very end of Spacemacs initialization."
  '(global-evil-surround-mode t)
  '(magit-delete-by-moving-to-trash nil)
  '(magit-repository-directories
-   '(("/home/david/projects/" . 1)
-     ("/home/david/go/src/github.com/storax" . 1)))
+   (quote
+    (("/home/david/dev/personal" . 1)
+     ("/home/david/dev/qc/dev" . 1)
+     ("/home/david/dev/qc/systems" . 1)
+     ("/home/david/dev/qc/webdev" . 1)
+     ("/home/david/dev/qc/support" . 1)
+     ("/home/david/dev/qc/systems/salt" . 2))))
  '(notmuch-saved-searches
    '((:name "inbox" :query "tag:inbox" :key "i")
      (:name "unread" :query "tag:unread" :key "u")
