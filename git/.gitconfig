@@ -1,8 +1,8 @@
 [user]
 	name = David Zuber
-	email = zuber.david@gmx.de
+	email = david@quadrature.ai
 [core]
-	editor = emacsclient -t -a=\"\"
+	editor = vi
 [alias]
 	co = checkout
 	br = branch

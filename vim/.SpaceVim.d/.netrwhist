@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/david/dev/qc/systems/sensu/sensu-plugins-netapp/.git'
+let g:netrw_dirhist_2='/home/david/dev/qc/systems/packaging/python-isort'
+let g:netrw_dirhist_3='/home/david/dev/qc/systems/sensu/sensu-plugins-netapp/lib/sensu-plugins-netapp'
+let g:netrw_dirhist_4='/home/david/dev/qc/systems/sensu/sensu-plugins-netapp/lib'
+let g:netrw_dirhist_5='/home/david/dev/qc/systems/salt-pillar/internal/rsync/www'
+let g:netrw_dirhist_6='/home/david/dev/qc/systems/salt-pillar/internal/systemd/units/projman'

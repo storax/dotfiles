@@ -5,7 +5,7 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer, the value of this option is a string.
-    colorscheme = "gruvbox"
+    colorscheme = "zenburn"
     colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors, the type of the value is boolean, true or false.
@@ -21,6 +21,7 @@
     # Display current mode text on statusline, by default It is disabled,
     # only color will be changed when switch modes.
     enable_statusline_mode = false
+    bootstrap_after = 'myspacevim#after'
 
 # Enable autocomplete layer
 [[layers]]
@@ -33,7 +34,56 @@
     default_position = "top"
     default_height = 30
 
+[[layers]]
+    name = "colorschemes"
+
+[[layers]]
+    name = "lang#ruby"
+
+[[layers]]
+    name = "lang#sh"
+
+[[layers]]
+    name = "lang#python"
+
+[[layers]]
+    name = "lang#puppet"
+
+[[layers]]
+    name = "lang#markdown"
+
+[[layers]]
+    name = "edit"
+
+[[layers]]
+    name = "git"
+
+[[layers]]
+    name = "lang#extra"
+
+[[layers]]
+    name = "fzf"
 # This is an example for adding custom plugins lilydjwg/colorizer
 [[custom_plugins]]
     repo = "lilydjwg/colorizer"
+    merged = false
+
+[[custom_plugins]]
+    repo = "jnurmine/Zenburn"
+    merged = false
+
+[[custom_plugins]]
+    repo = "elzr/vim-json"
+    merged = false
+
+[[custom_plugins]]
+    repo = "stephpy/vim-yaml"
+    merged = false
+
+[[custom_plugins]]
+    repo = "saltstack/salt-vim"
+    merged = false
+
+[[custom_plugins]]
+    repo = "ruby-formatter/rufo-vim"
     merged = false
