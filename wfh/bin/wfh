@@ -1,18 +1,4 @@
 #!/usr/bin/env bash
-xhost +local:root
-exec docker run \
-   --rm \
-   -h myhost \
-   --ipc=host \
-   --env="DISPLAY" \
-   --user=$(id -u $USER):$(id -g $USER) \
-   --workdir="/home/$USER" \
-   --volume="/home/$USER:/home/$USER" \
-   --volume="/etc/group:/etc/group:ro" \
-   --volume="/etc/passwd:/etc/passwd:ro" \
-   --volume="/etc/shadow:/etc/shadow:ro" \
-   --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-   --volume ~/projects/teradici-client/.logs:/tmp/Teradici/$USER/PCoIPClient/logs \
-   pcoip
-xhost -local:root
+sudo openfortivpn &
+/usr/NX/bin/nxplayer
+sudo pkill openfortivpn

@@ -4,7 +4,7 @@
 EMAIL="zuber.david@gmx.de"
 LOG="/var/log/restic.log"
 RDIR="/home/david/.config/backblaze"
-RESTIC="sudo -u restic --preserve-env=B2_ACCOUNT_KEY,B2_ACCOUNT_ID,RESTIC_REPOSITORY,RESTIC_PASSWORD_FILE /home/restic/bin/restic"
+RESTIC="sudo -u restic --preserve-env=B2_ACCOUNT_KEY,B2_ACCOUNT_ID,RESTIC_REPOSITORY,RESTIC_PASSWORD_FILE restic"
 
 ### keep last # of days of snapshots
 KEEPDAYS=10
@@ -14,7 +14,7 @@ log() {
 }
 
 notify() {
-    echo -e "Subject: Errors running Restic Backup on host: $(hostname)\n\n${1}" | su - david -c "sendmail -v ${EMAIL}"
+    echo -e "Subject: Errors running Restic Backup on host: $(hostname)\n\n${1}" | sendmail -v ${EMAIL}
 }
 
 cd $RDIR
@@ -66,5 +66,5 @@ fi
 log "end of run\n-----------------------------------------\n\n"
 
 # notify OK
-echo -e "Subject: Restic Backup OK on host: $(hostname)\n\nSnapshot complete, snapshots older than $KEEPDAYS days deleted." | su - david -c "sendmail -v ${EMAIL}"
+echo -e "Subject: Restic Backup OK on host: $(hostname)\n\nSnapshot complete, snapshots older than $KEEPDAYS days deleted." | sendmail -v ${EMAIL}
 

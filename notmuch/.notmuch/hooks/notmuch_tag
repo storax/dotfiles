@@ -37,6 +37,10 @@
 +backblaze -- tag:new and from:*@backblaze.com
 
 +quadrature -- tag:new and from:*@quadrature.ai
++sage -- tag:new and from:*@sageonline.co.uk
++quadrature +payslip -new -- tag:new and tag:sage and "Sage Online Services"
+
++bills +docmail -new -- tag:new and from:docmailsupport@cfh.com and "Docmail - Payment received for order"
 
 +spam +confluent -new -- tag:new and from:info@confluent.io
 +deleted +deliveroo -new -- tag:new and from:noreply@t.deliveroo.com

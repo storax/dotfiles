@@ -73,7 +73,7 @@ assign [class="Vlc"] "5"
 assign [class="Steam"] "6"
 assign [title="PlayOnLinux"] "6"
 assign [title="urxvttilda.sh"] "8: ~"
-assign [class="pcoip-client"] "10"
+assign [class="nxplayer.bin"] "10"
 assign [instance="ncmpcpp"] "9: music"
 bindsym F12 workspace "8: ~"
 
