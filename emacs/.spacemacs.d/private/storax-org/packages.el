@@ -32,10 +32,7 @@
   (use-package orgbox))
 
 (defun storax-org/init-ox-rst ()
-  (use-package ox-rst))
-
-(defun storax-org/init-ox-jira ()
-  (use-package ox-jira))
+  (use-package ox-rst :after ox))
 
 (defun storax-org/init-org-alert ()
   (use-package org-alert
