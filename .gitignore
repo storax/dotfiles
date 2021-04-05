@@ -9,3 +9,4 @@ kodi/.kodi/addons/
 /fonts/.local/share/fonts/.uuid
 /gtk/.config/gtk-2.0/dbus-daemon
 /gtk/.config/gtk-2.0/.dbus-daemon.sys
+/xdg/.local/share/applications/mimeinfo.cache

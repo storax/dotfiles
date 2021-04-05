@@ -9,12 +9,12 @@ RESTIC="sudo -u restic --preserve-env=B2_ACCOUNT_KEY,B2_ACCOUNT_ID,RESTIC_REPOSI
 ### keep last # of days of snapshots
 KEEPDAYS=10
 
-log() { 
+log() {
     echo -e "$(date "+%Y-%m-%d %H:%M:%S"): ${1}" | tee -a $LOG
 }
 
 notify() {
-    echo -e "Subject: Errors running Restic Backup on host: $(hostname)\n\n${1}" | sendmail -v ${EMAIL}
+    echo -e "Subject: Errors running Restic Backup on host: $(hostname)\n\n${1}" | sendmail -v "${EMAIL}"
 }
 
 cd $RDIR
@@ -31,7 +31,7 @@ source ${RDIR}/cred
 
 log "starting backup.."
 
-msg=$(${RESTIC} backup --exclude-caches --files-from=restic/include --exclude-file=restic/exclude >> $LOG 2>&1)
+msg=$(${RESTIC} backup --exclude-caches --files-from=restic/include --exclude-file=restic/exclude |& Tee -a "${LOG}")
 
 if [ $? -eq 1 ]
 then
@@ -40,7 +40,7 @@ then
     exit 1
 fi
 
-msg=$(${RESTIC} check >> $LOG 2>&1)
+msg=$(${RESTIC} check |& tee -a "${LOG}")
 
 # Check for Errors
 if [ $? -eq 1 ]
@@ -53,7 +53,7 @@ fi
 
 log "removing old snapshots.."
 
-msg=$(${RESTIC} forget --keep-daily ${KEEPDAYS} --prune)
+msg=$(${RESTIC} forget --keep-daily ${KEEPDAYS} --prune |& tee -a "${LOG}")
 
 if [ $? -eq 1 ]
 then
@@ -63,8 +63,9 @@ then
 fi
 
 
+# notify OK
+echo -e "Subject: Restic Backup OK on host: $(hostname)\n\nSnapshot complete, snapshots older than $KEEPDAYS days deleted." | sendmail -v "${EMAIL}" |& tee -a "${LOG}"
+
 log "end of run\n-----------------------------------------\n\n"
 
-# notify OK
-echo -e "Subject: Restic Backup OK on host: $(hostname)\n\nSnapshot complete, snapshots older than $KEEPDAYS days deleted." | sendmail -v ${EMAIL}
 

@@ -447,6 +447,27 @@ prompt_asp_keymap_select(){
     zle reset-prompt
 }
 
+zvm_after_select_vi_mode() {
+    case $ZVM_MODE in
+        $ZVM_MODE_NORMAL)
+            prompt_asp_keymap='%F{yellow}-- NORMAL --%f'
+            ;;
+        $ZVM_MODE_INSERT)
+            prompt_asp_keymap='%F{green}-- INSERT --%f'
+            ;;
+        $ZVM_MODE_VISUAL)
+            prompt_asp_keymap='%F{white}-- VISUAL --%f'
+            ;;
+        $ZVM_MODE_VISUAL_LINE)
+            prompt_asp_keymap='%F{white}-- VISUAL(L) --%f'
+            ;;
+        $ZVM_MODE_REPLACE)
+            prompt_asp_keymap='%F{orange}-- REPLACE --%f'
+            ;;
+    esac
+    zle reset-prompt
+}
+
 prompt_asp_k8s_setup() {
     local namespace separator modified_time_fmt
 
@@ -500,7 +521,8 @@ prompt_asp_setup() {
   # prompt turns red if the previous command didn't exit with 0
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [(y)es (n)o (a)bort (e)dit]? "
 
-  zle -N zle-keymap-select prompt_asp_keymap_select
+  # Replaced with zvm_after_select_vi_mode from zsh-vi-mode
+  #zle -N zle-keymap-select prompt_asp_keymap_select
 }
 
 prompt_asp_setup "$@"
