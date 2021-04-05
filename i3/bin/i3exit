@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    i3lock -d -i ~/.img/mrrobot.png
+    i3_lock_multi_monitor -i ~/.img/mrrobot.png
     xset dpms force off
 }
 
