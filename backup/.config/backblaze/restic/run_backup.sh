@@ -31,7 +31,7 @@ source ${RDIR}/cred
 
 log "starting backup.."
 
-msg=$(${RESTIC} backup --exclude-caches --files-from=restic/include --exclude-file=restic/exclude |& Tee -a "${LOG}")
+msg=$(${RESTIC} backup --exclude-caches --files-from=restic/include --exclude-file=restic/exclude |& tee -a "${LOG}")
 
 if [ $? -eq 1 ]
 then
