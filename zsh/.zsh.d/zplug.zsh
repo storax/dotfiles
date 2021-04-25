@@ -16,7 +16,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "agkozak/zsh-z"
-zplug "jeffreytse/zsh-vi-mode"
+zplug "b4b4r07/zsh-vimode-visual", defer:3
 zplug "zsh-users/zaw"
 # zplug "oknowton/zsh-dwim"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
