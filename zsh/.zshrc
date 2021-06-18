@@ -39,3 +39,5 @@ done
 if [[ "$ZPROF" = true ]]; then
     zprof
 fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

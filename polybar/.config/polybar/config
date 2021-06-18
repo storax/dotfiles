@@ -56,7 +56,7 @@ fixed-center = false
 
 modules-left = i3
 modules-center = mpd
-modules-right = down up wireless-network cpu temperature volume battery backlight date
+modules-right = down up wireless-network bluetooth cpu temperature volume battery backlight date
 
 border-bottom-size = 1
 
@@ -334,3 +334,13 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
+
+[module/bluetooth]
+type = custom/script
+exec = /home/david/.config/polybar/bluetooth.sh
+interval = 5
+click-left = exec /home/david/.config/polybar/toggle_bluetooth.sh
+format-padding = 1
+format-underline = ${colors.blue}
+; format-background = #000000
+; format-foreground = #ffffff

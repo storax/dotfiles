@@ -741,6 +741,7 @@ This function is called at the very end of Spacemacs initialization."
      (116 . evil-surround-read-tag)
      (60 . evil-surround-read-tag)
      (102 . evil-surround-function)))
+ '(evil-want-Y-yank-to-eol nil)
  '(global-evil-surround-mode t)
  '(magit-delete-by-moving-to-trash nil)
  '(magit-repository-directories
@@ -764,6 +765,7 @@ This function is called at the very end of Spacemacs initialization."
  '(storax/buffers-to-keep
    '("\\*Messsage\\*" "\\*scratch\\*" "\\*anaconda-mode\\*" "\\*http"))
  '(vc-follow-symlinks t)
+ '(warning-suppress-types '((comp) (yasnippet backquote-change)))
  '(web-mode-attr-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
